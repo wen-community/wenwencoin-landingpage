@@ -1,0 +1,10 @@
+.env
+node_modules/
+public
+next-env.d.ts
+.env*
+.next
+tailwind.config.js
+postcss.config.js
+prettier.config.js
+next.config.js
