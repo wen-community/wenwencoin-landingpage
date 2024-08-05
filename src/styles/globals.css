@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  @apply flex h-screen w-screen bg-white antialiased outline-none;
+}
+
+#__next {
+  @apply flex h-full w-full flex-col px-16;
+}
+
+.defaultGradient {
+  background: linear-gradient(
+      159deg,
+      rgb(43, 142, 197, 0.7) 0%,
+      rgb(253, 253, 249, 0) 100%
+    ),
+    linear-gradient(
+      25deg,
+      rgba(110, 115, 190, 1) 0%,
+      rgba(253, 253, 249, 0) 100%
+    );
+}
+
+background:;

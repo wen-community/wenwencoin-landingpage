@@ -1,15 +1,145 @@
+import { Source_Code_Pro } from 'next/font/google'
 import Head from 'next/head'
+import Image from 'next/image'
+
+import { useState } from 'react'
+
+import {
+  Arrow,
+  Asterisk,
+  Bandaids,
+  Clover,
+  CoinVertical,
+  GlobeSimple,
+  HandHeart,
+  Header,
+  Heart,
+  PawPrint,
+  Plugs,
+  Smiley
+} from '@/components'
+import { cn } from '@/utils/cn'
+
+const icons = [
+  Clover,
+  Smiley,
+  PawPrint,
+  Heart,
+  Bandaids,
+  GlobeSimple,
+  CoinVertical,
+  Asterisk
+]
+
+const inter = Source_Code_Pro({
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin']
+})
 
 export default function Home() {
+  const [isHovered, setIsHovered] = useState<boolean>(false)
+
   return (
     <>
       <Head>
         <title>Wen Wen Coin</title>
         <meta name="description" content="Wen Wen Coin" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/wen_head_logo.png" />
       </Head>
-      <main className="bg-white selection:top-0">Hello Wen Wen Coin</main>
+      <main className={cn('h-full', inter.className)}>
+        <section className="flex h-full flex-col">
+          <Header />
+          <div className="border-lightGray flex h-full flex-col items-center justify-center gap-16 border-t">
+            <div
+              className="relative flex size-[502px] items-center justify-center"
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {icons.map((Icon, index) => (
+                <div
+                  key={index}
+                  className="bg-skyBlue left-[calc(50% - 32px)] top-[calc(50% - 32px)] absolute flex h-16 w-16 items-center justify-center rounded-full transition-transform"
+                  style={{
+                    transform: cn({
+                      [`rotate(${index * 45}deg) translate(220px) rotate(-${index * 45}deg)`]:
+                        isHovered,
+                      'translate(0, 0)': !isHovered
+                    })
+                  }}
+                >
+                  <Icon />
+                </div>
+              ))}
+              <Image
+                onMouseEnter={() => setIsHovered(true)}
+                src="/wen_head_large.png"
+                width={297}
+                height={265}
+                alt="Wen Wen Coin"
+                className="z-10 mx-auto"
+              />
+            </div>
+            <div className="flex flex-col items-center gap-5">
+              <p className="w-96 text-center text-xl font-bold">
+                Onboarding mainstream audiences via the ultimate culture coin
+              </p>
+              <button
+                type="button"
+                className="rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
+              >
+                Learn More
+              </button>
+            </div>
+            <Arrow />
+          </div>
+        </section>
+        <section className="flex">
+          <div className="flex w-1/2 flex-col gap-7">
+            <Image
+              src="/wen_head_logo.png"
+              width={82}
+              height={73}
+              alt="Wen Wen Coin"
+            />
+            <h2 className="text-4xl font-bold">What is WEN</h2>
+            <p className="max-w-screen-md">
+              Wen is a coin on the Solana blockchain aiming to disrupt
+              mainstream audiences and become the ultimate social culture
+              coin.Wen started as a free airdrop to 1M+ recipients to give back
+              to the crypto community. There were zero influencers, whales, or
+              insiders involved and each recipient received the exact same
+              amount - this made Wen the fairest and widest distributed airdrop
+              ever on Solana. Emphasizing Wen is a coin for the people.Wen is
+              the proud owner of the #1 and #2 cat accounts in the world
+              (@shouldhavecat & @postsofcats) The mission for Wen is to take
+              over mainstream audiences and onboard the masses to the cutest cat
+              in crypto.
+            </p>
+            <div className="flex gap-6 pt-7">
+              <div className="flex flex-col gap-2">
+                <HandHeart />
+                <h2 className="text-4xl font-bold">280,000+</h2>
+                <p>Holders Worldwide</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <Plugs />
+                <h2 className="text-4xl font-bold">90+</h2>
+                <p>Integrations</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative flex w-1/2 justify-center">
+            <div className="defaultGradient absolute aspect-square w-full max-w-screen-sm rounded-3xl" />
+            <Image
+              src={'/wen_full_body.png'}
+              width={581}
+              height={489}
+              alt="Wen Wen Full Body"
+              className="z-10 translate-y-32"
+            />
+          </div>
+        </section>
+      </main>
     </>
   )
 }
