@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Telegram, Twitter } from '@/components'
 
 const Header = () => (
-  <header className="py-3.125 mb-[33px] mt-[25px] grid w-full grid-cols-3">
+  <header className="mb-[33px] mt-[25px] grid w-full grid-cols-3 py-3.125">
     <Image src="/wen_head_logo.png" width={73} height={52} alt="Wen Wen Coin" />
     <nav className="justity-self-center flex items-center justify-center gap-x-8 font-semibold">
       <Link href="/about">About</Link>

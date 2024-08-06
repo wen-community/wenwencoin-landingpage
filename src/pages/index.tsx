@@ -96,7 +96,7 @@ export default function Home() {
             <Arrow className="animate-bounce" />
           </div>
         </section>
-        <section className="max-h-screen-md flex h-full">
+        <section className="flex h-full max-h-screen-md">
           <div className="flex w-1/2 flex-col gap-7">
             <Image
               src="/wen_head_logo.png"
@@ -150,7 +150,7 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="bg-backgroundSecondary flex flex-col items-center gap-24 py-20">
+        <section className="flex flex-col items-center gap-24 bg-backgroundSecondary py-20">
           <h3 className="text-xl font-bold">
             WEN is trusted on 30+ CEXs and DEXes
           </h3>
@@ -178,7 +178,7 @@ export default function Home() {
             <Image src="/gate_logo.png" width={141} height={43} alt="Gate" />
           </div>
         </section>
-        <section className="max-h-screen-md flex h-full py-28">
+        <section className="flex h-full max-h-screen-md py-28">
           <div className="flex w-1/2 flex-col gap-4">
             <h2 className="text-10 font-bold">How to buy WEN</h2>
             <p className="flex max-w-screen-sm flex-col gap-8 font-semibold">
@@ -204,7 +204,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className="max-h-screen-md bg-backgroundSecondary flex h-full py-28">
+        <section className="flex h-full max-h-screen-md bg-backgroundSecondary py-28">
           <div className="flex w-1/2 flex-col gap-4">
             <h2 className="text-10 font-bold">FAQ</h2>
             <p className="flex max-w-screen-sm flex-col gap-8 font-semibold">
