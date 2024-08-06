@@ -16,7 +16,8 @@ module.exports = {
         lightGray: '#D9D9D9',
         skyBlue: '#2C8FC6',
         purple: '#7A7FC3',
-        backgroundSecondary: '#F7FAFC'
+        backgroundSecondary: '#F7FAFC',
+        tertiary: '#F2F6FA'
       },
       backgroundImage: {
         defaultGradient:
