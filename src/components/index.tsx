@@ -1,4 +1,6 @@
 export { default as Header } from './Header'
+export { default as BuyWenStep } from './BuyWenStep'
+export { default as FaqItem } from './FaqItem'
 
 export {
   PawPrint,
@@ -13,5 +15,8 @@ export {
   Twitter,
   Arrow,
   HandHeart,
-  Plugs
+  Plugs,
+  ArrowLeftRight,
+  Solana,
+  Wallet
 } from './icons'

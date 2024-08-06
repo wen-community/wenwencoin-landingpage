@@ -15,11 +15,18 @@ module.exports = {
       colors: {
         lightGray: '#D9D9D9',
         skyBlue: '#2C8FC6',
-        purple: '#7A7FC3'
+        purple: '#7A7FC3',
+        backgroundSecondary: '#F7FAFC'
       },
       backgroundImage: {
         defaultGradient:
           'linear-gradient(25deg, #2B8EC5 0%, #FDFDF9 100%), linear-gradient(159deg, #6E73BE 0%, #FDFDF9 100%)'
+      },
+      maxHeight: {
+        'screen-md': '47.875rem'
+      },
+      fontSize: {
+        10: '2.5rem' // 40px
       }
     }
   },

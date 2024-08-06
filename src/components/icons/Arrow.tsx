@@ -1,5 +1,8 @@
-const Arrow = () => (
+import { ISvgIcon } from './model'
+
+const Arrow = ({ className }: ISvgIcon) => (
   <svg
+    className={className}
     width="12"
     height="39"
     viewBox="0 0 12 39"
