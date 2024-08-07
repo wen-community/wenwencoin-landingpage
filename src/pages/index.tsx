@@ -121,7 +121,7 @@ export default function Home() {
           </div>
         </div>
         <div className="relative flex w-1/2 justify-center">
-          <div className="defaultGradient top-1/20 aspect-4/3 absolute w-full max-w-screen-md rounded-3xl" />
+          <div className="defaultGradient absolute top-1/20 aspect-4/3 w-full max-w-screen-md rounded-3xl" />
           <Image
             src={'/wen_full_body.png'}
             width={581}

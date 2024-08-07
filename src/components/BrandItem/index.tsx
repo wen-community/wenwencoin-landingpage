@@ -15,7 +15,7 @@ const BrandItem = ({
   height: number
 }) => (
   <div className="flex w-full max-w-[416px] flex-col gap-8">
-    <div className="bg-tertiary flex aspect-square w-full items-center justify-center">
+    <div className="flex aspect-square w-full items-center justify-center bg-tertiary">
       <Image src={url} width={width} height={height} alt="Wen Wen Coin" />
     </div>
     <div className="flex w-full items-center justify-between">
