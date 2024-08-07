@@ -8,7 +8,7 @@ body {
 }
 
 #__next {
-  @apply flex h-full w-full flex-col px-16;
+  @apply flex h-full w-full flex-col;
 }
 
 .defaultGradient {
@@ -21,6 +21,19 @@ body {
       25deg,
       rgba(110, 115, 190, 1) 0%,
       rgba(253, 253, 249, 0) 100%
+    );
+}
+
+.radialGradient {
+  background: radial-gradient(
+      52.97% 40.04% at 96.84% 100%,
+      rgba(150, 190, 220, 0.3) 0%,
+      rgba(150, 190, 220, 0) 100%
+    ),
+    radial-gradient(
+      71.91% 45.75% at 0% 100%,
+      rgba(122, 127, 195, 0.4) 0%,
+      rgba(122, 127, 195, 0) 100%
     );
 }
 

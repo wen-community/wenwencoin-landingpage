@@ -17,7 +17,8 @@ module.exports = {
         skyBlue: '#2C8FC6',
         purple: '#7A7FC3',
         backgroundSecondary: '#F7FAFC',
-        tertiary: '#F2F6FA'
+        tertiary: '#F2F6FA',
+        lightBlue: '#96BEDC'
       },
       backgroundImage: {
         defaultGradient:
@@ -28,6 +29,12 @@ module.exports = {
       },
       fontSize: {
         10: '2.5rem' // 40px
+      },
+      inset: {
+        '1/20': '5%'
+      },
+      aspectRatio: {
+        '4/3': '4 / 3'
       }
     }
   },

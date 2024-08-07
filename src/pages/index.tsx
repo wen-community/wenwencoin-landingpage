@@ -35,8 +35,8 @@ export default function Home() {
 
   return (
     <>
-      <section className="flex h-full flex-col">
-        <div className="flex h-[calc(100vh-100px)] flex-col items-center justify-center gap-16 border-t border-lightGray">
+      <section className="radialGradient flex h-[calc(100%-136px)] flex-col backdrop-blur-xl">
+        <div className="flex h-full flex-col items-center justify-center gap-16 border-t border-lightGray">
           <div
             className="relative flex size-[502px] items-center justify-center"
             onMouseLeave={() => setIsHovered(false)}
@@ -44,7 +44,7 @@ export default function Home() {
             {icons.map((Icon, index) => (
               <div
                 key={index}
-                className="left-[calc(50% - 32px)] top-[calc(50% - 32px)] absolute flex h-16 w-16 items-center justify-center rounded-full bg-skyBlue transition-transform"
+                className="absolute flex h-16 w-16 items-center justify-center rounded-full bg-skyBlue transition-transform"
                 style={{
                   transform: cn({
                     [`rotate(${index * 45}deg) translate(220px) rotate(-${index * 45}deg)`]:
@@ -79,7 +79,7 @@ export default function Home() {
           <Arrow className="animate-bounce" />
         </div>
       </section>
-      <section className="flex h-full max-h-screen-md">
+      <section className="flex h-full max-h-screen-md py-4">
         <div className="flex w-1/2 flex-col gap-7">
           <Image
             src="/wen_head_logo.png"
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
         </div>
         <div className="relative flex w-1/2 justify-center">
-          <div className="defaultGradient absolute aspect-square w-full max-w-screen-sm rounded-3xl" />
+          <div className="defaultGradient top-1/20 aspect-4/3 absolute w-full max-w-screen-md rounded-3xl" />
           <Image
             src={'/wen_full_body.png'}
             width={581}

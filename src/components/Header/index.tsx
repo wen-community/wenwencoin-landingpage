@@ -2,9 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Telegram, Twitter } from '@/components'
+import { cn } from '@/utils/cn'
 
-const Header = () => (
-  <header className="mb-[33px] mt-[25px] grid w-full grid-cols-3 py-3.125">
+const Header = ({ className }: { className?: string }) => (
+  <header
+    className={cn(
+      'mb-[33px] mt-[25px] grid w-full grid-cols-3 py-3.125',
+      className
+    )}
+  >
     <Link href="/">
       <Image
         src="/wen_head_logo.png"

@@ -20,8 +20,8 @@ const Layout = ({ children }: { children: ReactNode }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/wen_head_logo.png" />
     </Head>
-    <main className={cn('h-full', inter.className)}>
-      <Header />
+    <main className={cn('h-full [&>*]:px-16', inter.className)}>
+      <Header className="bg-transparent" />
       {children}
       <Header />
       <footer className="flex items-center justify-center gap-6 border-t py-8 text-sm">
