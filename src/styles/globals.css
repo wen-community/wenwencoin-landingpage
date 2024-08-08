@@ -37,4 +37,14 @@ body {
     );
 }
 
-background:;
+.leaflet-container {
+  @apply !w-full;
+}
+
+.leaflet-control-attribution {
+  @apply hidden;
+}
+
+.leaflet-marker-icon {
+  z-index: 800 !important;
+}

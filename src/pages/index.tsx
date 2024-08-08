@@ -13,6 +13,7 @@ import {
   GlobeSimple,
   HandHeart,
   Heart,
+  NextLink,
   PawPrint,
   Plugs,
   Smiley
@@ -69,12 +70,7 @@ export default function Home() {
             <p className="w-96 text-center text-xl font-bold">
               Onboarding mainstream audiences via the ultimate culture coin
             </p>
-            <button
-              type="button"
-              className="rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
-            >
-              Learn More
-            </button>
+            <NextLink href="/join">Learn More</NextLink>
           </div>
           <Arrow className="animate-bounce" />
         </div>
@@ -157,12 +153,12 @@ export default function Home() {
             Bybit, Kraken, Crypto.com, etc or follow the steps to buy Wen on
             chain through a crypto wallet.
           </p>
-          <button
-            type="button"
-            className="mt-7 w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
+          <NextLink
+            href="/buy"
+            // className="mt-7 w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
           >
             Buy Wen Now
-          </button>
+          </NextLink>
         </div>
         <div className="flex flex-col gap-10">
           {BUY_WEN_STEPS.map(({ content, icon, title }) => (
@@ -181,12 +177,9 @@ export default function Home() {
           <p className="flex max-w-screen-sm flex-col gap-8 font-semibold">
             Find answers to everything around the cute cat
           </p>
-          <button
-            type="button"
-            className="mt-7 w-max rounded-2.5 bg-black px-5 py-2.5 text-lg font-medium text-white"
-          >
+          <NextLink href="/" className="text-lg">
             Learn more about WEN
-          </button>
+          </NextLink>
           <div className="mt-7 space-y-1 text-xs">
             <h4 className="font-bold">Disclaimer</h4>
             <p className="max-w-48">
