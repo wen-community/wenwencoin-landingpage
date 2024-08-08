@@ -16,7 +16,7 @@ const NextLink = ({
   <Link
     href={href}
     className={cn(
-      'rounded-2.5 bg-black px-5 py-2.5 font-medium text-white',
+      'w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white',
       className
     )}
   >
