@@ -24,6 +24,7 @@ const Header = ({ className }: { className?: string }) => (
       <Link href="/docs">Docs</Link>
       <Link href="/brand">Brand</Link>
       <Link href="/faq">FAQ</Link>
+      <Link href="/community">Community</Link>
     </nav>
     <div className="flex items-center justify-end gap-x-5">
       <Twitter />

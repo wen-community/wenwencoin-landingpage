@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.1",
+    "cities.json": "^1.1.39",
     "clsx": "^2.1.1",
     "leaflet": "^1.9.4",
     "next": "14.2.5",

@@ -12,10 +12,10 @@ const FAQ_ITEMS = [
   {
     title: "What is Wen's tokenomics",
     content: (
-      <p>
+      <span>
         Token Supply: 727,000,000,000 <br /> <br /> No taxes, Contract ownership
         renounced, Wen is a coin for the people.
-      </p>
+      </span>
     )
   }
 ]

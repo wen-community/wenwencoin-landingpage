@@ -2,6 +2,8 @@ import { Dispatch, SetStateAction } from 'react'
 
 import { cn } from '@/utils/cn'
 
+import DropDown from '../DropDown'
+import FormLine from '../FormLine'
 import { Cross } from '../icons'
 
 type IAddLocation = {
@@ -17,24 +19,8 @@ const AddLocation = ({ showForm, setShowForm }: IAddLocation) => {
       })}
     >
       <form className="flex items-end gap-5">
-        <label title="name" htmlFor="name" className="flex flex-col gap-2">
-          Name / Username
-          <input
-            id="name"
-            type="text"
-            className="rounded-lg border border-black p-2"
-            placeholder="Anna Smith"
-          />
-        </label>
-        <label title="city" htmlFor="city" className="flex flex-col gap-2">
-          Location
-          <input
-            id="city"
-            type="text"
-            className="rounded-lg border border-black p-2"
-            placeholder="Anna Smith"
-          />
-        </label>
+        <FormLine id="name" title="Name / Username" placeholder="Anna Smith" />
+        <DropDown id="city" title="Location" placeholder="New York" />
         <button
           className="h-max w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
           type="submit"
