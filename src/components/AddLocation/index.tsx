@@ -1,5 +1,10 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction, useCallback, useState } from 'react'
+import toast from 'react-hot-toast'
 
+import yup from 'yup'
+
+import { supabase } from '@/services/supabase'
+import { DEFAULT_CITY, ICity } from '@/types'
 import { cn } from '@/utils/cn'
 
 import DropDown from '../DropDown'
@@ -11,16 +16,59 @@ type IAddLocation = {
   setShowForm: Dispatch<SetStateAction<boolean>>
 }
 
+const nameSchema = yup.string().required('Please enter a name')
+
 const AddLocation = ({ showForm, setShowForm }: IAddLocation) => {
+  const [selected, setSelected] = useState<ICity>(DEFAULT_CITY)
+  const [dropdownError, setDropDownError] = useState<string>('')
+  const [nameError, setNameError] = useState<string>('')
+  const [name, setName] = useState<string>('')
+
+  const handleAddLocation = useCallback(async () => {
+    if (!selected.name) {
+      setDropDownError('Please select a location')
+      return
+    }
+    try {
+      const username = await nameSchema.validate(name)
+
+      const { error } = await supabase.rpc('add_user_and_city', {
+        username,
+        city: selected.name
+      })
+
+      if (error) toast.error(error.message)
+      else toast.success('Thanks for adding a location!')
+    } catch (error) {
+      if (error instanceof yup.ValidationError) {
+        setNameError(error.message)
+        return
+      }
+    }
+  }, [name, selected.name])
+
   return (
     <div
       className={cn('flex items-center justify-between', {
         hidden: !showForm
       })}
     >
-      <form className="flex items-end gap-5">
-        <FormLine id="name" title="Name / Username" placeholder="Anna Smith" />
-        <DropDown id="city" title="Location" placeholder="New York" />
+      <form onSubmit={handleAddLocation} className="flex items-end gap-5">
+        <FormLine
+          error={nameError}
+          id="name"
+          title="Name / Username"
+          placeholder="Anna Smith"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <DropDown
+          error={dropdownError}
+          onLocationSelect={setSelected}
+          selected={selected.name}
+          title="Location"
+          id="city"
+          placeholder="New York"
+        />
         <button
           className="h-max w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
           type="submit"

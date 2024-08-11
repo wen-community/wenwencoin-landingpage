@@ -9,6 +9,27 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      locations: {
+        Row: {
+          city: string
+          created_at: string
+          id: number
+          user_count: number
+        }
+        Insert: {
+          city?: string
+          created_at?: string
+          id?: number
+          user_count?: number
+        }
+        Update: {
+          city?: string
+          created_at?: string
+          id?: number
+          user_count?: number
+        }
+        Relationships: []
+      }
       users: {
         Row: {
           city: string
@@ -28,14 +49,28 @@ export type Database = {
           id?: number
           username?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: 'users_city_fkey'
+            columns: ['city']
+            isOneToOne: false
+            referencedRelation: 'locations'
+            referencedColumns: ['city']
+          }
+        ]
       }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      add_user_and_city: {
+        Args: {
+          username: string
+          city: string
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never

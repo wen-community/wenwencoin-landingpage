@@ -35,22 +35,20 @@ const FormLine: ForwardRefRenderFunction<HTMLInputElement, IFormLine> = (
         <input
           {...restProps}
           id={id}
-          className="rounded-lg border border-black p-2"
+          className="rounded-lg border border-black p-2 outline-none"
           ref={ref}
           required={required}
           aria-label={title}
         />
       </label>
-      {error ? (
-        <div
-          className={cn(
-            'text-red whitespace-pre text-sm font-semibold leading-4 duration-300 ease-in-out',
-            { 'text-red/0': !error }
-          )}
-        >
-          {error}
-        </div>
-      ) : null}
+      <div
+        className={cn(
+          'text-red whitespace-pre text-sm font-semibold leading-4 duration-300 ease-in-out',
+          { 'text-red-400': !error }
+        )}
+      >
+        {error}
+      </div>
     </div>
   )
 }
