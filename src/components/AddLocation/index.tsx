@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react'
 import toast from 'react-hot-toast'
 
-import yup from 'yup'
+import * as yup from 'yup'
 
 import { supabase } from '@/services/supabase'
 import { DEFAULT_CITY, ICity } from '@/types'
