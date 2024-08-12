@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <>
       <section className="radialGradient flex h-[calc(100%-136px)] flex-col backdrop-blur-xl">
-        <div className="flex h-full flex-col items-center justify-center gap-16 border-t border-lightGray">
+        <div className="flex h-full flex-col items-center justify-center gap-16 overflow-hidden border-t border-lightGray">
           <div
             className="relative flex size-[502px] items-center justify-center"
             onMouseLeave={() => setIsHovered(false)}
@@ -75,8 +75,8 @@ export default function Home() {
           <Arrow className="animate-bounce" />
         </div>
       </section>
-      <section className="flex h-full max-h-screen-md py-4">
-        <div className="flex w-1/2 flex-col gap-7">
+      <section className="flex flex-col overflow-hidden py-4 lg:flex-row">
+        <div className="flex flex-col gap-7 lg:w-1/2">
           <Image
             src="/wen_head_logo.png"
             width={82}
@@ -116,14 +116,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="relative flex w-1/2 justify-center">
-          <div className="defaultGradient absolute top-1/20 aspect-4/3 w-full max-w-screen-md rounded-3xl" />
+        <div className="relative flex w-full justify-center pb-[33%] lg:pb-0">
+          <div className="defaultGradient absolute top-1/20 aspect-4/3 w-full max-w-screen-sm rounded-3xl" />
           <Image
             src={'/wen_full_body.png'}
             width={581}
             height={489}
             alt="Wen Wen Full Body"
-            className="absolute bottom-0 z-10"
+            className="bottom-0 z-10 max-h-[489px] w-2/3 translate-y-1/3 object-contain"
           />
         </div>
       </section>
@@ -131,7 +131,7 @@ export default function Home() {
         <h3 className="text-xl font-bold">
           WEN is trusted on 30+ CEXs and DEXes
         </h3>
-        <div className="flex flex-wrap items-center justify-center gap-x-24">
+        <div className="scrollbar-none flex items-center justify-center gap-x-24 overflow-x-scroll">
           <Image src="/bybit_logo.png" width={115} height={38} alt="Bybit" />
           <Image src="/kraken_logo.png" width={137} height={37} alt="Kraken" />
           <Image
@@ -145,8 +145,8 @@ export default function Home() {
           <Image src="/gate_logo.png" width={141} height={43} alt="Gate" />
         </div>
       </section>
-      <section className="flex h-full max-h-screen-md py-28">
-        <div className="flex w-1/2 flex-col gap-4">
+      <section className="flex flex-wrap gap-10 py-28">
+        <div className="flex flex-col gap-4 lg:w-1/2">
           <h2 className="text-10 font-bold">How to buy WEN</h2>
           <p className="flex max-w-screen-sm flex-col gap-8 font-semibold">
             Head over to one of your favorite crypto central exchanges like
@@ -171,8 +171,8 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="flex h-full max-h-screen-md bg-backgroundSecondary py-28">
-        <div className="flex w-1/2 flex-col gap-4">
+      <section className="flex flex-wrap gap-10 bg-backgroundSecondary py-28">
+        <div className="flex flex-col gap-4 lg:w-1/2">
           <h2 className="text-10 font-bold">FAQ</h2>
           <p className="flex max-w-screen-sm flex-col gap-8 font-semibold">
             Find answers to everything around the cute cat
@@ -188,7 +188,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="flex w-1/2 flex-col gap-4">
+        <div className="flex flex-col gap-4">
           {FAQ_ITEMS.map(({ title, content }) => (
             <FaqItem content={content} title={title} key={title} />
           ))}

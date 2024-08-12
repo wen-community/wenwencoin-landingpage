@@ -18,7 +18,7 @@ const FaqItem = ({ title, content }: IFaqItem) => {
         onClick={() => {
           setIsOpen((val) => !val)
         }}
-        className="flex w-full items-center justify-between gap-6 py-5 text-xl font-bold"
+        className="flex w-full items-center justify-between gap-6 py-5 text-start text-xl font-bold"
       >
         {title}
         <Chevron

@@ -9,8 +9,8 @@ type IBuyWenStep = {
 }
 
 const BuyWenStep = ({ icon, title, content }: IBuyWenStep) => (
-  <div className="flex h-20 items-center gap-10">
-    <div className="flex aspect-square h-full items-center justify-center rounded-full bg-skyBlue">
+  <div className="flex items-center gap-10">
+    <div className="flex aspect-square w-24 items-center justify-center rounded-full bg-skyBlue">
       {icon}
     </div>
     <div className="w-full max-w-md">

@@ -1,23 +1,8 @@
-import {
-  MapContainer,
-  // Marker,
-  TileLayer
-} from 'react-leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
 
 import 'leaflet/dist/leaflet.css'
 
 import MapMarker from './MapMarker'
-
-// import { Icon } from 'leaflet'
-
-// const customIcon = new Icon({
-//   iconUrl: '/wen_head_logo.png', // Replace with your icon path
-//   iconSize: [41, 30],
-//   iconAnchor: [12, 41],
-//   popupAnchor: [1, -34],
-//   shadowSize: [41, 41],
-//   className: 'custom-icon' // We'll use this to style the icon
-// })
 
 const Map = () => {
   const ZOOM_LEVEL = 3
@@ -33,10 +18,11 @@ const Map = () => {
           minZoom={2}
           maxZoom={10}
         />
-        {/* <Marker position={{ lat, lng }} icon={customIcon}></Marker> */}
+        <>
+          <div className="absolute z-[400] h-full w-full bg-gradient-to-b from-lightBlue/50 to-purple/50" />
+          <MapMarker />
+        </>
       </MapContainer>
-      <div className="absolute z-[400] h-full w-full bg-gradient-to-b from-lightBlue/50 to-purple/50" />
-      <MapMarker />
     </div>
   )
 }

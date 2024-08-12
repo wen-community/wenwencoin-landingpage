@@ -20,7 +20,12 @@ const Layout = ({ children }: { children: ReactNode }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/wen_head_logo.png" />
     </Head>
-    <main className={cn('h-full [&>*]:px-16', inter.className)}>
+    <main
+      className={cn(
+        'max-w-screen h-full overflow-x-hidden [&>*]:px-4 md:[&>*]:px-8 lg:[&>*]:px-16',
+        inter.className
+      )}
+    >
       <Header className="bg-transparent" />
       {children}
       <Header />

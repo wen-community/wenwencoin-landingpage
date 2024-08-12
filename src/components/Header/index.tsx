@@ -7,11 +7,11 @@ import { cn } from '@/utils/cn'
 const Header = ({ className }: { className?: string }) => (
   <header
     className={cn(
-      'mb-[33px] mt-[25px] grid w-full grid-cols-3 py-3.125',
+      'mb-[33px] mt-[25px] flex w-full items-center justify-between py-3.125',
       className
     )}
   >
-    <Link href="/">
+    <Link href="/" className="w-max">
       <Image
         src="/wen_head_logo.png"
         width={73}
@@ -19,7 +19,7 @@ const Header = ({ className }: { className?: string }) => (
         alt="Wen Wen Coin"
       />
     </Link>
-    <nav className="justity-self-center flex items-center justify-center gap-x-8 font-semibold">
+    <nav className="justity-self-center hidden items-center justify-center gap-x-8 font-semibold lg:flex">
       <Link href="/about">About</Link>
       <Link href="/docs">Docs</Link>
       <Link href="/brand">Brand</Link>
