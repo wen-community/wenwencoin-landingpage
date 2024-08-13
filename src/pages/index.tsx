@@ -36,8 +36,8 @@ export default function Home() {
 
   return (
     <>
-      <section className="radialGradient flex h-[calc(100%-136px)] flex-col backdrop-blur-xl">
-        <div className="flex h-full flex-col items-center justify-center gap-16 overflow-hidden border-t border-lightGray">
+      <section className="radialGradient flex h-[calc(100%-136px)] flex-col border-t border-lightGray backdrop-blur-xl">
+        <div className="flex h-full flex-col items-center justify-center gap-16 overflow-hidden">
           <div
             className="relative flex size-[335px] items-center justify-center md:size-[502px]"
             onMouseLeave={() => setIsHovered(false)}

@@ -30,7 +30,7 @@ const JoinCommunity = () => {
         </div>
       </div>
       <AddLocation showForm={showForm} setShowForm={setShowForm} />
-      <section className="aspect-21/9 gap-8 py-12 md:py-16">
+      <section className="gap-8 py-12 md:py-16">
         <MapComponent />
       </section>
     </>
