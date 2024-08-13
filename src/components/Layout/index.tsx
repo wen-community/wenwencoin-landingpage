@@ -1,5 +1,6 @@
 import { Source_Code_Pro } from 'next/font/google'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import { ReactNode } from 'react'
 
@@ -28,12 +29,20 @@ const Layout = ({ children }: { children: ReactNode }) => (
     >
       <Header className="bg-transparent" />
       {children}
-      <Header />
-      <footer className="flex items-center justify-center gap-6 border-t py-8 text-sm">
+      <Header style="secondary" className="flex-col gap-y-8 md:flex-row" />
+      <footer className="flex flex-col-reverse items-center justify-center gap-6 border-t py-8 text-sm md:flex-row">
         <p>© 2024 WEN. All rights reserved.</p>
-        <p>Privacy Policy</p>
-        <p>Terms of Service</p>
-        <p>Cookies Settings</p>
+        <div className="flex flex-col items-center gap-6 md:flex-row">
+          <Link href="/privacy" className="underline">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="underline">
+            Terms of Service
+          </Link>
+          <Link href="/cookies" className="underline">
+            Cookies Settings
+          </Link>
+        </div>
       </footer>
     </main>
   </>

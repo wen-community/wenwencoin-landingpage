@@ -10,7 +10,7 @@ const Map = () => {
   const lat = 52.5162
   const lng = 13.3777
   return (
-    <div className="relative flex aspect-21/9 w-full">
+    <div className="relative flex h-[695px] w-full">
       <MapContainer center={{ lat, lng }} zoom={ZOOM_LEVEL}>
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png"

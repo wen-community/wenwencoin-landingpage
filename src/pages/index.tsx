@@ -39,16 +39,16 @@ export default function Home() {
       <section className="radialGradient flex h-[calc(100%-136px)] flex-col backdrop-blur-xl">
         <div className="flex h-full flex-col items-center justify-center gap-16 overflow-hidden border-t border-lightGray">
           <div
-            className="relative flex size-[502px] items-center justify-center"
+            className="relative flex size-[335px] items-center justify-center md:size-[502px]"
             onMouseLeave={() => setIsHovered(false)}
           >
             {icons.map((Icon, index) => (
               <div
                 key={index}
-                className="absolute flex h-16 w-16 items-center justify-center rounded-full bg-skyBlue transition-transform"
+                className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-skyBlue transition-transform md:h-16 md:w-16"
                 style={{
                   transform: cn({
-                    [`rotate(${index * 45}deg) translate(220px) rotate(-${index * 45}deg)`]:
+                    [`rotate(${index * 45}deg) translate(min(220px, 37vw)) rotate(-${index * 45}deg)`]:
                       isHovered,
                     'translate(0, 0)': !isHovered
                   })
@@ -63,16 +63,16 @@ export default function Home() {
               width={297}
               height={265}
               alt="Wen Wen Coin"
-              className="z-10 mx-auto"
+              className="z-10 mx-auto h-44 w-48 md:h-64 md:w-72"
             />
           </div>
-          <div className="flex flex-col items-center gap-5">
-            <p className="w-96 text-center text-xl font-bold">
+          <div className="flex flex-col gap-5 md:items-center">
+            <p className="max-w-96 text-left text-3xl font-bold md:text-center md:text-xl">
               Onboarding mainstream audiences via the ultimate culture coin
             </p>
             <NextLink href="/join">Learn More</NextLink>
           </div>
-          <Arrow className="animate-bounce" />
+          <Arrow className="hidden animate-bounce md:block" />
         </div>
       </section>
       <section className="flex flex-col overflow-hidden py-4 lg:flex-row">
@@ -131,7 +131,7 @@ export default function Home() {
         <h3 className="text-xl font-bold">
           WEN is trusted on 30+ CEXs and DEXes
         </h3>
-        <div className="scrollbar-none flex items-center justify-center gap-x-24 overflow-x-scroll">
+        <div className="flex max-w-full items-center justify-center gap-x-16 overflow-x-scroll scrollbar-none md:gap-x-24">
           <Image src="/bybit_logo.png" width={115} height={38} alt="Bybit" />
           <Image src="/kraken_logo.png" width={137} height={37} alt="Kraken" />
           <Image

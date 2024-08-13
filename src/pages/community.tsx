@@ -8,12 +8,14 @@ const JoinCommunity = () => {
 
   return (
     <>
-      <div className="flex items-center justify-between py-10">
+      <div className="flex flex-wrap items-center justify-between gap-12 py-10">
         <div className="flex flex-col gap-5">
-          <h1 className="text-10 font-bold">Join the community</h1>
+          <h1 className="pr-10 text-10 font-bold leading-10">
+            Join the community
+          </h1>
           <button
             onClick={() => setShowForm(true)}
-            className="w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white disabled:opacity-50"
+            className="hidden w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white disabled:opacity-50 md:block"
             type="button"
             disabled={showForm}
           >
@@ -21,14 +23,14 @@ const JoinCommunity = () => {
           </button>
         </div>
         <div className="flex flex-col gap-4">
-          <h2 className="flex items-center gap-6 text-4xl font-semibold">
+          <h2 className="flex flex-col gap-6 text-5xl font-semibold md:flex-row md:items-center">
             <HandHeart /> 280,000+
           </h2>
-          <p>Holders Worldwide</p>
+          <p className="text-lg">Holders Worldwide</p>
         </div>
       </div>
       <AddLocation showForm={showForm} setShowForm={setShowForm} />
-      <section className="aspect-21/9 gap-8 py-16">
+      <section className="aspect-21/9 gap-8 py-12 md:py-16">
         <MapComponent />
       </section>
     </>
