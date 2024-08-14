@@ -5,6 +5,7 @@ export { default as Layout } from './Layout'
 export { default as BrandItem } from './BrandItem'
 export { default as NextLink } from './Link'
 export { default as AddLocation } from './AddLocation'
+export { default as CountUp } from './CountUp'
 
 export {
   PawPrint,

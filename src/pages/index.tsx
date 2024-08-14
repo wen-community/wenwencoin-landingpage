@@ -1,7 +1,7 @@
-import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
 import { useState } from 'react'
+import ReactVisibilitySensor from 'react-visibility-sensor'
 
 import {
   Arrow,
@@ -10,6 +10,7 @@ import {
   BuyWenStep,
   Clover,
   CoinVertical,
+  CountUp,
   FaqItem,
   GlobeSimple,
   HandHeart,
@@ -20,11 +21,6 @@ import {
   Smiley
 } from '@/components'
 import { BUY_WEN_STEPS, FAQ_ITEMS } from '@/constants'
-
-const CountUp = dynamic(() => import('@/components/CountUp'))
-
-import ReactVisibilitySensor from 'react-visibility-sensor'
-
 import { cn } from '@/utils/cn'
 
 const icons = [
@@ -69,7 +65,7 @@ export default function Home() {
               width={297}
               height={265}
               alt="Wen Wen Coin"
-              className="animate-rock z-10 mx-auto h-44 w-48 md:h-64 md:w-72"
+              className="z-10 mx-auto h-44 w-48 animate-rock md:h-64 md:w-72"
             />
           </div>
           <div className="flex flex-col gap-5 md:items-center">
