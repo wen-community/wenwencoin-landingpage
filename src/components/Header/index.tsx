@@ -50,21 +50,11 @@ const Header = ({
             }
           )}
         >
-          <Link onClick={() => setIsOpen(false)} href="/about">
-            About
-          </Link>
-          <Link onClick={() => setIsOpen(false)} href="/docs">
-            Docs
-          </Link>
-          <Link onClick={() => setIsOpen(false)} href="/brand">
-            Brand
-          </Link>
-          <Link onClick={() => setIsOpen(false)} href="/faq">
-            FAQ
-          </Link>
-          <Link onClick={() => setIsOpen(false)} href="/community">
-            Community
-          </Link>
+          <Link href="/about">About</Link>
+          <Link href="/docs">Docs</Link>
+          <Link href="/brand">Brand</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/community">Community</Link>
         </nav>
         <div
           className={cn(

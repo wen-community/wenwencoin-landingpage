@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
 import { useState } from 'react'
@@ -19,6 +20,11 @@ import {
   Smiley
 } from '@/components'
 import { BUY_WEN_STEPS, FAQ_ITEMS } from '@/constants'
+
+const CountUp = dynamic(() => import('@/components/CountUp'))
+
+import ReactVisibilitySensor from 'react-visibility-sensor'
+
 import { cn } from '@/utils/cn'
 
 const icons = [
@@ -103,15 +109,27 @@ export default function Home() {
               in crypto.
             </p>
           </div>
-          <div className="flex gap-6 gap-x-28 pt-7">
+          <div className="flex flex-col gap-6 gap-x-28 pt-7 md:flex-row">
             <div className="flex flex-col justify-between gap-2 [&>*]:h-14">
               <HandHeart />
-              <h2 className="text-4xl font-bold">280,000+</h2>
+              <h2 className="text-4xl font-bold">
+                <ReactVisibilitySensor partialVisibility>
+                  {({ isVisible }: { isVisible: boolean }) => (
+                    <div>{isVisible ? <CountUp end={280000} /> : 0}+</div>
+                  )}
+                </ReactVisibilitySensor>
+              </h2>
               <p>Holders Worldwide</p>
             </div>
             <div className="flex flex-col justify-between gap-2 [&>*]:h-14">
               <Plugs />
-              <h2 className="text-4xl font-bold">90+</h2>
+              <h2 className="text-4xl font-bold">
+                <ReactVisibilitySensor partialVisibility>
+                  {({ isVisible }: { isVisible: boolean }) => (
+                    <div>{isVisible ? <CountUp end={90} /> : 0}+</div>
+                  )}
+                </ReactVisibilitySensor>
+              </h2>
               <p>Integrations</p>
             </div>
           </div>
