@@ -1,7 +1,12 @@
 import Image from 'next/image'
 
-const MapMarker = () => (
-  <div className="absolute z-[401] flex w-max gap-2 rounded-2xl bg-white p-2 pl-0">
+import { forwardRef, ForwardRefRenderFunction } from 'react'
+
+const MapMarker: ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => (
+  <div
+    ref={ref}
+    className="absolute z-[401] flex w-max gap-2 rounded-2xl bg-white p-2 pl-0"
+  >
     <Image
       src="/wen_head_logo.png"
       alt="wen head logo"
@@ -16,4 +21,4 @@ const MapMarker = () => (
   </div>
 )
 
-export default MapMarker
+export default forwardRef(MapMarker)

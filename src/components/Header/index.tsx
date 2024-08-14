@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Telegram, Twitter } from '@/components'
 import { cn } from '@/utils/cn'
@@ -16,6 +17,11 @@ const Header = ({
   style?: 'primary' | 'secondary'
 }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   return (
     <header
@@ -23,7 +29,8 @@ const Header = ({
         'h-full max-h-36 w-full overflow-y-hidden transition-[max-height] duration-500 ease-in-out',
         {
           'fixed z-[1001] flex max-h-screen flex-col bg-white md:static md:max-h-36':
-            isOpen
+            isOpen,
+          'max-h-72': style === 'secondary'
         }
       )}
     >

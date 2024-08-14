@@ -29,7 +29,10 @@ const Layout = ({ children }: { children: ReactNode }) => (
     >
       <Header className="bg-transparent" />
       {children}
-      <Header style="secondary" className="flex-col gap-y-8 md:flex-row" />
+      <Header
+        style="secondary"
+        className="flex-col gap-y-8 border-b-0 md:flex-row"
+      />
       <footer className="flex flex-col-reverse items-center justify-center gap-6 border-t py-8 text-sm md:flex-row">
         <p>© 2024 WEN. All rights reserved.</p>
         <div className="flex flex-col items-center gap-6 md:flex-row">

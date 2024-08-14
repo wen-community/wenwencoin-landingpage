@@ -167,12 +167,7 @@ export default function Home() {
             Bybit, Kraken, Crypto.com, etc or follow the steps to buy Wen on
             chain through a crypto wallet.
           </p>
-          <NextLink
-            href="/buy"
-            // className="mt-7 w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
-          >
-            Buy Wen Now
-          </NextLink>
+          <NextLink href="/buy">Buy Wen Now</NextLink>
         </div>
         <div className="flex flex-col gap-10">
           {BUY_WEN_STEPS.map(({ content, icon, title }) => (
