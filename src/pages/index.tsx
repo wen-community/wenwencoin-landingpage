@@ -69,7 +69,7 @@ export default function Home() {
               width={297}
               height={265}
               alt="Wen Wen Coin"
-              className="z-10 mx-auto h-44 w-48 md:h-64 md:w-72"
+              className="animate-rock z-10 mx-auto h-44 w-48 md:h-64 md:w-72"
             />
           </div>
           <div className="flex flex-col gap-5 md:items-center">

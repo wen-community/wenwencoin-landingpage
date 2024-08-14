@@ -36,6 +36,15 @@ module.exports = {
       aspectRatio: {
         '4/3': '4 / 3',
         '21/9': '21 / 9'
+      },
+      keyframes: {
+        rock: {
+          '0%, 100%': { transform: 'rotate(-25deg)' },
+          '50%': { transform: 'rotate(25deg)' }
+        }
+      },
+      animation: {
+        rock: 'rock 2s ease-in-out infinite'
       }
     }
   },
