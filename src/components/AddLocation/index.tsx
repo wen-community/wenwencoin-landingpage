@@ -34,7 +34,9 @@ const AddLocation = ({ showForm, setShowForm }: IAddLocation) => {
 
       const { error } = await supabase.rpc('add_user_and_city', {
         username,
-        city: selected.name
+        city: selected.name,
+        latitude: selected.lat,
+        longitude: selected.lng
       })
 
       if (error) toast.error(error.message)
@@ -45,7 +47,7 @@ const AddLocation = ({ showForm, setShowForm }: IAddLocation) => {
         return
       }
     }
-  }, [name, selected.name])
+  }, [name, selected.lat, selected.lng, selected.name])
 
   return (
     <div
