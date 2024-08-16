@@ -1,4 +1,10 @@
-import { Dispatch, SetStateAction, useCallback, useState } from 'react'
+import {
+  Dispatch,
+  FormEvent,
+  SetStateAction,
+  useCallback,
+  useState
+} from 'react'
 import toast from 'react-hot-toast'
 
 import * as yup from 'yup'
@@ -9,53 +15,66 @@ import { cn } from '@/utils/cn'
 
 import DropDown from '../DropDown'
 import FormLine from '../FormLine'
-import { Cross } from '../icons'
+import { Cross, Spinner } from '../icons'
 
 type IAddLocation = {
   showForm: boolean
   setShowForm: Dispatch<SetStateAction<boolean>>
+  fetchMarkers: () => void
 }
 
 const nameSchema = yup.string().required('Please enter a name')
 
-const AddLocation = ({ showForm, setShowForm }: IAddLocation) => {
+const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
   const [selected, setSelected] = useState<ICity>(DEFAULT_CITY)
   const [dropdownError, setDropDownError] = useState<string>('')
   const [nameError, setNameError] = useState<string>('')
   const [name, setName] = useState<string>('')
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const handleAddLocation = useCallback(async () => {
-    if (!selected.name) {
-      setDropDownError('Please select a location')
-      return
-    }
-    try {
-      const username = await nameSchema.validate(name)
-
-      const { error } = await supabase.rpc('add_user_and_city', {
-        username,
-        city: selected.name,
-        latitude: selected.lat,
-        longitude: selected.lng
-      })
-
-      if (error) toast.error(error.message)
-      else toast.success('Thanks for adding a location!')
-    } catch (error) {
-      if (error instanceof yup.ValidationError) {
-        setNameError(error.message)
+  const handleAddLocation = useCallback(
+    async (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault()
+      setIsLoading(true)
+      if (!selected.name) {
+        setDropDownError('Please select a location')
         return
       }
-    }
-  }, [name, selected.lat, selected.lng, selected.name])
+      try {
+        const username = await nameSchema.validate(name)
+
+        const { error } = await supabase.rpc('add_user_and_city', {
+          username,
+          city_name: selected.name,
+          latitude: selected.lat,
+          longitude: selected.lng
+        })
+
+        if (error) toast.error(error.message)
+        else toast.success('Thanks for adding a location!')
+        setIsLoading(false)
+        fetchMarkers()
+      } catch (error) {
+        if (error instanceof yup.ValidationError) {
+          setNameError(error.message)
+          setIsLoading(false)
+          return
+        }
+      }
+    },
+    [fetchMarkers, name, selected.lat, selected.lng, selected.name]
+  )
 
   return (
     <div
-      className={cn('flex items-center justify-between', {
+      className={cn('flex items-start justify-between md:items-center', {
         hidden: !showForm
       })}
     >
-      <form onSubmit={handleAddLocation} className="flex items-end gap-5">
+      <form
+        onSubmit={handleAddLocation}
+        className="flex flex-wrap items-end gap-5"
+      >
         <FormLine
           error={nameError}
           id="name"
@@ -72,10 +91,11 @@ const AddLocation = ({ showForm, setShowForm }: IAddLocation) => {
           placeholder="New York"
         />
         <button
-          className="h-max w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
+          disabled={isLoading}
+          className="flex h-10 w-44 -translate-y-1 items-center justify-center gap-2 rounded-2.5 bg-black px-5 py-2.5 font-medium text-white disabled:opacity-50"
           type="submit"
         >
-          Add to the map
+          {isLoading ? <Spinner /> : 'Add to the map'}
         </button>
       </form>
       <button

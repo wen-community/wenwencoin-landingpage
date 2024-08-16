@@ -1,29 +1,14 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import toast from 'react-hot-toast'
+import { useMemo } from 'react'
 import { MapContainer, TileLayer } from 'react-leaflet'
 
 import 'leaflet/dist/leaflet.css'
 
 import { MAP_CENTER, ZOOM_LEVEL } from '@/constants'
-import { supabase } from '@/services/supabase'
 import { ILocation } from '@/types'
 
 import Marker from './MapMarker'
 
-const Map = () => {
-  const [markers, setMarkers] = useState<ILocation[]>([])
-
-  const fetchMarkers = useCallback(async () => {
-    const { data, error } = await supabase.from('locations').select('*')
-
-    if (error) toast.error(error.message)
-    else setMarkers(data)
-  }, [])
-
-  useEffect(() => {
-    fetchMarkers()
-  }, [fetchMarkers])
-
+const Map = ({ markers }: { markers: ILocation[] }) => {
   const markerList = useMemo(
     () =>
       markers.map((location) => (

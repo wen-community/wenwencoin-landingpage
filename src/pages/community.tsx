@@ -1,10 +1,26 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 
 import { AddLocation, HandHeart } from '@/components'
 import { MapComponent } from '@/components/Map/OpenStreetMap'
+import { supabase } from '@/services/supabase'
+import { ILocation } from '@/types'
 
 const JoinCommunity = () => {
   const [showForm, setShowForm] = useState<boolean>(false)
+
+  const [markers, setMarkers] = useState<ILocation[]>([])
+
+  const fetchMarkers = useCallback(async () => {
+    const { data, error } = await supabase.from('locations').select('*')
+
+    if (error) toast.error(error.message)
+    else setMarkers(data)
+  }, [])
+
+  useEffect(() => {
+    fetchMarkers()
+  }, [fetchMarkers])
 
   return (
     <>
@@ -29,9 +45,13 @@ const JoinCommunity = () => {
           <p className="text-lg">Holders Worldwide</p>
         </div>
       </div>
-      <AddLocation showForm={showForm} setShowForm={setShowForm} />
+      <AddLocation
+        fetchMarkers={fetchMarkers}
+        showForm={showForm}
+        setShowForm={setShowForm}
+      />
       <section className="gap-8 py-12 md:py-16">
-        <MapComponent />
+        <MapComponent markers={markers} />
       </section>
     </>
   )

@@ -70,23 +70,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      add_user_and_city:
-        | {
-            Args: {
-              username: string
-              city: string
-            }
-            Returns: undefined
-          }
-        | {
-            Args: {
-              username: string
-              city: string
-              latitude: string
-              longitude: string
-            }
-            Returns: undefined
-          }
+      add_user_and_city: {
+        Args: {
+          username: string
+          city_name: string
+          latitude: string
+          longitude: string
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
