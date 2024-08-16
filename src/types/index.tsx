@@ -15,3 +15,12 @@ export const DEFAULT_CITY = {
   admin1: '',
   admin2: ''
 }
+
+export type ILocation = {
+  id: number
+  city: string
+  created_at: string
+  lat: string
+  lng: string
+  user_count: number
+}

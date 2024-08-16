@@ -46,5 +46,5 @@ body {
 }
 
 .leaflet-marker-icon {
-  z-index: 800 !important;
+  @apply !border-0;
 }

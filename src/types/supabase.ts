@@ -14,18 +14,24 @@ export type Database = {
           city: string
           created_at: string
           id: number
+          lat: string
+          lng: string
           user_count: number
         }
         Insert: {
           city?: string
           created_at?: string
           id?: number
+          lat?: string
+          lng?: string
           user_count?: number
         }
         Update: {
           city?: string
           created_at?: string
           id?: number
+          lat?: string
+          lng?: string
           user_count?: number
         }
         Relationships: []
@@ -64,13 +70,23 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      add_user_and_city: {
-        Args: {
-          username: string
-          city: string
-        }
-        Returns: undefined
-      }
+      add_user_and_city:
+        | {
+            Args: {
+              username: string
+              city: string
+            }
+            Returns: undefined
+          }
+        | {
+            Args: {
+              username: string
+              city: string
+              latitude: string
+              longitude: string
+            }
+            Returns: undefined
+          }
     }
     Enums: {
       [_ in never]: never

@@ -30,7 +30,7 @@ const Header = ({
         {
           'fixed z-[1001] flex max-h-screen flex-col bg-white md:static md:max-h-36':
             isOpen,
-          'max-h-72': style === 'secondary'
+          'h-max max-h-72': style === 'secondary'
         }
       )}
     >

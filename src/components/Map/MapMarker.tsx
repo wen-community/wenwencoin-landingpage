@@ -1,12 +1,20 @@
 import Image from 'next/image'
 
-import { forwardRef, ForwardRefRenderFunction } from 'react'
+import ReactDOMServer from 'react-dom/server'
+import { Marker } from 'react-leaflet'
 
-const MapMarker: ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => (
-  <div
-    ref={ref}
-    className="absolute z-[401] flex w-max gap-2 rounded-2xl bg-white p-2 pl-0"
-  >
+import { divIcon } from 'leaflet'
+
+import { ILocation } from '@/types'
+
+const MarkerDiv = ({
+  count,
+  cityName
+}: {
+  count: number
+  cityName: string
+}) => (
+  <div className="flex w-max gap-2 rounded-2xl bg-white p-2 pl-0">
     <Image
       src="/wen_head_logo.png"
       alt="wen head logo"
@@ -15,10 +23,25 @@ const MapMarker: ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => (
       className=""
     />
     <div className="flex flex-col text-xs">
-      <h6 className="font-bold">20.2k</h6>
-      <p className="font-light text-black/60">PORTUGAL</p>
+      <h6 className="font-bold">{count}</h6>
+      <p className="font-light text-black/60">{cityName}</p>
     </div>
   </div>
 )
 
-export default forwardRef(MapMarker)
+const LeafletMarker = ({ location }: { location: ILocation }) => {
+  const icon = divIcon({
+    html: ReactDOMServer.renderToString(
+      <MarkerDiv count={location.user_count} cityName={location.city} />
+    )
+  })
+
+  return (
+    <Marker
+      icon={icon}
+      position={{ lat: Number(location.lat), lng: Number(location.lng) }}
+    />
+  )
+}
+
+export default LeafletMarker
