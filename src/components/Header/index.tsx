@@ -26,7 +26,7 @@ const Header = ({
   return (
     <header
       className={cn(
-        'h-full max-h-36 w-full overflow-y-hidden transition-[max-height] duration-500 ease-in-out',
+        'h-full max-h-36 w-full overflow-y-hidden px-4 transition-[max-height] duration-500 ease-in-out',
         {
           'fixed z-[1001] flex max-h-screen flex-col bg-white md:static md:max-h-36':
             isOpen,

@@ -1,6 +1,7 @@
 import { Source_Code_Pro } from 'next/font/google'
 import Head from 'next/head'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { ReactNode } from 'react'
 
@@ -13,42 +14,46 @@ const inter = Source_Code_Pro({
   subsets: ['latin']
 })
 
-const Layout = ({ children }: { children: ReactNode }) => (
-  <>
-    <Head>
-      <title>Wen Wen Coin</title>
-      <meta name="description" content="Wen Wen Coin" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/wen_head_logo.png" />
-    </Head>
-    <main
-      className={cn(
-        'max-w-screen h-full overflow-x-hidden [&>*]:px-4 md:[&>*]:px-8 lg:[&>*]:px-16',
-        inter.className
-      )}
-    >
-      <Header className="bg-transparent" />
-      {children}
-      <Header
-        style="secondary"
-        className="flex-col gap-y-8 border-b-0 md:flex-row"
-      />
-      <footer className="flex flex-col-reverse items-center justify-center gap-6 border-t py-8 text-sm md:flex-row">
-        <p>© 2024 WEN. All rights reserved.</p>
-        <div className="flex flex-col items-center gap-6 md:flex-row">
-          <Link href="/privacy" className="underline">
-            Privacy Policy
-          </Link>
-          <Link href="/terms" className="underline">
-            Terms of Service
-          </Link>
-          <Link href="/cookies" className="underline">
-            Cookies Settings
-          </Link>
-        </div>
-      </footer>
-    </main>
-  </>
-)
+const Layout = ({ children }: { children: ReactNode }) => {
+  const pathname = usePathname()
+
+  return (
+    <>
+      <Head>
+        <title>Wen Wen Coin</title>
+        <meta name="description" content="Wen Wen Coin" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/wen_head_logo.png" />
+      </Head>
+      <main
+        className={cn(
+          'max-w-screen h-full [&>*]:px-4 md:[&>*]:px-8 lg:[&>*]:px-16',
+          inter.className
+        )}
+      >
+        {pathname !== '/' && <Header className="bg-transparent" />}
+        {children}
+        <Header
+          style="secondary"
+          className="flex-col gap-y-8 border-b-0 md:flex-row"
+        />
+        <footer className="flex flex-col-reverse items-center justify-center gap-6 border-t py-8 text-sm md:flex-row">
+          <p>© 2024 WEN. All rights reserved.</p>
+          <div className="flex flex-col items-center gap-6 md:flex-row">
+            <Link href="/privacy" className="underline">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="underline">
+              Terms of Service
+            </Link>
+            <Link href="/cookies" className="underline">
+              Cookies Settings
+            </Link>
+          </div>
+        </footer>
+      </main>
+    </>
+  )
+}
 
 export default Layout

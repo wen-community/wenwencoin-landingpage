@@ -1,82 +1,22 @@
 import Image from 'next/image'
 
-import { useState } from 'react'
 import ReactVisibilitySensor from 'react-visibility-sensor'
 
 import {
-  Arrow,
-  Asterisk,
-  Bandaids,
   BuyWenStep,
-  Clover,
-  CoinVertical,
   CountUp,
   FaqItem,
-  GlobeSimple,
   HandHeart,
-  Heart,
+  HeroSection,
   NextLink,
-  PawPrint,
-  Plugs,
-  Smiley
+  Plugs
 } from '@/components'
 import { BUY_WEN_STEPS, FAQ_ITEMS } from '@/constants'
-import { cn } from '@/utils/cn'
 
-const icons = [
-  Clover,
-  Smiley,
-  PawPrint,
-  Heart,
-  Bandaids,
-  GlobeSimple,
-  CoinVertical,
-  Asterisk
-]
 export default function Home() {
-  const [isHovered, setIsHovered] = useState<boolean>(false)
-
   return (
     <>
-      <section className="radialGradient flex h-[calc(100%-136px)] flex-col border-t border-lightGray backdrop-blur-xl">
-        <div className="flex h-full flex-col items-center justify-center gap-16 overflow-hidden">
-          <div
-            className="relative flex size-[335px] items-center justify-center md:size-[502px]"
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {icons.map((Icon, index) => (
-              <div
-                key={index}
-                className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-skyBlue transition-transform md:h-16 md:w-16"
-                style={{
-                  transform: cn({
-                    [`rotate(${index * 45}deg) translate(min(220px, 37vw)) rotate(-${index * 45}deg)`]:
-                      isHovered,
-                    'translate(0, 0)': !isHovered
-                  })
-                }}
-              >
-                <Icon />
-              </div>
-            ))}
-            <Image
-              onMouseEnter={() => setIsHovered(true)}
-              src="/wen_head_large.png"
-              width={297}
-              height={265}
-              alt="Wen Wen Coin"
-              className="z-10 mx-auto h-44 w-48 animate-rock md:h-64 md:w-72"
-            />
-          </div>
-          <div className="flex flex-col gap-5 md:items-center">
-            <p className="max-w-96 text-left text-3xl font-bold md:text-center md:text-xl">
-              Onboarding mainstream audiences via the ultimate culture coin
-            </p>
-            <NextLink href="/join">Learn More</NextLink>
-          </div>
-          <Arrow className="hidden animate-bounce md:block" />
-        </div>
-      </section>
+      <HeroSection />
       <section className="flex flex-col overflow-hidden py-4 lg:flex-row">
         <div className="flex flex-col gap-7 lg:w-1/2">
           <Image

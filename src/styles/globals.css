@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply flex h-screen w-screen bg-white antialiased outline-none;
+  @apply flex w-screen bg-white antialiased outline-none;
 }
 
 #__next {
@@ -47,4 +47,13 @@ body {
 
 .leaflet-marker-icon {
   @apply !border-0;
+}
+
+@layer utilities {
+  .clip-circle-full {
+    clip-path: circle(100%);
+  }
+  .clip-circle-zero {
+    clip-path: circle(0%);
+  }
 }
