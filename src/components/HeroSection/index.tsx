@@ -27,11 +27,11 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <div className="relative h-[200vh] w-full !px-0">
-      <div className="sticky top-0 z-50 h-screen w-full">
+    <div className="relative h-[max(200vh,1800px)] w-full !px-0">
+      <div className="h-[max(100vh, 900px)] sticky top-0 z-50 w-full">
         <div
           ref={animatedRef}
-          className="absolute inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-skyBlue via-lightBlue to-purple py-10 transition-[clip-path] duration-500 ease-in-out"
+          className="absolute inset-0 z-50 flex h-screen items-center justify-center bg-gradient-to-br from-skyBlue via-lightBlue to-purple py-10 transition-[clip-path] duration-500 ease-in-out"
         >
           <Overlay />
         </div>

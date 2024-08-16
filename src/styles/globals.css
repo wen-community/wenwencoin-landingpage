@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply flex w-screen bg-white antialiased outline-none;
+  @apply flex w-screen bg-white antialiased outline-none scrollbar-none;
 }
 
 #__next {

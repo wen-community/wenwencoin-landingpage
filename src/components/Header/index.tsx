@@ -36,7 +36,7 @@ const Header = ({
     >
       <div
         className={cn(
-          'flex w-full items-center justify-between border-b border-lightGray pb-[55px] pt-[37px] md:border-b-0',
+          'flex w-full items-center justify-between border-b border-lightGray py-5 md:border-b-0 md:pb-[55px] md:pt-[37px]',
           className
         )}
       >

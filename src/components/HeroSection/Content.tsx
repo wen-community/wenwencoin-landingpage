@@ -33,9 +33,9 @@ const Content = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false)
 
   return (
-    <div className="sticky top-0 z-10 h-screen w-full">
+    <div className="max-w-screen sticky top-0 z-10 h-[max(100vh,900px)] w-full">
       <Header className="bg-transparent" />
-      <section className="radialGradient flex h-[calc(100%-142px)] flex-col border-t border-lightGray px-4 backdrop-blur-xl md:px-8 lg:px-16">
+      <section className="radialGradient flex h-[calc(100%-142px)] flex-col border-t-0 border-lightGray px-4 backdrop-blur-xl md:border-t md:px-8 lg:px-16">
         <div className="flex h-full flex-col items-center justify-center gap-16 overflow-hidden">
           <div
             className="relative flex size-[335px] items-center justify-center md:size-[502px]"
