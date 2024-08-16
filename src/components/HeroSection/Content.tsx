@@ -62,7 +62,7 @@ const Content = () => {
               width={297}
               height={265}
               alt="Wen Wen Coin"
-              className="z-10 mx-auto h-44 w-48 animate-rock md:h-64 md:w-72"
+              className="z-10 mx-auto w-48 animate-rock md:w-80"
             />
           </div>
           <div className="flex flex-col gap-5 md:items-center">
