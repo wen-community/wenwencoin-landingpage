@@ -40,7 +40,7 @@ module.exports = {
       keyframes: {
         rock: {
           '0%, 100%': { transform: 'rotate(-25deg)' },
-          '50%': { transform: 'rotate(25deg)' }
+          '50%': { transform: 'rotate(0deg)' }
         },
         travel: {
           '0%, 100%': { transform: 'translateY(10%)' },
@@ -48,7 +48,7 @@ module.exports = {
         }
       },
       animation: {
-        rock: 'rock 2s ease-in-out infinite',
+        rock: 'rock 10s ease-in-out infinite',
         travel: 'travel 2s ease-in-out infinite'
       }
     }

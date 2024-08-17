@@ -44,7 +44,7 @@ const Content = () => {
             {icons.map((Icon, index) => (
               <div
                 key={index}
-                className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-skyBlue transition-transform md:h-16 md:w-16"
+                className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-skyBlue transition-transform duration-300 md:h-16 md:w-16"
                 style={{
                   transform: cn({
                     [`rotate(${index * 45}deg) translate(min(220px, 37vw)) rotate(-${index * 45}deg)`]:
@@ -62,7 +62,7 @@ const Content = () => {
               width={297}
               height={265}
               alt="Wen Wen Coin"
-              className="z-10 mx-auto w-48 animate-rock md:w-80"
+              className="z-10 mx-auto w-48 animate-rock md:w-96"
             />
           </div>
           <div className="flex flex-col gap-5 md:items-center">
