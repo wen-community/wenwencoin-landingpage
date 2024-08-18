@@ -3,7 +3,9 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
+
+import Lenis from 'lenis'
 
 import { cn } from '@/utils/cn'
 
@@ -16,6 +18,17 @@ const inter = Source_Code_Pro({
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname()
+
+  useEffect(() => {
+    const lenis = new Lenis()
+
+    const raf = (time: number) => {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
 
   return (
     <>
