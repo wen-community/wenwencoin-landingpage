@@ -57,10 +57,12 @@ const Header = ({
             }
           )}
         >
-          <Link href="/about">About</Link>
-          <Link href="/docs">Docs</Link>
+          <Link href="#about">About</Link>
+          <Link target="_blank" href="https://docs.wenwencoin.com/">
+            Docs
+          </Link>
           <Link href="/brand">Brand</Link>
-          <Link href="/faq">FAQ</Link>
+          <Link href="#faq">FAQ</Link>
           <Link href="/community">Community</Link>
         </nav>
         <div
@@ -75,22 +77,32 @@ const Header = ({
               flex: style === 'secondary'
             })}
           >
-            <Twitter />
-            <Telegram />
-            <Image
-              src="/birdeye_logo.png"
-              width={16}
-              height={16}
-              alt="Birdeye"
-            />
+            <Link href="https://x.com/wenwencoin" target="_blank">
+              <Twitter />
+            </Link>
+            <Link href="https://t.me/wenwencoinsol" target="_blank">
+              <Telegram />
+            </Link>
+            <Link
+              href="https://birdeye.so/token/WENWENvqqNya429ubCdR81ZmD69brwQaaBYY6p3LCpk?chain=solana"
+              target="_blank"
+            >
+              <Image
+                src="/birdeye_logo.png"
+                width={16}
+                height={16}
+                alt="Birdeye"
+              />
+            </Link>
           </div>
 
-          <button
-            type="button"
+          <Link
+            href="https://jup.ag/swap/USDC-WEN"
             className="rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
+            target="_blank"
           >
             Trade WEN
-          </button>
+          </Link>
           <button
             onClick={() => setIsOpen((val) => !val)}
             type="button"
@@ -113,14 +125,23 @@ const Header = ({
             <Link href="/community">Community</Link>
           </nav>
           <div className="flex items-center gap-x-5">
-            <Twitter />
-            <Telegram />
-            <Image
-              src="/birdeye_logo.png"
-              width={16}
-              height={16}
-              alt="Birdeye"
-            />
+            <Link href="https://x.com/wenwencoin" target="_blank">
+              <Twitter />
+            </Link>
+            <Link href="https://t.me/wenwencoinsol" target="_blank">
+              <Telegram />
+            </Link>
+            <Link
+              href="https://birdeye.so/token/WENWENvqqNya429ubCdR81ZmD69brwQaaBYY6p3LCpk?chain=solana"
+              target="_blank"
+            >
+              <Image
+                src="/birdeye_logo.png"
+                width={16}
+                height={16}
+                alt="Birdeye"
+              />
+            </Link>
           </div>
         </div>
       )}

@@ -17,7 +17,10 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <section className="flex flex-col overflow-hidden py-4 lg:flex-row">
+      <section
+        id="about"
+        className="flex flex-col overflow-hidden py-4 lg:flex-row"
+      >
         <div className="flex flex-col gap-7 lg:w-1/2">
           <Image
             src="/wen_head_logo.png"
@@ -107,7 +110,9 @@ export default function Home() {
             Bybit, Kraken, Crypto.com, etc or follow the steps to buy Wen on
             chain through a crypto wallet.
           </p>
-          <NextLink href="/buy">Buy Wen Now</NextLink>
+          <NextLink target="_blank" href="https://jup.ag/swap/USDC-WEN">
+            Buy Wen Now
+          </NextLink>
         </div>
         <div className="flex flex-col gap-10">
           {BUY_WEN_STEPS.map(({ content, icon, title }) => (
@@ -120,13 +125,16 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="flex flex-wrap gap-10 bg-backgroundSecondary py-28">
+      <section
+        id="faq"
+        className="flex flex-wrap gap-10 bg-backgroundSecondary py-28"
+      >
         <div className="flex flex-col gap-4 lg:w-1/2">
           <h2 className="text-10 font-bold">FAQ</h2>
           <p className="flex max-w-screen-sm flex-col gap-8 font-semibold">
             Find answers to everything around the cute cat
           </p>
-          <NextLink href="/" className="text-lg">
+          <NextLink href="#about" className="text-lg">
             Learn more about WEN
           </NextLink>
           <div className="mt-7 space-y-1 text-xs">

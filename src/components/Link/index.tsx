@@ -1,19 +1,17 @@
-import Link from 'next/link'
+import Link, { LinkProps } from 'next/link'
 
-import { ReactNode } from 'react'
+import { FC, HTMLProps } from 'react'
 
 import { cn } from '@/utils/cn'
 
-const NextLink = ({
+const NextLink: FC<LinkProps & HTMLProps<HTMLAnchorElement>> = ({
   href,
   children,
-  className
-}: {
-  href: string
-  children: ReactNode
-  className?: string
+  className,
+  ...props
 }) => (
   <Link
+    {...props}
     href={href}
     className={cn(
       'w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white',

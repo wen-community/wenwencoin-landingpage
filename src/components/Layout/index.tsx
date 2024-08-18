@@ -46,9 +46,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
             <Link href="/terms" className="underline">
               Terms of Service
             </Link>
-            <Link href="/cookies" className="underline">
+            {/* <Link href="/cookies" className="underline">
               Cookies Settings
-            </Link>
+            </Link> */}
           </div>
         </footer>
       </main>

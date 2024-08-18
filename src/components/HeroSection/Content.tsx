@@ -69,7 +69,7 @@ const Content = () => {
             <p className="max-w-96 text-left text-3xl font-bold md:text-center md:text-xl">
               Onboarding mainstream audiences via the ultimate culture coin
             </p>
-            <NextLink href="/join">Learn More</NextLink>
+            <NextLink href="#about">Learn More</NextLink>
           </div>
           <Arrow className="hidden animate-bounce md:block" />
         </div>
