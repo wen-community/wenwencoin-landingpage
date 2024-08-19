@@ -36,21 +36,21 @@ const Header = ({
   return (
     <header
       className={cn(
-        'h-full max-h-36 w-full overflow-y-hidden px-4 transition-[max-height] duration-500 ease-in-out',
+        'h-full max-h-36 w-full overflow-y-hidden px-4 transition-[max-height] duration-500 ease-in-out md:px-16',
         {
           'fixed z-[1001] flex max-h-screen flex-col bg-white md:static md:max-h-36':
-            menu === 'open',
+            menu === 'open' && style === 'primary',
           'h-max max-h-72': style === 'secondary'
         }
       )}
     >
       <div
         className={cn(
-          'flex w-full items-center justify-between border-b border-lightGray py-5 md:border-b-0 md:pb-[55px] md:pt-[37px]',
+          'relative flex w-full items-center justify-between border-b border-lightGray py-5 md:py-[55px]',
           className
         )}
       >
-        <Link href="/" className="w-max">
+        <Link href="/" className="static left-0 w-max md:absolute">
           <Image
             src="/wen_head_logo.png"
             width={73}
@@ -60,7 +60,7 @@ const Header = ({
         </Link>
         <nav
           className={cn(
-            'justity-self-center hidden items-center justify-center gap-x-8 font-semibold lg:flex',
+            'justity-self-center hidden w-full items-center justify-center gap-x-8 font-semibold lg:flex',
             {
               hidden: style === 'primary',
               'flex gap-x-4': style === 'secondary'
@@ -74,7 +74,7 @@ const Header = ({
         </nav>
         <div
           className={cn(
-            'flex flex-col-reverse items-center justify-end gap-x-5 gap-y-8 md:flex-row',
+            'static right-0 flex flex-col-reverse items-center justify-end gap-x-5 gap-y-8 md:absolute md:flex-row',
             { 'flex-row': style === 'primary' }
           )}
         >
