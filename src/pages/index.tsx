@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import ReactVisibilitySensor from 'react-visibility-sensor'
 
@@ -43,9 +44,16 @@ export default function Home() {
             </p>
             <p>
               Wen is the proud owner of the #1 and #2 cat accounts in the world
-              (@shouldhavecat & @postsofcats) The mission for Wen is to take
-              over mainstream audiences and onboard the masses to the cutest cat
-              in crypto.
+              (
+              <Link href="https://x.com/ShouldHaveCat" target="_blank">
+                @shouldhavecat
+              </Link>{' '}
+              &{' '}
+              <Link href="https://x.com/PostsOfCats" target="_blank">
+                @postsofcats
+              </Link>
+              ) The mission for Wen is to take over mainstream audiences and
+              onboard the masses to the cutest cat in crypto.
             </p>
           </div>
           <div className="flex flex-col gap-6 gap-x-28 pt-7 md:flex-row">

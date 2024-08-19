@@ -5,7 +5,7 @@ import { ArrowRight } from '../icons'
 type IBuyWenStep = {
   icon: ReactNode
   title: string
-  content: string
+  content: ReactNode
 }
 
 const BuyWenStep = ({ icon, title, content }: IBuyWenStep) => (
@@ -13,11 +13,11 @@ const BuyWenStep = ({ icon, title, content }: IBuyWenStep) => (
     <div className="flex aspect-square w-24 items-center justify-center rounded-full bg-skyBlue">
       {icon}
     </div>
-    <div className="w-full max-w-md">
-      <h3 className="flex items-center gap-x-3.5 text-lg font-bold">
+    <div className="flex w-full max-w-md flex-col gap-1">
+      <h3 className="flex items-center gap-x-3.5 text-xl font-bold">
         {title} <ArrowRight />
       </h3>
-      <p className="text-sm font-semibold">{content}</p>
+      <p>{content}</p>
     </div>
   </div>
 )

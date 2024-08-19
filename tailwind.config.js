@@ -39,8 +39,8 @@ module.exports = {
       },
       keyframes: {
         rock: {
-          '0%, 100%': { transform: 'rotate(-25deg)' },
-          '50%': { transform: 'rotate(0deg)' }
+          '0%, 100%': { transform: 'rotate(10deg)' },
+          '50%': { transform: 'rotate(20deg)' }
         },
         travel: {
           '0%, 100%': { transform: 'translateY(10%)' },

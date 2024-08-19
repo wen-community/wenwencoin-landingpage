@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
-import { useEffect, useState } from 'react'
+import { useCallback } from 'react'
 
 import { Telegram, Twitter } from '@/components'
 import { cn } from '@/utils/cn'
@@ -16,12 +16,22 @@ const Header = ({
   className?: string
   style?: 'primary' | 'secondary'
 }) => {
-  const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const menu = searchParams.get('menu')
 
-  useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
+  const handleOpen = useCallback(() => {
+    const newSearchParams = new URLSearchParams(searchParams)
+    newSearchParams.set('menu', 'open')
+    router.push(`${pathname}?${newSearchParams.toString()}`)
+  }, [pathname, router, searchParams])
+
+  const handleClose = useCallback(() => {
+    const newSearchParams = new URLSearchParams(searchParams)
+    newSearchParams.delete('menu')
+    router.push(`${pathname}?${newSearchParams.toString()}`)
+  }, [pathname, router, searchParams])
 
   return (
     <header
@@ -29,7 +39,7 @@ const Header = ({
         'h-full max-h-36 w-full overflow-y-hidden px-4 transition-[max-height] duration-500 ease-in-out',
         {
           'fixed z-[1001] flex max-h-screen flex-col bg-white md:static md:max-h-36':
-            isOpen,
+            menu === 'open',
           'h-max max-h-72': style === 'secondary'
         }
       )}
@@ -57,12 +67,9 @@ const Header = ({
             }
           )}
         >
-          <Link href="#about">About</Link>
-          <Link target="_blank" href="https://docs.wenwencoin.com/">
-            Docs
-          </Link>
+          <Link href="/#about">About</Link>
           <Link href="/brand">Brand</Link>
-          <Link href="#faq">FAQ</Link>
+          <Link href="/#faq">FAQ</Link>
           <Link href="/community">Community</Link>
         </nav>
         <div
@@ -104,24 +111,23 @@ const Header = ({
             Trade WEN
           </Link>
           <button
-            onClick={() => setIsOpen((val) => !val)}
+            onClick={menu === 'open' ? handleClose : handleOpen}
             type="button"
             title="Toggle menu"
             className={cn('md:hidden', {
               hidden: style === 'secondary'
             })}
           >
-            {isOpen ? <Cross /> : <Hamburger />}
+            {menu === 'open' ? <Cross /> : <Hamburger />}
           </button>
         </div>
       </div>
-      {isOpen && style === 'primary' && (
+      {menu === 'open' && style === 'primary' && (
         <div className="flex h-full flex-col justify-between py-14 md:hidden">
           <nav className="flex flex-col gap-5 text-2xl font-bold">
-            <Link href="/about">About</Link>
-            <Link href="/docs">Docs</Link>
+            <Link href="/#about">About</Link>
             <Link href="/brand">Brand</Link>
-            <Link href="/faq">FAQ</Link>
+            <Link href="/#faq">FAQ</Link>
             <Link href="/community">Community</Link>
           </nav>
           <div className="flex items-center gap-x-5">
