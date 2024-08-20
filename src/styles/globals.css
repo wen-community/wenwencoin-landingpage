@@ -49,6 +49,10 @@ body {
   @apply !border-0;
 }
 
+.leaflet-container {
+  @apply !bg-[#88ccfc];
+}
+
 @layer utilities {
   .clip-circle-full {
     clip-path: circle(100%);
@@ -56,4 +60,8 @@ body {
   .clip-circle-zero {
     clip-path: circle(0%);
   }
+}
+
+.leaflet-div-icon {
+  @apply !bg-transparent;
 }

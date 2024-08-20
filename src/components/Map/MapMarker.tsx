@@ -44,4 +44,22 @@ const LeafletMarker = ({ location }: { location: ILocation }) => {
   )
 }
 
+export const markerIcon = (location: ILocation) =>
+  divIcon({
+    html: ReactDOMServer.renderToString(
+      <MarkerDiv count={location.user_count} cityName={location.city} />
+    )
+  })
+
+export const pointIcon = (count: number, size: number) =>
+  divIcon({
+    html: ReactDOMServer.renderToString(
+      <div
+        className="flex items-center justify-center rounded-full bg-purple p-1 text-base font-semibold text-white"
+        style={{ width: `${size}px;`, height: `${size}px;` }}
+      >
+        {count}
+      </div>
+    )
+  })
 export default LeafletMarker
