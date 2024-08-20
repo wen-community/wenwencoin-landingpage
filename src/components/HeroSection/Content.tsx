@@ -33,7 +33,7 @@ const Content = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false)
 
   return (
-    <div className="max-w-screen sticky top-0 h-[max(100vh,900px)] w-full">
+    <div className="max-w-screen sticky top-0 h-[max(100vh,900px)] w-full md:h-[max(100vh,1000px)]">
       <Header className="bg-transparent" />
       <section className="radialGradient flex h-[calc(100%-142px)] flex-col px-4 backdrop-blur-xl md:px-8 lg:px-16">
         <div className="flex h-full flex-col items-center justify-center gap-16 overflow-hidden">

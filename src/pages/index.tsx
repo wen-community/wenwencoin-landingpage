@@ -92,11 +92,11 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="flex flex-col items-center gap-24 bg-backgroundSecondary py-20">
-        <h3 className="text-xl font-bold">
+      <section className="flex flex-col items-center !px-0">
+        <h3 className="px-4 py-20 text-xl font-bold md:px-8 lg:px-16">
           WEN is trusted on 30+ CEXs and DEXes
         </h3>
-        <div className="flex max-w-full items-center justify-center gap-x-16 overflow-x-scroll scrollbar-none md:gap-x-24">
+        <div className="flex w-full max-w-full items-center justify-center gap-x-16 overflow-x-scroll bg-backgroundSecondary px-4 py-20 scrollbar-none md:gap-x-24 md:px-8 lg:px-16">
           <Image src="/bybit_logo.png" width={115} height={38} alt="Bybit" />
           <Image src="/kraken_logo.png" width={137} height={37} alt="Kraken" />
           <Image
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
       <section
         id="faq"
-        className="flex flex-wrap gap-10 bg-backgroundSecondary py-28"
+        className="relative flex flex-wrap gap-10 bg-backgroundSecondary py-28"
       >
         <div className="flex flex-col gap-4 lg:w-1/2">
           <h2 className="text-10 font-bold">FAQ</h2>
@@ -145,18 +145,18 @@ export default function Home() {
           <NextLink href="#about" className="text-lg">
             Learn more about WEN
           </NextLink>
-          <div className="mt-7 space-y-1 text-xs">
-            <h4 className="font-bold">Disclaimer</h4>
-            <p className="max-w-48">
-              Wen is a coin with no intrinsic value or expectation of financial
-              return. The coin is for entertainment purposes only.
-            </p>
-          </div>
         </div>
         <div className="flex flex-col gap-4">
           {FAQ_ITEMS.map(({ title, content }) => (
             <FaqItem content={content} title={title} key={title} />
           ))}
+        </div>
+        <div className="md:8 absolute bottom-4 left-0 mt-7 flex gap-2 px-4 text-xs lg:px-16">
+          <h4 className="font-bold">Disclaimer:</h4>
+          <p className="">
+            Wen is a coin with no intrinsic value or expectation of financial
+            return. The coin is for entertainment purposes only.
+          </p>
         </div>
       </section>
     </>

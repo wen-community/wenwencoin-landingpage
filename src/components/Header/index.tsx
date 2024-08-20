@@ -4,7 +4,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 import { useCallback } from 'react'
 
-import { Telegram, Twitter } from '@/components'
+import { NextLink, Telegram, Twitter } from '@/components'
 import { cn } from '@/utils/cn'
 
 import { Cross, Hamburger } from '../icons'
@@ -103,13 +103,9 @@ const Header = ({
             </Link>
           </div>
 
-          <Link
-            href="https://jup.ag/swap/USDC-WEN"
-            className="rounded-2.5 bg-black px-5 py-2.5 font-medium text-white"
-            target="_blank"
-          >
+          <NextLink href="https://jup.ag/swap/USDC-WEN" target="_blank">
             Trade WEN
-          </Link>
+          </NextLink>
           <button
             onClick={menu === 'open' ? handleClose : handleOpen}
             type="button"

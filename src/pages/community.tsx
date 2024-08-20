@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
+import ReactVisibilitySensor from 'react-visibility-sensor'
 
-import { AddLocation, HandHeart } from '@/components'
+import { AddLocation, CountUp, HandHeart } from '@/components'
 import { MapComponent } from '@/components/Map/OpenStreetMap'
 import { supabase } from '@/services/supabase'
 import { ILocation } from '@/types'
@@ -31,7 +32,7 @@ const JoinCommunity = () => {
           </h1>
           <button
             onClick={() => setShowForm(true)}
-            className="hidden w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white disabled:opacity-50 md:block"
+            className="hidden w-max rounded-2.5 border bg-black px-5 py-2.5 font-medium text-white transition-colors hover:border-black hover:bg-white hover:text-black disabled:opacity-50 md:block"
             type="button"
             disabled={showForm}
           >
@@ -40,7 +41,12 @@ const JoinCommunity = () => {
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="flex flex-col gap-6 text-5xl font-semibold md:flex-row md:items-center">
-            <HandHeart /> 280,000+
+            <HandHeart />
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }: { isVisible: boolean }) => (
+                <div>{isVisible ? <CountUp end={280000} /> : 0}+</div>
+              )}
+            </ReactVisibilitySensor>
           </h2>
           <p className="text-lg">Holders Worldwide</p>
         </div>

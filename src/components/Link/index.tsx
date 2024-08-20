@@ -14,7 +14,7 @@ const NextLink: FC<LinkProps & HTMLProps<HTMLAnchorElement>> = ({
     {...props}
     href={href}
     className={cn(
-      'w-max rounded-2.5 bg-black px-5 py-2.5 font-medium text-white',
+      'w-max rounded-2.5 border bg-black px-5 py-2.5 font-medium text-white transition-colors hover:border-black hover:bg-white hover:text-black',
       className
     )}
   >

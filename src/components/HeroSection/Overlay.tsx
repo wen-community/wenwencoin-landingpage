@@ -11,7 +11,7 @@ const Overlay = () => {
 
   const handleScroll = () => {
     window.scrollTo({
-      top: window.innerHeight,
+      top: window.innerHeight * 1.8,
       behavior: 'smooth'
     })
   }

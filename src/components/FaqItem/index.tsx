@@ -13,12 +13,12 @@ const FaqItem = ({ title, content }: IFaqItem) => {
   const [isOpen, setIsOpen] = useState<boolean>(true)
 
   return (
-    <div className="flex w-full max-w-screen-md flex-col">
+    <div className="flex w-full max-w-screen-md flex-col gap-5 p-5">
       <button
         onClick={() => {
           setIsOpen((val) => !val)
         }}
-        className="flex w-full items-center justify-between gap-6 py-5 text-start text-xl font-bold"
+        className="flex w-full items-center justify-between gap-6 text-start text-xl font-bold"
       >
         {title}
         <Chevron
@@ -28,7 +28,7 @@ const FaqItem = ({ title, content }: IFaqItem) => {
         />
       </button>
       <p
-        className={cn('w-full max-w-xl py-5', {
+        className={cn('w-full max-w-xl', {
           hidden: !isOpen
         })}
       >
