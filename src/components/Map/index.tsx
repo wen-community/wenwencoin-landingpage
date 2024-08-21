@@ -3,11 +3,11 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
 import { MAP_CENTER, ZOOM_LEVEL } from '@/constants'
-import { ILocation } from '@/types'
+import { IUser } from '@/types'
 
 import Cluster from './Cluster'
 
-const Map = ({ markers }: { markers: ILocation[] }) => {
+const Map = ({ users }: { users: IUser[] }) => {
   return (
     <div className="relative flex h-[695px] w-full">
       <MapContainer
@@ -21,7 +21,7 @@ const Map = ({ markers }: { markers: ILocation[] }) => {
           minZoom={2}
           maxZoom={10}
         />
-        <Cluster locations={markers} />
+        <Cluster users={users} />
       </MapContainer>
     </div>
   )

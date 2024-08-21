@@ -24,3 +24,12 @@ export type ILocation = {
   lng: string
   user_count: number
 }
+
+export type IUser = {
+  id: number
+  username: string
+  city: string
+  lat: string
+  lng: string
+  created_at: string
+}

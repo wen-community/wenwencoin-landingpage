@@ -41,18 +41,24 @@ export type Database = {
           city: string
           created_at: string
           id: number
+          lat: string
+          lng: string
           username: string
         }
         Insert: {
           city: string
           created_at?: string
           id?: number
+          lat?: string
+          lng?: string
           username: string
         }
         Update: {
           city?: string
           created_at?: string
           id?: number
+          lat?: string
+          lng?: string
           username?: string
         }
         Relationships: [

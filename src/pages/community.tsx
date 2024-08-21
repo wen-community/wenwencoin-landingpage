@@ -5,18 +5,17 @@ import ReactVisibilitySensor from 'react-visibility-sensor'
 import { AddLocation, CountUp, HandHeart } from '@/components'
 import { MapComponent } from '@/components/Map/OpenStreetMap'
 import { supabase } from '@/services/supabase'
-import { ILocation } from '@/types'
+import { IUser } from '@/types'
 
 const JoinCommunity = () => {
   const [showForm, setShowForm] = useState<boolean>(false)
 
-  const [markers, setMarkers] = useState<ILocation[]>([])
+  const [users, setUsers] = useState<IUser[]>([])
 
   const fetchMarkers = useCallback(async () => {
-    const { data, error } = await supabase.from('locations').select('*')
-
+    const { data, error } = await supabase.from('users').select('*')
     if (error) toast.error(error.message)
-    else setMarkers(data)
+    else setUsers(data)
   }, [])
 
   useEffect(() => {
@@ -57,7 +56,7 @@ const JoinCommunity = () => {
         setShowForm={setShowForm}
       />
       <section className="gap-8 py-12 md:py-16">
-        <MapComponent markers={markers} />
+        <MapComponent users={users} />
       </section>
     </>
   )

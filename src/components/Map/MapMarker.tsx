@@ -5,15 +5,9 @@ import { Marker } from 'react-leaflet'
 
 import { divIcon } from 'leaflet'
 
-import { ILocation } from '@/types'
+import { IUser } from '@/types'
 
-const MarkerDiv = ({
-  count,
-  cityName
-}: {
-  count: number
-  cityName: string
-}) => (
+const MarkerDiv = ({ name, cityName }: { name: string; cityName: string }) => (
   <div className="flex w-max gap-2 rounded-2xl bg-white p-2 pl-0">
     <Image
       src="/wen_head_logo.png"
@@ -23,31 +17,31 @@ const MarkerDiv = ({
       className=""
     />
     <div className="flex flex-col text-xs">
-      <h6 className="font-bold">{count}</h6>
+      <h6 className="font-bold">{name}</h6>
       <p className="font-light text-black/60">{cityName}</p>
     </div>
   </div>
 )
 
-const LeafletMarker = ({ location }: { location: ILocation }) => {
+const LeafletMarker = ({ user }: { user: IUser }) => {
   const icon = divIcon({
     html: ReactDOMServer.renderToString(
-      <MarkerDiv count={location.user_count} cityName={location.city} />
+      <MarkerDiv name={user.username} cityName={user.city} />
     )
   })
 
   return (
     <Marker
       icon={icon}
-      position={{ lat: Number(location.lat), lng: Number(location.lng) }}
+      position={{ lat: Number(user.lat), lng: Number(user.lng) }}
     />
   )
 }
 
-export const markerIcon = (location: ILocation) =>
+export const markerIcon = (user: IUser) =>
   divIcon({
     html: ReactDOMServer.renderToString(
-      <MarkerDiv count={location.user_count} cityName={location.city} />
+      <MarkerDiv name={user.username} cityName={user.city} />
     )
   })
 

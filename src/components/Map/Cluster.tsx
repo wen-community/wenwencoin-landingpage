@@ -4,19 +4,19 @@ import { Marker, useMap } from 'react-leaflet'
 import { PointFeature } from 'supercluster'
 import useSupercluster from 'use-supercluster'
 
-import { ILocation } from '@/types'
+import { IUser } from '@/types'
 
 import { markerIcon, pointIcon } from './MapMarker'
 
 type BBox = [number, number, number, number]
 
-type IClusterProps = ILocation & {
+type IClusterProps = IUser & {
   cluster: boolean
   point_count: number
   cluster_id: number
 }
 
-const Cluster = ({ locations }: { locations: ILocation[] }) => {
+const Cluster = ({ users }: { users: IUser[] }) => {
   const [bounds, setBounds] = useState<BBox | undefined>()
   const [zoom, setZoom] = useState(12)
   const map = useMap()
@@ -46,7 +46,7 @@ const Cluster = ({ locations }: { locations: ILocation[] }) => {
 
   const points: PointFeature<IClusterProps>[] = useMemo(
     () =>
-      locations.map((location) => ({
+      users.map((location) => ({
         type: 'Feature',
         properties: {
           cluster: false,
@@ -59,7 +59,7 @@ const Cluster = ({ locations }: { locations: ILocation[] }) => {
           coordinates: [parseFloat(location.lat), parseFloat(location.lat)]
         }
       })),
-    [locations]
+    [users]
   )
 
   const { clusters, supercluster } = useSupercluster({
@@ -76,11 +76,8 @@ const Cluster = ({ locations }: { locations: ILocation[] }) => {
         const [longitude, latitude] = cluster.geometry.coordinates
         // the point may be either a cluster or a crime point
         const { cluster: isCluster } = cluster.properties
-
         // we have a cluster to render
         if (isCluster && supercluster) {
-          console.log('cluster', cluster)
-
           return (
             <Marker
               key={`cluster-${cluster.id}`}
@@ -106,7 +103,7 @@ const Cluster = ({ locations }: { locations: ILocation[] }) => {
           <Marker
             key={`crime-${cluster.properties.id}`}
             position={[latitude, longitude]}
-            icon={markerIcon(cluster.properties as ILocation)}
+            icon={markerIcon(cluster.properties as IUser)}
           />
         )
       })}
