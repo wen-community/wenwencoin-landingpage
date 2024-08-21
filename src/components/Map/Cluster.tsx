@@ -79,6 +79,7 @@ const Cluster = ({ users }: { users: IUser[] }) => {
         if (isCluster && supercluster) {
           return (
             <Marker
+              riseOnHover
               key={`cluster-${cluster.id}`}
               position={[latitude, longitude]}
               icon={pointIcon(cluster.properties.point_count, 50)}
@@ -100,6 +101,7 @@ const Cluster = ({ users }: { users: IUser[] }) => {
         // we have a single point (crime) to render
         return (
           <Marker
+            riseOnHover
             key={`crime-${cluster.properties.id}`}
             position={[latitude, longitude]}
             icon={markerIcon(cluster.properties as IUser)}
