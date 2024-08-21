@@ -55,7 +55,7 @@ const Cluster = ({ users }: { users: IUser[] }) => {
         },
         geometry: {
           type: 'Point',
-          coordinates: [parseFloat(location.lat), parseFloat(location.lat)]
+          coordinates: [parseFloat(location.lng), parseFloat(location.lat)]
         }
       })),
     [users]

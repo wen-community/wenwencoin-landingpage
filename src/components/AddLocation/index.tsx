@@ -58,6 +58,8 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
         else toast.success('Thanks for adding a location!')
         setIsLoading(false)
         fetchMarkers()
+        setSelected(DEFAULT_CITY)
+        setName('')
       } catch (error) {
         if (error instanceof yup.ValidationError) {
           setNameError(error.message)
