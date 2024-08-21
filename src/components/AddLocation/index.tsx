@@ -50,8 +50,14 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
         const { error } = await supabase.rpc('add_user_and_city', {
           username,
           city_name: selected.name,
-          latitude: selected.lat,
-          longitude: selected.lng
+          latitude: (
+            Number(selected.lat) +
+            (Math.random() - 0.5) * 0.1
+          ).toString(),
+          longitude: (
+            Number(selected.lng) +
+            (Math.random() - 0.5) * 0.1
+          ).toString()
         })
 
         if (error) toast.error(error.message)
