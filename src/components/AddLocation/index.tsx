@@ -23,7 +23,11 @@ type IAddLocation = {
   fetchMarkers: () => void
 }
 
-const nameSchema = yup.string().required('Please enter a name')
+const nameSchema = yup
+  .string()
+  .required('Please enter a name')
+  .max(20, 'Username is too long')
+  .min(3, 'Username is too short')
 
 const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
   const [selected, setSelected] = useState<ICity>(DEFAULT_CITY)
