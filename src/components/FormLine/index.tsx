@@ -41,12 +41,7 @@ const FormLine: ForwardRefRenderFunction<HTMLInputElement, IFormLine> = (
           aria-label={title}
         />
       </label>
-      <div
-        className={cn(
-          'text-red whitespace-pre text-sm font-semibold leading-4 duration-300 ease-in-out',
-          { 'text-red-400': !error }
-        )}
-      >
+      <div className="absolute bottom-0 translate-y-5 whitespace-pre text-xs font-bold leading-4 text-red-400 duration-300 ease-in-out">
         {error}
       </div>
     </div>

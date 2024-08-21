@@ -26,8 +26,8 @@ type IAddLocation = {
 const nameSchema = yup
   .string()
   .required('Please enter a name')
-  .max(20, 'Username is too long')
-  .min(3, 'Username is too short')
+  .max(20, 'name is too long (20 characters max)')
+  .min(3, 'name is too short (3 characters min)')
 
 const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
   const [selected, setSelected] = useState<ICity>(DEFAULT_CITY)
@@ -89,14 +89,13 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
         <DropDown
           error={dropdownError}
           onLocationSelect={setSelected}
-          selected={selected.name}
           title="Location"
           id="city"
           placeholder="New York"
         />
         <button
-          disabled={isLoading}
-          className="flex h-10 w-44 -translate-y-1 items-center justify-center gap-2 rounded-2.5 bg-black px-5 py-2.5 font-medium text-white disabled:opacity-50"
+          disabled={isLoading || selected.name === ''}
+          className="flex h-10 w-max -translate-y-1 items-center justify-center gap-2 rounded-2.5 border border-black bg-black px-5 py-2.5 font-medium text-white transition-colors hover:bg-white hover:text-black disabled:opacity-50"
           type="submit"
         >
           {isLoading ? <Spinner /> : 'Add to the map'}

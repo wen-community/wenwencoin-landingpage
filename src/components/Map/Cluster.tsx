@@ -22,7 +22,6 @@ const Cluster = ({ users }: { users: IUser[] }) => {
   const map = useMap()
 
   const updateMap = useCallback(() => {
-    console.log('updating')
     const b = map.getBounds()
     setBounds([
       b.getSouthWest().lng,
