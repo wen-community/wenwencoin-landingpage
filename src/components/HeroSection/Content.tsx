@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { cn } from '@/utils/cn'
 
+import { FlipWords } from '../FlipWord'
 import Header from '../Header'
 import {
   Arrow,
@@ -71,8 +72,12 @@ const Content = () => {
             />
           </div>
           <div className="flex flex-col gap-5 md:items-center">
-            <p className="max-w-96 text-left text-3xl font-bold md:text-center md:text-xl">
-              Onboarding mainstream audiences via the ultimate culture coin
+            <p className="max-w-screen-sm text-left !text-3xl font-bold md:text-center md:text-xl">
+              Onboarding{' '}
+              <FlipWords
+                words={['World', 'Massess', 'Crowd', 'Fans', 'Audiences']}
+              />
+              to the ultimate culture coin
             </p>
             <NextLink href="#about">Learn More</NextLink>
           </div>
