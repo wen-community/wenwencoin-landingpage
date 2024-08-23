@@ -47,7 +47,7 @@ module.exports = {
           '50%': { transform: 'translateY(80%)' }
         },
         fadeIn: {
-          '0%': { transform: 'translateY(80%)', opacity: 0 },
+          '0%': { transform: 'translateY(40%)', opacity: 0 },
           '100%': { transform: 'translateY(0%)', opacity: 1 }
         }
       },

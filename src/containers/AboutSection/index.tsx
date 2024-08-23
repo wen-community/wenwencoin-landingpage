@@ -63,7 +63,7 @@ const AboutSection = () => (
       </div>
     </div>
     <VisibilitySensor className="relative flex w-full justify-center pb-[33%] lg:pb-0">
-      <div className="defaultGradient animate-fadeIn absolute top-1/20 aspect-4/3 w-full max-w-screen-sm rounded-3xl" />
+      <div className="defaultGradient absolute top-1/20 aspect-4/3 w-full max-w-screen-sm animate-fadeIn rounded-3xl" />
       <Image
         src={'/wen_full_body.png'}
         width={581}
