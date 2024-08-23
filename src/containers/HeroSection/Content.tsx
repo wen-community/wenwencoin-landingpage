@@ -2,22 +2,21 @@ import Image from 'next/image'
 
 import { useState } from 'react'
 
-import { cn } from '@/utils/cn'
-
-import { FlipWords } from '../FlipWord'
-import Header from '../Header'
 import {
   Arrow,
   Asterisk,
   Bandaids,
   Clover,
   CoinVertical,
+  FlipWords,
   GlobeSimple,
+  Header,
   Heart,
+  NextLink,
   PawPrint,
   Smiley
-} from '../icons'
-import NextLink from '../Link'
+} from '@/components'
+import { cn } from '@/utils/cn'
 
 const icons = [
   { icon: Heart, color: '#969ACF' },
@@ -73,7 +72,7 @@ const Content = () => {
           </div>
           <div className="flex flex-col gap-5 md:items-center">
             <p className="max-w-screen-sm text-left !text-3xl font-bold md:text-center md:text-xl">
-              Onboarding{' '}
+              Onboarding the{' '}
               <FlipWords
                 words={['World', 'Massess', 'Crowd', 'Fans', 'Audiences']}
               />

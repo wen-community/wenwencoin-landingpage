@@ -6,7 +6,8 @@ export { default as BrandItem } from './BrandItem'
 export { default as NextLink } from './Link'
 export { default as AddLocation } from './AddLocation'
 export { default as CountUp } from './CountUp'
-export { default as HeroSection } from './HeroSection'
+export { default as VisibilitySensor } from './VisibilitySensor'
+export { default as FlipWords } from './FlipWords'
 
 export {
   PawPrint,

@@ -20,7 +20,6 @@
     "react-dom": "18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-leaflet": "^4.2.1",
-    "react-visibility-sensor": "^5.1.1",
     "supercluster": "^8.0.1",
     "tailwind-merge": "^2.4.0",
     "tailwind-scrollbar": "^3.1.0",

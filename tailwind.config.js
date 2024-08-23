@@ -45,11 +45,16 @@ module.exports = {
         travel: {
           '0%, 100%': { transform: 'translateY(10%)' },
           '50%': { transform: 'translateY(80%)' }
+        },
+        fadeIn: {
+          '0%': { transform: 'translateY(80%)', opacity: 0 },
+          '100%': { transform: 'translateY(0%)', opacity: 1 }
         }
       },
       animation: {
         rock: 'rock 10s ease-in-out infinite',
-        travel: 'travel 2s ease-in-out infinite'
+        travel: 'travel 2s ease-in-out infinite',
+        fadeIn: 'fadeIn 1s ease-in-out'
       }
     }
   },

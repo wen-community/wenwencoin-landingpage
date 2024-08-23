@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { cn } from '@/utils/cn'
 
-export const FlipWords = ({
+const FlipWords = ({
   words,
   duration = 3000,
   className
@@ -95,3 +95,5 @@ export const FlipWords = ({
     </AnimatePresence>
   )
 }
+
+export default FlipWords

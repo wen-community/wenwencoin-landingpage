@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { PawPrint } from '../icons'
+import { PawPrint } from '@/components'
 
 const Overlay = () => {
   const handleScroll = () => {

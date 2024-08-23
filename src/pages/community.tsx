@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
-import ReactVisibilitySensor from 'react-visibility-sensor'
 
-import { AddLocation, CountUp, HandHeart } from '@/components'
+import { AddLocation, CountUp, HandHeart, VisibilitySensor } from '@/components'
 import { MapComponent } from '@/components/Map/OpenStreetMap'
 import { supabase } from '@/services/supabase'
 import { IUser } from '@/types'
@@ -41,11 +40,9 @@ const JoinCommunity = () => {
         <div className="flex flex-col gap-4">
           <h2 className="flex flex-col gap-6 text-5xl font-semibold md:flex-row md:items-center">
             <HandHeart />
-            <ReactVisibilitySensor partialVisibility>
-              {({ isVisible }: { isVisible: boolean }) => (
-                <div>{isVisible ? <CountUp end={280000} /> : 0}+</div>
-              )}
-            </ReactVisibilitySensor>
+            <VisibilitySensor>
+              <CountUp end={280000} />+
+            </VisibilitySensor>
           </h2>
           <p className="text-lg">Holders Worldwide</p>
         </div>
