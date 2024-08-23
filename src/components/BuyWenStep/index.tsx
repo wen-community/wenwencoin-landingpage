@@ -15,7 +15,8 @@ const BuyWenStep = ({ icon, title, content }: IBuyWenStep) => (
     </div>
     <div className="flex w-full max-w-md flex-col gap-1">
       <h3 className="flex items-center gap-x-3.5 text-xl font-bold transition-all">
-        {title} <ArrowRight />
+        {title}{' '}
+        <ArrowRight className="transition-transform duration-300 group-hover:translate-x-10" />
       </h3>
       <p>{content}</p>
     </div>
