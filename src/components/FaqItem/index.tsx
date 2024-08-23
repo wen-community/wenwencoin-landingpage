@@ -1,9 +1,10 @@
 import { ReactNode, useState } from 'react'
 
+import { AnimatePresence, motion } from 'framer-motion'
+
 import { cn } from '@/utils/cn'
 
 import { Chevron } from '../icons'
-
 type IFaqItem = {
   title: string
   content: ReactNode
@@ -27,13 +28,19 @@ const FaqItem = ({ title, content }: IFaqItem) => {
           })}
         />
       </button>
-      <p
-        className={cn('w-full max-w-xl', {
-          hidden: !isOpen
-        })}
-      >
-        {content}
-      </p>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.p
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="w-full max-w-xl"
+          >
+            {content}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
