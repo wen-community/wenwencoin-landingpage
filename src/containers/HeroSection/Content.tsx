@@ -72,11 +72,11 @@ const Content = () => {
           </div>
           <div className="flex flex-col gap-5 md:items-center">
             <p className="max-w-screen-sm text-left !text-3xl font-bold md:text-center md:text-xl">
-              Onboarding the{' '}
+              Onboarding the
               <FlipWords
                 words={['World', 'Massess', 'Crowd', 'Fans', 'Audiences']}
               />
-              to the ultimate culture coin
+              one Wen at a time.
             </p>
             <NextLink href="#about">Learn More</NextLink>
           </div>

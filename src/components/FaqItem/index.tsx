@@ -11,7 +11,7 @@ type IFaqItem = {
 }
 
 const FaqItem = ({ title, content }: IFaqItem) => {
-  const [isOpen, setIsOpen] = useState<boolean>(true)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
     <div className="flex w-full max-w-screen-md flex-col gap-5 p-5">

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import VisibilitySensor from '../VisibilitySensor'
+
 function CountUp({
   end,
   duration = 2000,
@@ -10,8 +12,13 @@ function CountUp({
   start?: number
 }) {
   const [count, setCount] = useState<number>(start)
+  const [isVisible, setIsVisible] = useState<boolean>(false)
 
   useEffect(() => {
+    if (!isVisible) {
+      setCount(start)
+      return
+    }
     let startTime: number | null = null
     let animationFrame: number
 
@@ -31,9 +38,13 @@ function CountUp({
     animationFrame = requestAnimationFrame(animate)
 
     return () => cancelAnimationFrame(animationFrame)
-  }, [end, duration, start])
+  }, [end, duration, start, isVisible])
 
-  return count.toLocaleString()
+  return (
+    <VisibilitySensor setIsVisible={setIsVisible}>
+      {count.toLocaleString()}
+    </VisibilitySensor>
+  )
 }
 
 export default CountUp
