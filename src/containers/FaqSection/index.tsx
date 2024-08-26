@@ -4,7 +4,7 @@ import { FAQ_ITEMS } from '@/constants'
 const FaqSection = () => (
   <section
     id="faq"
-    className="relative flex flex-wrap gap-10 bg-backgroundSecondary py-28"
+    className="relative flex flex-col gap-10 bg-backgroundSecondary py-28 lg:flex-row"
   >
     <div className="flex flex-col gap-4 lg:w-1/2">
       <h2 className="text-10 font-bold">FAQ</h2>
@@ -15,7 +15,7 @@ const FaqSection = () => (
         Learn more about WEN
       </NextLink>
     </div>
-    <div className="flex flex-col gap-4">
+    <div className="flex w-full flex-col gap-4 lg:w-1/2">
       {FAQ_ITEMS.map(({ title, content }) => (
         <FaqItem content={content} title={title} key={title} />
       ))}
