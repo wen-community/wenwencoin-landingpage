@@ -12,6 +12,9 @@ module.exports = {
       padding: {
         3.125: '0.781rem'
       },
+      width: {
+        4.5: '1.125rem'
+      },
       colors: {
         lightGray: '#D9D9D9',
         skyBlue: '#2C8FC6',

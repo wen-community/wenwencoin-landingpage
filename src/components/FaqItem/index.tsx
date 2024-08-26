@@ -21,7 +21,7 @@ const FaqItem = ({ title, content }: IFaqItem) => {
         }}
         className="flex w-full items-center justify-between gap-6 text-start text-xl font-bold"
       >
-        {title}
+        <span className="w-[calc(100%-1.125rem)]">{title}</span>
         <Chevron
           className={cn('transition-transform', {
             'rotate-180 opacity-40': isOpen
