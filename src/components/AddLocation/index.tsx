@@ -106,7 +106,7 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
         />
         <button
           disabled={isLoading || selected.name === ''}
-          className="flex h-10 w-max -translate-y-1 items-center justify-center gap-2 rounded-2.5 border border-black bg-black px-5 py-2.5 font-medium text-white transition-colors hover:bg-white hover:text-black disabled:opacity-50"
+          className="flex h-10 w-max items-center justify-center gap-2 rounded-2.5 border border-black bg-black px-5 py-2.5 font-medium text-white transition-colors hover:bg-white hover:text-black disabled:opacity-50"
           type="submit"
         >
           {isLoading ? <Spinner /> : 'Add to the map'}
@@ -115,6 +115,7 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
       <button
         title="close form"
         type="button"
+        className="ml-auto md:ml-0"
         onClick={() => setShowForm(false)}
       >
         <Cross />
