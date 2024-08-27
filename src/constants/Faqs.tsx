@@ -2,7 +2,7 @@ const FAQ_ITEMS = [
   {
     title: "What are some of Wen's other initiatives",
     content:
-      'Some of Wen&apos;s other initiatives include being the creator of an NFT standard (WNS), owner of the Wen Validator, and Wen also has an officially licensed IP to curate out and cement a timeless brand'
+      "Some of Wen's other initiatives include being the creator of an NFT standard (WNS), owner of the Wen Validator, and Wen also has an officially licensed IP to curate out and cement a timeless brand"
   },
   {
     title: 'How do I buy WEN?',

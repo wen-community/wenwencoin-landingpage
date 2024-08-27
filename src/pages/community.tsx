@@ -30,7 +30,7 @@ const JoinCommunity = () => {
           </h1>
           <button
             onClick={() => setShowForm(true)}
-            className="hidden w-max rounded-2.5 border bg-black px-5 py-2.5 font-medium text-white transition-colors hover:border-black hover:bg-white hover:text-black disabled:opacity-50 md:block"
+            className="w-max rounded-2.5 border bg-black px-5 py-2.5 font-medium text-white transition-colors hover:border-black hover:bg-white hover:text-black disabled:opacity-50"
             type="button"
             disabled={showForm}
           >

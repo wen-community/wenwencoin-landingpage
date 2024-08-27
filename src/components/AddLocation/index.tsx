@@ -79,9 +79,12 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
 
   return (
     <div
-      className={cn('flex items-start justify-between md:items-center', {
-        hidden: !showForm
-      })}
+      className={cn(
+        'flex flex-wrap-reverse items-start justify-between gap-y-2 md:flex-wrap md:items-center',
+        {
+          hidden: !showForm
+        }
+      )}
     >
       <form
         onSubmit={handleAddLocation}
