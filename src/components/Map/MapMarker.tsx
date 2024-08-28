@@ -5,12 +5,13 @@ import { Marker } from 'react-leaflet'
 
 import { divIcon } from 'leaflet'
 
+import IMAGE_URL from '@/constants/ImageURL'
 import { IUser } from '@/types'
 
 const MarkerDiv = ({ name, cityName }: { name: string; cityName: string }) => (
   <div className="flex w-max gap-2 rounded-2xl bg-white p-2 pl-0">
     <Image
-      src="/wen_head_logo.png"
+      src={`${IMAGE_URL}/wen_head_logo.png`}
       alt="wen head logo"
       width={40}
       height={34}

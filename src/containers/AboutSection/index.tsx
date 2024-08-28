@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { CountUp, HandHeart, Plugs, VisibilitySensor } from '@/components'
+import IMAGE_URL from '@/constants/ImageURL'
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
@@ -15,7 +16,7 @@ const AboutSection = () => {
     >
       <div className="flex flex-col gap-7 lg:w-1/2">
         <Image
-          src="/wen_head_logo.png"
+          src={`${IMAGE_URL}/wen_head_logo.png`}
           width={82}
           height={73}
           alt="Wen Wen Coin"
@@ -71,7 +72,7 @@ const AboutSection = () => {
           <div className="defaultGradient absolute top-1/20 aspect-4/3 w-full max-w-screen-sm animate-fadeIn rounded-3xl" />
         )}
         <Image
-          src={'/wen_full_body.png'}
+          src={`${IMAGE_URL}/wen_full_body.png`}
           width={581}
           height={489}
           alt="Wen Wen Full Body"

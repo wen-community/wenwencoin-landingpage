@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { PawPrint } from '@/components'
+import IMAGE_URL from '@/constants/ImageURL'
 import { cn } from '@/utils/cn'
 
 const OverlayUI = () => {
@@ -32,13 +33,13 @@ const OverlayUI = () => {
     let scrollIntensity = 0
 
     if (event instanceof WheelEvent) {
-      scrollIntensity = event.deltaY * 0.1 // Adjust this multiplier to control sensitivity
+      scrollIntensity = event.deltaY * 0.05 // Adjust this multiplier to control sensitivity
     } else if (event instanceof TouchEvent) {
       const touch = event.touches[0]
       const currentTouchY = touch.clientY
 
       if (lastTouchY !== null) {
-        scrollIntensity = (lastTouchY - currentTouchY) * 0.1 // Adjust multiplier as needed
+        scrollIntensity = (lastTouchY - currentTouchY) * 0.2 // Adjust multiplier as needed
       }
 
       lastTouchY = currentTouchY
@@ -47,7 +48,9 @@ const OverlayUI = () => {
     setClipSize((prevSize) => {
       const newSize = Math.max(0, Math.min(100, prevSize - scrollIntensity))
       if (newSize <= 5) {
-        setShowModal(false)
+        setTimeout(() => {
+          setShowModal(false)
+        }, 500)
       }
       return newSize
     })
@@ -114,7 +117,7 @@ const OverlayUI = () => {
         >
           <div className="relative w-max cursor-pointer items-center">
             <Image
-              src="/wen_full_body.png"
+              src={`${IMAGE_URL}/wen_full_body.png`}
               width={278.5}
               height={321}
               className={cn(

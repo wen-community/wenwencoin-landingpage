@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useCallback } from 'react'
 
 import { NextLink, Telegram, Twitter } from '@/components'
+import IMAGE_URL from '@/constants/ImageURL'
 import { cn } from '@/utils/cn'
 
 import { Cross, Hamburger } from '../icons'
@@ -52,7 +53,7 @@ const Header = ({
       >
         <Link href="/" className="static left-0 w-max md:absolute">
           <Image
-            src="/wen_head_logo.png"
+            src={`${IMAGE_URL}/wen_head_logo.png`}
             width={73}
             height={52}
             alt="Wen Wen Coin"
@@ -95,7 +96,7 @@ const Header = ({
               target="_blank"
             >
               <Image
-                src="/birdeye_logo.png"
+                src={`${IMAGE_URL}/birdeye_logo.png`}
                 width={16}
                 height={16}
                 alt="Birdeye"
@@ -138,7 +139,7 @@ const Header = ({
               target="_blank"
             >
               <Image
-                src="/birdeye_logo.png"
+                src={`${IMAGE_URL}/birdeye_logo.png`}
                 width={16}
                 height={16}
                 alt="Birdeye"

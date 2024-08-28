@@ -15,6 +15,7 @@ import {
   PawPrint,
   Smiley
 } from '@/components'
+import IMAGE_URL from '@/constants/ImageURL'
 import { cn } from '@/utils/cn'
 
 const icons = [
@@ -57,7 +58,7 @@ const Content = () => {
         ))}
         <Image
           onMouseEnter={() => setIsHovered(true)}
-          src="/wen_head_large.png"
+          src={`${IMAGE_URL}/wen_head_large.png`}
           width={297}
           height={265}
           alt="Wen Wen Coin"

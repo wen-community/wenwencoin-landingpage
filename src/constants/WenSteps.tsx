@@ -3,6 +3,11 @@ import Link from 'next/link'
 
 import { ArrowLeftRight, Solana, Wallet } from '@/components'
 
+const IMAGE_URL =
+  'https://niwzrpzmgomfotvsyjsy.supabase.co/storage/v1/object/public/assets'
+
+console.log(IMAGE_URL)
+
 const BUY_WEN_STEPS = [
   {
     icon: <Wallet />,
@@ -18,7 +23,12 @@ const BUY_WEN_STEPS = [
   },
   {
     icon: (
-      <Image src={'/jupiter_logo.png'} width={40} height={40} alt="Jupiter" />
+      <Image
+        src={`${IMAGE_URL}/jupiter_logo.png`}
+        width={40}
+        height={40}
+        alt="Jupiter"
+      />
     ),
     title: 'Go to Jupiter',
     content: (

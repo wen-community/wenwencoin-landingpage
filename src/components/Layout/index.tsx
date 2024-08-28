@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import { ReactNode } from 'react'
 
+import IMAGE_URL from '@/constants/ImageURL'
 // import Lenis from 'lenis'
 import { cn } from '@/utils/cn'
 
@@ -14,17 +15,6 @@ const inter = Source_Code_Pro({
 })
 
 const Layout = ({ children }: { children: ReactNode }) => {
-  // useEffect(() => {
-  //   const lenis = new Lenis()
-
-  //   const raf = (time: number) => {
-  //     lenis.raf(time)
-  //     requestAnimationFrame(raf)
-  //   }
-
-  //   requestAnimationFrame(raf)
-  // }, [])
-
   return (
     <>
       <Head>
@@ -32,6 +22,16 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <meta name="description" content="Wen Wen Coin" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/wen_head_logo.png" />
+        <link
+          rel="preload"
+          href={`${IMAGE_URL}/wen_full_body.png`}
+          as="image"
+        />
+        <link
+          rel="preload"
+          href={`${IMAGE_URL}/wen_head_large.png`}
+          as="image"
+        />
       </Head>
       <main
         className={cn(
