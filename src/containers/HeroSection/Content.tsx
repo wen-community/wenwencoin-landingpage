@@ -1,32 +1,31 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { useState } from 'react'
 
 import {
+  Africa,
+  Antarctica,
   Arrow,
-  Asterisk,
-  Bandaids,
-  Clover,
-  CoinVertical,
+  Asia,
+  Australia,
+  Europe,
   FlipWords,
-  GlobeSimple,
-  Heart,
   NextLink,
-  PawPrint,
-  Smiley
+  NorthAmerica,
+  SouthAmerica
 } from '@/components'
 import IMAGE_URL from '@/constants/ImageURL'
 import { cn } from '@/utils/cn'
 
 const icons = [
-  { icon: Heart, color: '#969ACF' },
-  { icon: GlobeSimple, color: '#A9AFD8' },
-  { icon: Asterisk, color: '#B2BBDD' },
-  { icon: CoinVertical, color: '#A1BADB' },
-  { icon: Bandaids, color: '#86B5D8' },
-  { icon: PawPrint, color: '#509FCD' },
-  { icon: Clover, color: '#2C8FC6' },
-  { icon: Smiley, color: '#7A7FC3' }
+  Australia,
+  Asia,
+  Antarctica,
+  Europe,
+  SouthAmerica,
+  NorthAmerica,
+  Africa
 ]
 
 const Content = () => {
@@ -38,23 +37,23 @@ const Content = () => {
         className="relative flex size-[335px] items-center justify-center md:size-[502px]"
         onMouseLeave={() => setIsHovered(false)}
       >
-        {icons.map(({ icon: Icon, color }, index) => (
-          <div
+        {icons.slice(0, 7).map((Icon, index) => (
+          <Link
+            href={`/community?continent=${Icon.name}`}
             key={index}
             className={
-              'absolute flex h-12 w-12 items-center justify-center rounded-full transition-transform duration-300 ease-in-out md:h-16 md:w-16'
+              'absolute flex size-20 items-center justify-center rounded-full transition-transform duration-300 ease-in-out md:size-28'
             }
             style={{
               transform: cn({
-                [`rotate(${index * 45}deg) translate(min(220px, 37vw)) rotate(-${index * 45}deg)`]:
+                [`rotate(${index * (360 / 7)}deg) translate(min(220px, 37vw)) rotate(-${index * (360 / 7)}deg)`]:
                   isHovered,
                 'translate(0, 0)': !isHovered
-              }),
-              backgroundColor: color
+              })
             }}
           >
             <Icon />
-          </div>
+          </Link>
         ))}
         <Image
           onMouseEnter={() => setIsHovered(true)}

@@ -25,5 +25,12 @@ export {
   Plugs,
   ArrowLeftRight,
   Solana,
-  Wallet
+  Wallet,
+  Africa,
+  Antarctica,
+  Asia,
+  Australia,
+  Europe,
+  NorthAmerica,
+  SouthAmerica
 } from './icons'
