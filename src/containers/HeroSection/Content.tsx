@@ -33,7 +33,7 @@ const Content = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false)
 
   return (
-    <section className="radialGradient flex min-h-[max(calc(100%-142px),700px)] flex-col items-center justify-evenly px-4 backdrop-blur-xl md:px-8 lg:px-16">
+    <section className="radialGradient flex min-h-[max(calc(100%-142px),900px)] flex-col items-center justify-evenly gap-y-7 px-4 backdrop-blur-xl md:px-8 lg:px-16">
       <div
         className="relative flex size-[335px] items-center justify-center md:size-[502px]"
         onMouseLeave={() => setIsHovered(false)}
