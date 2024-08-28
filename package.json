@@ -14,7 +14,6 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.29",
     "leaflet": "^1.9.4",
-    "lenis": "^1.1.9",
     "next": "14.2.5",
     "react": "18.3.1",
     "react-dom": "18.3.1",

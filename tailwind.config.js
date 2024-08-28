@@ -52,12 +52,21 @@ module.exports = {
         fadeIn: {
           '0%': { transform: 'translateY(40%)', opacity: 0 },
           '100%': { transform: 'translateY(0%)', opacity: 1 }
+        },
+        hiThere: {
+          '30%': { transform: 'scale(1.2)' },
+          '40%': { transform: 'rotate(-20deg), scale(1.2)' },
+          '50%': { transform: 'rotate(20deg) ,scale(1.2)' },
+          '60%': { transform: 'rotate(-20deg) ,scale(1.2)' },
+          '70%': { transform: 'rotate(0deg) ,scale(1.2)' },
+          '100%': { transform: 'scale(1)' }
         }
       },
       animation: {
         rock: 'rock 10s ease-in-out infinite',
         travel: 'travel 2s ease-in-out infinite',
-        fadeIn: 'fadeIn 1s ease-in-out'
+        fadeIn: 'fadeIn 1s ease-in-out',
+        hiThere: 'hiThere 1s ease infinite;'
       }
     }
   },

@@ -4,11 +4,11 @@
 
 html,
 body {
-  @apply flex w-screen !scroll-auto bg-white antialiased outline-none scrollbar-none;
+  @apply flex h-screen w-screen !scroll-auto bg-white antialiased outline-none;
 }
 
 #__next {
-  @apply flex h-full w-full flex-col;
+  @apply flex h-screen w-screen flex-col overflow-hidden;
 }
 
 .defaultGradient {
