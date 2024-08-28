@@ -19,12 +19,31 @@ const OverlayUI = () => {
       behavior: 'smooth'
     })
   }
+  let lastTouchY: number | null = null
 
-  const handleScrollAttempt = (event: WheelEvent) => {
+  const handleTouchStart = (event: TouchEvent) => {
+    event.preventDefault()
+    lastTouchY = event.touches[0].clientY
+  }
+
+  const handleScrollAttempt = (event: WheelEvent | TouchEvent) => {
     event.preventDefault()
 
-    // Adjust clipSize based on scroll direction and intensity
-    const scrollIntensity = event.deltaY * 0.1 // Adjust this multiplier to control sensitivity
+    let scrollIntensity = 0
+
+    if (event instanceof WheelEvent) {
+      scrollIntensity = event.deltaY * 0.1 // Adjust this multiplier to control sensitivity
+    } else if (event instanceof TouchEvent) {
+      const touch = event.touches[0]
+      const currentTouchY = touch.clientY
+
+      if (lastTouchY !== null) {
+        scrollIntensity = (lastTouchY - currentTouchY) * 0.1 // Adjust multiplier as needed
+      }
+
+      lastTouchY = currentTouchY
+    }
+
     setClipSize((prevSize) => {
       const newSize = Math.max(0, Math.min(100, prevSize - scrollIntensity))
       if (newSize <= 5) {
@@ -38,11 +57,21 @@ const OverlayUI = () => {
     const element = backgroundRef.current
     if (element) {
       element.addEventListener('wheel', handleScrollAttempt, { passive: false })
+      element.addEventListener('touchstart', handleTouchStart, {
+        passive: false
+      })
+      element.addEventListener('touchmove', handleScrollAttempt, {
+        passive: false
+      })
     }
 
     return () => {
       if (element) {
         element.removeEventListener('wheel', handleScrollAttempt)
+        element.addEventListener('touchstart', handleTouchStart, {
+          passive: false
+        })
+        element.removeEventListener('touchmove', handleScrollAttempt)
       }
     }
   }, [])
