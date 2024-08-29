@@ -1,6 +1,7 @@
 import { useSearchParams } from 'next/navigation'
 
-import { MapContainer, TileLayer } from 'react-leaflet'
+import React, { useEffect, useRef } from 'react'
+import { MapContainer, TileLayer, useMap } from 'react-leaflet'
 
 import 'leaflet/dist/leaflet.css'
 
@@ -10,19 +11,31 @@ import { IUser } from '@/types'
 
 import Cluster from './Cluster'
 
+const MapUpdater = ({ continent }: { continent: string | null }) => {
+  const map = useMap()
+
+  useEffect(() => {
+    if (continent && CONTINENTS_POSITION[continent]) {
+      map.setView(CONTINENTS_POSITION[continent], ZOOM_LEVEL)
+    } else {
+      map.setView([MAP_CENTER.lat, MAP_CENTER.lng], 2)
+    }
+  }, [continent, map])
+
+  return null
+}
+
 const Map = ({ users }: { users: IUser[] }) => {
-  const continent = useSearchParams().get('continent')
+  const searchParams = useSearchParams()
+  const continent = searchParams.get('continent')
+  const mapRef = useRef(null)
 
   return (
     <div className="relative flex h-[695px] w-full">
       <MapContainer
-        center={
-          CONTINENTS_POSITION['continent'] || {
-            lat: MAP_CENTER.lat,
-            lng: MAP_CENTER.lng
-          }
-        }
-        zoom={continent ? ZOOM_LEVEL : 5}
+        ref={mapRef}
+        center={[MAP_CENTER.lat, MAP_CENTER.lng]}
+        zoom={5}
         preferCanvas={true}
       >
         <TileLayer
@@ -32,6 +45,7 @@ const Map = ({ users }: { users: IUser[] }) => {
           maxZoom={10}
         />
         <Cluster users={users} />
+        <MapUpdater continent={continent} />
       </MapContainer>
     </div>
   )
