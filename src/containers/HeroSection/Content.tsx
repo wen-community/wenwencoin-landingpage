@@ -41,9 +41,14 @@ const Content = () => {
           <Link
             href={`/community?continent=${Icon.name}`}
             key={index}
-            className={
-              'absolute flex size-20 items-center justify-center rounded-full transition-transform duration-300 ease-in-out md:size-28'
-            }
+            className={cn(
+              'absolute flex size-20 items-center justify-center rounded-full transition-all duration-300 ease-in-out md:size-28',
+              '[&>svg]:transition-transform [&>svg]:duration-300 [&>svg]:ease-in-out [&>svg]:hover:scale-125',
+              {
+                'opacity-100': isHovered,
+                'opacity-0': !isHovered
+              }
+            )}
             style={{
               transform: cn({
                 [`rotate(${index * (360 / 7)}deg) translate(min(220px, 37vw)) rotate(-${index * (360 / 7)}deg)`]:
