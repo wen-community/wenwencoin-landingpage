@@ -1,10 +1,10 @@
 import { Source_Code_Pro } from 'next/font/google'
 import Head from 'next/head'
+import { usePathname } from 'next/navigation'
 
 import { ReactNode } from 'react'
 
-import IMAGE_URL from '@/constants/ImageURL'
-// import Lenis from 'lenis'
+import { Overlay } from '@/containers'
 import { cn } from '@/utils/cn'
 
 import Header from '../Header'
@@ -15,6 +15,7 @@ const inter = Source_Code_Pro({
 })
 
 const Layout = ({ children }: { children: ReactNode }) => {
+  const pathname = usePathname()
   return (
     <>
       <Head>
@@ -22,17 +23,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <meta name="description" content="Wen Wen Coin" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.webp" />
-        <link
-          rel="preload"
-          href={`${IMAGE_URL}/wen_full_body.png`}
-          as="image"
-        />
-        <link
-          rel="preload"
-          href={`${IMAGE_URL}/wen_head_large.png`}
-          as="image"
-        />
       </Head>
+      {pathname === '/' && <Overlay />}
       <main
         className={cn(
           'h-full w-full overflow-y-scroll [&>*]:px-4 md:[&>*]:px-8 lg:[&>*]:px-16',

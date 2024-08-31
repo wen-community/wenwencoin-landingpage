@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { useState } from 'react'
 
+import { FlipWords, NextLink } from '@/components'
 import {
   Africa,
   Antarctica,
@@ -10,11 +11,9 @@ import {
   Asia,
   Australia,
   Europe,
-  FlipWords,
-  NextLink,
   NorthAmerica,
   SouthAmerica
-} from '@/components'
+} from '@/components/icons'
 import { cn } from '@/utils/cn'
 
 const icons = [
@@ -38,7 +37,7 @@ const Content = () => {
       >
         {icons.slice(0, 7).map((Icon, index) => (
           <Link
-            href={`/community?continent=${Icon.name}`}
+            href={`/community?continent=${Icon.name.toString().toLowerCase()}`}
             key={index}
             className={cn(
               'absolute flex size-20 items-center justify-center rounded-full transition-all duration-300 ease-in-out md:size-28',

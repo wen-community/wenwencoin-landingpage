@@ -2,13 +2,12 @@ import Image from 'next/image'
 
 import { useEffect, useRef, useState } from 'react'
 
-import { cn } from '@/utils/cn'
+import { useAnimation } from '@/contexts/AnimationContext'
 
-const OverlayUI = () => {
+const Overlay = () => {
   const animatedRef = useRef<HTMLDivElement | null>(null)
-  const backgroundRef = useRef<HTMLDivElement | null>(null)
   const [startAnimation, setStartAnimation] = useState<boolean>(false)
-  const [showModal, setShowModal] = useState(true)
+  const { isAnimationLoaded, setAnimationLoaded } = useAnimation()
 
   useEffect(() => {
     if (!startAnimation) return
@@ -25,7 +24,7 @@ const OverlayUI = () => {
 
       if (value <= 0) {
         setTimeout(() => {
-          setShowModal(false)
+          setAnimationLoaded(true)
         }, 500)
       }
       animatedRef.current.style.clipPath = `circle(${value}%)`
@@ -39,38 +38,34 @@ const OverlayUI = () => {
     animationFrame = requestAnimationFrame(animate)
 
     return () => cancelAnimationFrame(animationFrame)
-  }, [startAnimation])
+  }, [setAnimationLoaded, startAnimation])
 
   useEffect(() => {
-    if (showModal) {
+    if (!isAnimationLoaded) {
       setTimeout(() => {
         setStartAnimation(true)
       }, 2000)
     }
-  }, [showModal])
+  }, [isAnimationLoaded])
 
-  return showModal ? (
+  return !isAnimationLoaded ? (
     <>
-      <div
-        ref={backgroundRef}
-        className="absolute top-0 z-50 flex h-screen w-screen items-center justify-center"
-      />
-      <div
-        ref={animatedRef}
-        className={cn(
-          'absolute inset-0 flex h-screen items-center justify-center bg-gradient-to-br from-skyBlue via-lightBlue to-purple py-10 transition-[clip-path] duration-500 ease-in-out md:z-10'
-        )}
-      >
-        <Image
-          src="/logo.webp"
-          width={297}
-          height={265}
-          className="relative z-20 aspect-square w-40 animate-hiThere transition-transform duration-300 ease-in-out md:w-72"
-          alt="Wen Wen Coin"
-        />
+      <div className="absolute top-0 z-50 flex h-screen w-screen items-center justify-center">
+        <div
+          ref={animatedRef}
+          className="absolute inset-0 flex h-screen items-center justify-center bg-gradient-to-br from-skyBlue via-lightBlue to-purple py-10 transition-[clip-path] duration-500 ease-in-out md:z-10"
+        >
+          <Image
+            src="/logo.webp"
+            width={297}
+            height={265}
+            className="relative z-20 aspect-square w-40 animate-hiThere transition-transform duration-300 ease-in-out md:w-72"
+            alt="Wen Wen Coin"
+          />
+        </div>
       </div>
     </>
   ) : null
 }
 
-export default OverlayUI
+export default Overlay

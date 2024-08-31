@@ -1,15 +1,15 @@
 import {
   AboutSection,
   BuySection,
+  ContentSection,
   DexSection,
-  FaqSection,
-  HeroSection
+  FaqSection
 } from '@/containers'
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <ContentSection />
       <AboutSection />
       <DexSection />
       <BuySection />

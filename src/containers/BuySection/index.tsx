@@ -1,5 +1,5 @@
 import { BuyWenStep, NextLink } from '@/components'
-import { BUY_WEN_STEPS } from '@/constants'
+import BUY_WEN_STEPS from '@/constants/BuyWenSteps'
 
 const BuySection = () => (
   <section className="flex flex-wrap gap-10 py-28">
