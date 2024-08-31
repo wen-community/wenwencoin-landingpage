@@ -23,7 +23,11 @@ const OverlayUI = () => {
       const percentage: number = Math.min(progress / duration, 1) // Use updated duration
       const value: number = Math.floor(percentage * (0 - 100) + 100)
 
-      if (value <= 0) setShowModal(false)
+      if (value <= 0) {
+        setTimeout(() => {
+          setShowModal(false)
+        }, 500)
+      }
       animatedRef.current.style.clipPath = `circle(${value}%)`
       animatedRef.current.style.pointerEvents = value <= 0 ? 'none' : 'auto'
 
@@ -54,7 +58,7 @@ const OverlayUI = () => {
       <div
         ref={animatedRef}
         className={cn(
-          'absolute inset-0 flex h-screen items-center justify-center bg-gradient-to-br from-skyBlue via-lightBlue to-purple py-10 transition-[clip-path] duration-75 ease-in-out md:z-10'
+          'absolute inset-0 flex h-screen items-center justify-center bg-gradient-to-br from-skyBlue via-lightBlue to-purple py-10 transition-[clip-path] duration-500 ease-in-out md:z-10'
         )}
       >
         <Image
