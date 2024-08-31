@@ -21,8 +21,8 @@ const icons = [
   { icon: Asia, name: 'asia' },
   { icon: Antarctica, name: 'antarctica' },
   { icon: Europe, name: 'europe' },
-  { icon: SouthAmerica, name: 'south-america' },
-  { icon: NorthAmerica, name: 'north-america' },
+  { icon: SouthAmerica, name: 'southamerica' },
+  { icon: NorthAmerica, name: 'northamerica' },
   { icon: Africa, name: 'africa' }
 ]
 
