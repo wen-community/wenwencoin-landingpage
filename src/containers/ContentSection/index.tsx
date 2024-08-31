@@ -17,13 +17,13 @@ import {
 import { cn } from '@/utils/cn'
 
 const icons = [
-  Australia,
-  Asia,
-  Antarctica,
-  Europe,
-  SouthAmerica,
-  NorthAmerica,
-  Africa
+  { icon: Australia, name: 'australia' },
+  { icon: Asia, name: 'asia' },
+  { icon: Antarctica, name: 'antarctica' },
+  { icon: Europe, name: 'europe' },
+  { icon: SouthAmerica, name: 'south-america' },
+  { icon: NorthAmerica, name: 'north-america' },
+  { icon: Africa, name: 'africa' }
 ]
 
 const Content = () => {
@@ -35,9 +35,9 @@ const Content = () => {
         className="relative flex size-[335px] items-center justify-center md:size-[502px]"
         onMouseLeave={() => setIsHovered(false)}
       >
-        {icons.slice(0, 7).map((Icon, index) => (
+        {icons.slice(0, 7).map(({ icon: Icon, name }, index) => (
           <Link
-            href={`/community?continent=${Icon.name.toString().toLowerCase()}`}
+            href={`/community?continent=${name}`}
             key={index}
             className={cn(
               'absolute flex size-20 items-center justify-center rounded-full transition-all duration-300 ease-in-out md:size-28',
