@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { PawPrint } from '@/components'
-import IMAGE_URL from '@/constants/ImageURL'
 import { cn } from '@/utils/cn'
 
 const OverlayUI = () => {
@@ -117,11 +116,11 @@ const OverlayUI = () => {
         >
           <div className="relative w-max cursor-pointer items-center">
             <Image
-              src={`${IMAGE_URL}/wen_full_body.png`}
-              width={278.5}
-              height={321}
+              src="/logo.webp"
+              width={297}
+              height={265}
               className={cn(
-                'relative z-20 w-40 transition-transform duration-300 ease-in-out md:h-80 md:w-72',
+                'relative z-20 aspect-square w-40 transition-transform duration-300 ease-in-out md:w-72',
                 {
                   'animate-hiThere': isMouseOver
                 }

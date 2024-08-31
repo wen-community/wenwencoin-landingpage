@@ -21,7 +21,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <title>Wen Wen Coin</title>
         <meta name="description" content="Wen Wen Coin" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/wen_head_logo.png" />
+        <link rel="icon" href="/logo.webp" />
         <link
           rel="preload"
           href={`${IMAGE_URL}/wen_full_body.png`}
