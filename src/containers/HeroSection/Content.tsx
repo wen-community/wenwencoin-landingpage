@@ -32,7 +32,7 @@ const Content = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false)
 
   return (
-    <section className="radialGradient flex min-h-[max(calc(100%-142px),900px)] flex-col items-center justify-evenly gap-y-7 px-4 backdrop-blur-xl md:px-8 lg:px-16">
+    <section className="radialGradient flex min-h-[max(calc(100%-142px),900px)] flex-col items-center justify-center gap-y-7 px-4 backdrop-blur-xl md:px-8 lg:gap-y-14 lg:px-16">
       <div
         className="relative flex size-[335px] items-center justify-center md:size-[502px]"
         onMouseLeave={() => setIsHovered(false)}
@@ -74,10 +74,8 @@ const Content = () => {
       <div className="flex flex-col gap-5 md:items-center">
         <p className="max-w-screen-sm text-left !text-3xl font-bold md:text-center md:text-xl">
           Onboarding the
-          <FlipWords
-            words={['World', 'Massess', 'Crowd', 'Fans', 'Audiences']}
-          />
-          one Wen at a time.
+          <FlipWords words={['World', 'Massess', 'Universe', 'Cults']} />, One
+          Wen at a time.
         </p>
         <NextLink href="#about">Learn More</NextLink>
       </div>
