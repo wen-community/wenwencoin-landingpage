@@ -8,7 +8,7 @@ const DexSection = () => (
       WEN is trusted on 30+ CEXs and DEXes
     </h3>
     <div className="w-full overflow-hidden bg-backgroundSecondary">
-      <div className="animate-slider flex w-full items-center justify-center gap-x-16 gap-y-12 py-20 md:animate-none md:flex-wrap md:gap-x-24">
+      <div className="flex w-full animate-slider items-center justify-center gap-x-16 gap-y-12 py-20 md:animate-none md:flex-wrap md:gap-x-24">
         <Image
           src={`${IMAGE_URL}/bybit_logo.png`}
           width={115}
