@@ -27,7 +27,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       {pathname === '/' && <Overlay />}
       <main
         className={cn(
-          'h-full w-full overflow-y-scroll [&>*]:px-4 md:[&>*]:px-8 lg:[&>*]:px-16',
+          'h-full w-full overflow-y-scroll scroll-smooth [&>*]:px-4 md:[&>*]:px-8 lg:[&>*]:px-16',
           inter.className
         )}
       >
