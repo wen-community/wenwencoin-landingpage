@@ -16,7 +16,7 @@ const AboutSection = () => {
     >
       <div className="flex flex-col gap-7 lg:w-1/2">
         <Image
-          src={`${IMAGE_URL}/wen_head_logo.png`}
+          src={`${IMAGE_URL}/wen_head_logo.webp`}
           width={82}
           height={73}
           alt="Wen Wen Coin"
@@ -72,7 +72,7 @@ const AboutSection = () => {
           <div className="defaultGradient absolute top-1/20 aspect-4/3 w-full max-w-screen-sm animate-fadeIn rounded-3xl" />
         )}
         <Image
-          src={`${IMAGE_URL}/wen_full_body.png`}
+          src={`${IMAGE_URL}/wen_full_body.webp`}
           width={581}
           height={489}
           alt="Wen Wen Full Body"

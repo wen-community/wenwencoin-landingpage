@@ -53,7 +53,7 @@ const Header = ({
       >
         <Link href="/" className="static left-0 w-max md:absolute">
           <Image
-            src={`${IMAGE_URL}/wen_head_logo.png`}
+            src={`${IMAGE_URL}/wen_head_logo.webp`}
             width={73}
             height={52}
             alt="Wen Wen Coin"
@@ -96,7 +96,7 @@ const Header = ({
               target="_blank"
             >
               <Image
-                src={`${IMAGE_URL}/birdeye_logo.png`}
+                src={`${IMAGE_URL}/birdeye_logo.webp`}
                 width={16}
                 height={16}
                 alt="Birdeye"
@@ -139,7 +139,7 @@ const Header = ({
               target="_blank"
             >
               <Image
-                src={`${IMAGE_URL}/birdeye_logo.png`}
+                src={`${IMAGE_URL}/birdeye_logo.webp`}
                 width={16}
                 height={16}
                 alt="Birdeye"

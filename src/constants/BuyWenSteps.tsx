@@ -43,7 +43,7 @@ const BUY_WEN_STEPS = [
   {
     icon: (
       <Image
-        src="https://niwzrpzmgomfotvsyjsy.supabase.co/storage/v1/object/public/assets/jupiter_logo.png"
+        src="https://niwzrpzmgomfotvsyjsy.supabase.co/storage/v1/object/public/assets/jupiter_logo.webp"
         width={40}
         height={40}
         alt="Jupiter"
