@@ -77,6 +77,7 @@ const AboutSection = () => {
           height={489}
           alt="Wen Wen Full Body"
           className="bottom-0 z-10 max-h-[489px] w-2/3 translate-y-1/3 object-contain"
+          priority
         />
       </VisibilitySensor>
     </section>

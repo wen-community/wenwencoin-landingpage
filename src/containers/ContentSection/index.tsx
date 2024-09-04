@@ -67,6 +67,7 @@ const Content = () => {
           className={
             'z-10 mx-auto w-48 animate-rock cursor-pointer hover:scale-125 md:w-72'
           }
+          priority
         />
       </div>
       <div className="flex flex-col gap-5 md:items-center">

@@ -64,6 +64,7 @@ const Overlay = () => {
             height={265}
             className="relative z-20 aspect-square w-36 animate-hiThere transition-transform duration-300 ease-in-out md:w-64"
             alt="Wen Wen Coin"
+            priority
           />
           <div className="left-0 h-2 w-60 rounded-full bg-gray-200 md:w-96">
             <div

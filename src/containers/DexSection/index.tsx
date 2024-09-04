@@ -1,7 +1,5 @@
 import Image from 'next/image'
 
-import IMAGE_URL from '@/constants/ImageURL'
-
 const DexSection = () => (
   <section className="flex flex-col items-center !px-0">
     <h3 className="px-4 pb-5 pt-20 text-center text-xl font-bold md:px-8 lg:px-16">
@@ -10,40 +8,46 @@ const DexSection = () => (
     <div className="w-full overflow-hidden bg-backgroundSecondary">
       <div className="flex w-full animate-slider items-center justify-center gap-x-16 gap-y-12 py-20 md:animate-none md:flex-wrap md:gap-x-24">
         <Image
-          src={`${IMAGE_URL}/bybit_logo.webp`}
+          src="/bybit_logo.webp"
           width={115}
           height={38}
           alt="Bybit"
+          priority
         />
         <Image
-          src={`${IMAGE_URL}/kraken_logo.webp`}
+          src="/kraken_logo.webp"
           width={137}
           height={37}
           alt="Kraken"
+          priority
         />
         <Image
-          src={`${IMAGE_URL}/crypto.com_logo.webp`}
+          src="/crypto.com_logo.webp"
           width={178}
           height={34}
           alt="crpyto.com"
+          priority
         />
         <Image
-          src={`${IMAGE_URL}/kucoin_logo.webp`}
+          src="/kucoin_logo.webp"
           width={124}
           height={36}
           alt="Kucoin"
+          priority
         />
         <Image
-          src={`${IMAGE_URL}/htx_logo.webp`}
+          src="/htx_logo.webp"
           width={88}
           height={34}
           alt="Kucoin"
+          priority
         />
         <Image
-          src={`${IMAGE_URL}/gate_logo.webp`}
+          src="/gate_logo.webp"
           width={141}
           height={43}
           alt="Gate"
+          priority
         />
       </div>
     </div>
