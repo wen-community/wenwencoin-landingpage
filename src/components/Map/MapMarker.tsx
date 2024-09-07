@@ -1,33 +1,51 @@
-import Image from 'next/image'
+import Link from 'next/link'
 
 import ReactDOMServer from 'react-dom/server'
 import { Marker } from 'react-leaflet'
 
 import { divIcon } from 'leaflet'
 
-import IMAGE_URL from '@/constants/ImageURL'
 import { IUser } from '@/types'
 
-const MarkerDiv = ({ name, cityName }: { name: string; cityName: string }) => (
-  <div className="flex w-max gap-2 rounded-2xl bg-white p-2 pl-0">
-    <Image
-      src={`${IMAGE_URL}/wen_head_logo.webp`}
-      alt="wen head logo"
-      width={40}
-      height={34}
-      className=""
-    />
-    <div className="flex flex-col text-xs">
-      <h6 className="font-bold">{name}</h6>
-      <p className="font-light text-black/60">{cityName}</p>
-    </div>
+import { TwitterV2 } from '../icons'
+import ExternalLink from '../icons/ExternalLink'
+
+const MarkerDiv = ({
+  name,
+  twitterName
+}: {
+  name: string
+  twitterName: string
+}) => (
+  <div className="flex w-40 flex-col rounded-lg bg-black/90 px-3 py-2 text-white">
+    {twitterName ? (
+      <>
+        <span className="text-sm font-bold">{name}</span>
+        <Link
+          href={`https://x.com/{${twitterName}}`}
+          target="_blank"
+          className="flex items-center gap-1 text-xs"
+        >
+          <TwitterV2 />
+          {twitterName}
+          <ExternalLink className="-translate-y-0.5" />
+        </Link>
+      </>
+    ) : (
+      <>
+        <span className="text-sm font-bold">{name}</span>
+        <span className="flex items-center gap-1 text-xs text-white/60">
+          <TwitterV2 /> N/A
+        </span>
+      </>
+    )}
   </div>
 )
 
 const LeafletMarker = ({ user }: { user: IUser }) => {
   const icon = divIcon({
     html: ReactDOMServer.renderToString(
-      <MarkerDiv name={user.username} cityName={user.city} />
+      <MarkerDiv name={user.username} twitterName={user.twitter_name} />
     )
   })
 
@@ -42,7 +60,7 @@ const LeafletMarker = ({ user }: { user: IUser }) => {
 export const markerIcon = (user: IUser) =>
   divIcon({
     html: ReactDOMServer.renderToString(
-      <MarkerDiv name={user.username} cityName={user.city} />
+      <MarkerDiv name={user.username} twitterName={user.twitter_name} />
     )
   })
 
@@ -50,7 +68,7 @@ export const pointIcon = (count: number, size: number) =>
   divIcon({
     html: ReactDOMServer.renderToString(
       <div
-        className="flex items-center justify-center rounded-full bg-purple p-1 text-base font-semibold text-white"
+        className="flex items-center justify-center rounded-full bg-gray-600 p-1 text-base font-semibold text-white"
         style={{ width: `${size}px;`, height: `${size}px;` }}
       >
         {count}

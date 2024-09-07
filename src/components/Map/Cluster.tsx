@@ -7,7 +7,6 @@ import useSupercluster from 'use-supercluster'
 import { IUser } from '@/types'
 
 import { markerIcon, pointIcon } from './MapMarker'
-import MarkerPopup from './MarkerPopup'
 
 type BBox = [number, number, number, number]
 
@@ -106,9 +105,7 @@ const Cluster = ({ users }: { users: IUser[] }) => {
             key={`crime-${cluster.properties.id}`}
             position={[latitude, longitude]}
             icon={markerIcon(cluster.properties as IUser)}
-          >
-            <MarkerPopup user={cluster.properties as IUser} />
-          </Marker>
+          />
         )
       })}
     </>
