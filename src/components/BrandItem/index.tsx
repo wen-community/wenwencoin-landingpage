@@ -20,10 +20,7 @@ const BrandItem = ({
   const [isVisible, setIsVisible] = useState<boolean>(false)
 
   return (
-    <VisibilitySensor
-      setIsVisible={setIsVisible}
-      className="h-[489px] w-[416px]"
-    >
+    <VisibilitySensor setIsVisible={setIsVisible} className="aspect-4/3 w-80">
       {isVisible && (
         <div className="flex animate-fadeIn flex-col gap-8">
           <div className="flex aspect-square w-full items-center justify-center bg-tertiary">
