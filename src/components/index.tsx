@@ -32,6 +32,5 @@ export {
   Australia,
   Europe,
   NorthAmerica,
-  SouthAmerica,
-  ProgressBar
+  SouthAmerica
 } from './icons'

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 
-import { AddLocation, CountUp, HandHeart } from '@/components'
+import { AddLocation, CountUp } from '@/components'
 import { MapComponent } from '@/components/Map/OpenStreetMap'
 import { supabase } from '@/services/supabase'
 import { IUser } from '@/types'
@@ -38,11 +38,13 @@ const JoinCommunity = () => {
           </button>
         </div>
         <div className="flex flex-col gap-4">
-          <h2 className="flex flex-col gap-6 text-5xl font-semibold md:flex-row md:items-center">
-            <HandHeart />
+          <h2 className="relative flex flex-col gap-2 text-5xl font-semibold md:flex-row md:items-center">
             <span className="relative flex">
-              <CountUp end={286455} />+
-              <span className="absolute right-0 top-0 size-2 animate-ping rounded-full bg-green-500" />
+              <CountUp end={286455} />
+            </span>
+            <span className="absolute -left-4 top-0 flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
             </span>
           </h2>
           <p className="text-lg">Holders Worldwide</p>

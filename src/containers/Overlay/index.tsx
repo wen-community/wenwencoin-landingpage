@@ -68,7 +68,7 @@ const Overlay = () => {
           />
           <div className="relative h-3 w-60 overflow-hidden rounded-lg bg-lightGray md:w-80">
             <div
-              className="animate-progressBar bg-stripes bg-size-stripes absolute left-0 top-0 h-full rounded-l-lg bg-skyBlue transition-[width] duration-300 ease-in-out"
+              className="absolute left-0 top-0 h-full animate-progressBar rounded-l-lg bg-skyBlue bg-stripes bg-size-stripes transition-[width] duration-300 ease-in-out"
               style={{ width }}
             ></div>
           </div>
