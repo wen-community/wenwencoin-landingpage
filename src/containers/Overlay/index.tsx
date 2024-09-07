@@ -66,11 +66,11 @@ const Overlay = () => {
             alt="Wen Wen Coin"
             priority
           />
-          <div className="left-0 h-2 w-60 rounded-full bg-gray-200 md:w-96">
+          <div className="relative h-3 w-60 overflow-hidden rounded-lg bg-lightGray md:w-80">
             <div
-              className="transition-width h-full rounded-full bg-blue-500 duration-500"
+              className="animate-progressBar bg-stripes bg-size-stripes absolute left-0 top-0 h-full rounded-l-lg bg-skyBlue transition-[width] duration-300 ease-in-out"
               style={{ width }}
-            />
+            ></div>
           </div>
         </div>
       </div>

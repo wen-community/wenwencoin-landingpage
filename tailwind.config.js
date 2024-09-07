@@ -25,7 +25,9 @@ module.exports = {
       },
       backgroundImage: {
         defaultGradient:
-          'linear-gradient(25deg, #2B8EC5 0%, #FDFDF9 100%), linear-gradient(159deg, #6E73BE 0%, #FDFDF9 100%)'
+          'linear-gradient(25deg, #2B8EC5 0%, #FDFDF9 100%), linear-gradient(159deg, #6E73BE 0%, #FDFDF9 100%)',
+        stripes:
+          'linear-gradient(45deg, #2C8FC6 25%, transparent 25%, transparent 50%, #96BEDC 50%, lightblue 75%, #7A7FC3 75%, #7A7FC3)'
       },
       maxHeight: {
         'screen-md': '47.875rem'
@@ -40,6 +42,7 @@ module.exports = {
         '4/3': '4 / 3',
         '21/9': '21 / 9'
       },
+
       keyframes: {
         rock: {
           '0%, 100%': { transform: 'rotate(-5deg)' },
@@ -64,14 +67,22 @@ module.exports = {
         slider: {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' }
+        },
+        progressBar: {
+          '0%': { 'background-position': '40px 0' },
+          '100%': { 'background-position': '0 0' }
         }
       },
       animation: {
+        progressBar: 'progressBar 1s linear infinite',
         rock: 'rock 10s ease-in-out infinite',
         travel: 'travel 2s ease-in-out infinite',
         fadeIn: 'fadeIn 1s ease-in-out',
         hiThere: 'hiThere 1s ease infinite;',
         slider: 'slider 10s ease-in-out infinite'
+      },
+      backgroundSize: {
+        'size-stripes': '20px 20px'
       }
     }
   },
