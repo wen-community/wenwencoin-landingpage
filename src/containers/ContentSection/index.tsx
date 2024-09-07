@@ -30,9 +30,9 @@ const Content = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false)
 
   return (
-    <section className="radialGradient flex min-h-[max(calc(100%-142px),900px)] flex-col items-center justify-center gap-y-7 px-4 backdrop-blur-xl md:px-8 lg:gap-y-14 lg:px-16">
+    <section className="radialGradient flex min-h-[max(calc(100%-142px),600px)] flex-col items-center justify-center gap-y-7 px-4 backdrop-blur-xl md:min-h-[max(calc(100%-142px),900px)] md:px-8 lg:gap-y-14 lg:px-16">
       <div
-        className="relative flex size-[335px] items-center justify-center md:size-[502px]"
+        className="relative flex size-[335px] -translate-y-10 items-center justify-center md:size-[502px]"
         onMouseLeave={() => setIsHovered(false)}
       >
         {icons.slice(0, 7).map(({ icon: Icon, name }, index) => (
@@ -49,7 +49,7 @@ const Content = () => {
             )}
             style={{
               transform: cn({
-                [`rotate(${index * (360 / 7)}deg) translate(min(220px, 37vw)) rotate(-${index * (360 / 7)}deg)`]:
+                [`rotate(${index * (360 / 7)}deg) translate(200%) rotate(-${index * (360 / 7)}deg)`]:
                   isHovered,
                 'translate(0, 0)': !isHovered
               })
@@ -60,6 +60,7 @@ const Content = () => {
         ))}
         <Image
           onMouseEnter={() => setIsHovered(true)}
+          onClick={() => setIsHovered(true)}
           src={`/logo.webp`}
           width={297}
           height={265}
