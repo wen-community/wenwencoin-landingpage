@@ -40,8 +40,9 @@ const JoinCommunity = () => {
         <div className="flex flex-col gap-4">
           <h2 className="flex flex-col gap-6 text-5xl font-semibold md:flex-row md:items-center">
             <HandHeart />
-            <span className="flex">
-              <CountUp end={280000} />+
+            <span className="relative flex">
+              <CountUp end={286455} />+
+              <span className="absolute right-0 top-0 size-2 animate-ping rounded-full bg-green-500" />
             </span>
           </h2>
           <p className="text-lg">Holders Worldwide</p>

@@ -43,6 +43,7 @@ export type Database = {
           id: number
           lat: string
           lng: string
+          twitter_name: string
           username: string
         }
         Insert: {
@@ -51,6 +52,7 @@ export type Database = {
           id?: number
           lat?: string
           lng?: string
+          twitter_name?: string
           username: string
         }
         Update: {
@@ -59,6 +61,7 @@ export type Database = {
           id?: number
           lat?: string
           lng?: string
+          twitter_name?: string
           username?: string
         }
         Relationships: [
@@ -82,6 +85,7 @@ export type Database = {
           city_name: string
           latitude: string
           longitude: string
+          twitter: string
         }
         Returns: undefined
       }

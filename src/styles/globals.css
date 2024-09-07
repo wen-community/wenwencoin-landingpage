@@ -65,3 +65,12 @@ body {
 .leaflet-div-icon {
   @apply !bg-transparent;
 }
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  @apply !bg-black/90;
+}
+
+.leaflet-popup-content {
+  @apply !m-0;
+}

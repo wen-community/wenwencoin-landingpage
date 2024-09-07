@@ -32,4 +32,5 @@ export type IUser = {
   lat: string
   lng: string
   created_at: string
+  twitter_name: string
 }

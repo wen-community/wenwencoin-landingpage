@@ -31,6 +31,7 @@ const nameSchema = yup
 
 const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
   const [selected, setSelected] = useState<ICity>(DEFAULT_CITY)
+  const [twitterName, setTwitterName] = useState<string>('')
   const [dropdownError, setDropDownError] = useState<string>('')
   const [nameError, setNameError] = useState<string>('')
   const [name, setName] = useState<string>('')
@@ -57,7 +58,8 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
           longitude: (
             Number(selected.lng) +
             (Math.random() - 0.5) * 0.1
-          ).toString()
+          ).toString(),
+          twitter: twitterName
         })
 
         if (error) toast.error(error.message)
@@ -74,7 +76,7 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
         }
       }
     },
-    [fetchMarkers, name, selected.lat, selected.lng, selected.name]
+    [fetchMarkers, name, selected.lat, selected.lng, selected.name, twitterName]
   )
 
   return (
@@ -103,6 +105,13 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
           title="Location"
           id="city"
           placeholder="New York"
+        />
+        <FormLine
+          error={nameError}
+          id="twitter"
+          title="Twitter / Username"
+          placeholder="elonmusk"
+          onChange={(e) => setTwitterName(e.target.value)}
         />
         <button
           disabled={isLoading || selected.name === ''}
