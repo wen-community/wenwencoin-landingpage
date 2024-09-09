@@ -22,9 +22,9 @@ const MarkerDiv = ({
       <>
         <span className="text-sm font-bold">{name}</span>
         <Link
-          href={`https://x.com/{${twitterName}}`}
+          href={`https://x.com/${twitterName}`}
           target="_blank"
-          className="flex items-center gap-1 text-xs"
+          className="flex items-center gap-1 text-xs !text-white"
         >
           <TwitterV2 />
           {twitterName}

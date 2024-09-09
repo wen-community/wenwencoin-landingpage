@@ -43,7 +43,7 @@ const ToolTip = ({
     <>
       {items.map((item) => (
         <div
-          className="group relative space-x-4"
+          className="group relative"
           key={item.name}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -82,7 +82,7 @@ const ToolTip = ({
           <div
             onMouseMove={handleMouseMove}
             className={cn(
-              'relative size-5 rounded-full border-2 !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105',
+              'relative size-5 rounded-full border border-black/40 !p-0 transition duration-500 group-hover:z-30 group-hover:scale-125',
               `bg-[${item.hex}]`
             )}
           />

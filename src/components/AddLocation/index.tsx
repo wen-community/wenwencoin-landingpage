@@ -61,10 +61,12 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
           ).toString(),
           twitter: twitterName
         })
-
-        if (error) toast.error(error.message)
-        else toast.success('Thanks for adding a location!')
         setIsLoading(false)
+
+        if (error) {
+          toast.error(error.message)
+          return
+        } else toast.success('Thanks for adding a location!')
         fetchMarkers()
         setSelected(DEFAULT_CITY)
         setName('')

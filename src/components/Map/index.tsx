@@ -42,7 +42,7 @@ const Map = ({ users }: { users: IUser[] }) => {
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=yLxcIp3UUDBGuYbjZXuk"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>'
           minZoom={2}
-          maxZoom={10}
+          maxZoom={12}
         />
         <Cluster users={users} />
         <MapUpdater continent={continent} />

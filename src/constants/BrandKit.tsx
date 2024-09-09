@@ -46,4 +46,32 @@ const BRAND_KIT = [
   }
 ]
 
+export const BRAND_COLORS = [
+  {
+    id: 1,
+    name: 'Red',
+    hex: '#ff0020'
+  },
+  {
+    id: 2,
+    name: 'Gray',
+    hex: '#444444'
+  },
+  {
+    id: 3,
+    name: 'OfBlack',
+    hex: '#121212'
+  },
+  {
+    id: 4,
+    name: 'Blue',
+    hex: '#45a0d1'
+  },
+  {
+    id: 5,
+    name: 'White',
+    hex: '#ffffff'
+  }
+]
+
 export default BRAND_KIT
