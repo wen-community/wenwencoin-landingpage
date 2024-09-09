@@ -27,12 +27,6 @@ const BRAND_KIT = [
     heigth: 262
   },
   {
-    url: `${IMAGE_URL}/brand_image_5.webp`,
-    title: 'Brand Colors',
-    width: 383,
-    heigth: 308
-  },
-  {
     url: `${IMAGE_URL}/brand_image_6.webp`,
     title: 'Full Body + Background Text',
     width: 341,
