@@ -37,6 +37,7 @@ const Map = ({ users }: { users: IUser[] }) => {
         center={[MAP_CENTER.lat, MAP_CENTER.lng]}
         zoom={3}
         preferCanvas={true}
+        zoomAnimation
       >
         <TileLayer
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=yLxcIp3UUDBGuYbjZXuk"

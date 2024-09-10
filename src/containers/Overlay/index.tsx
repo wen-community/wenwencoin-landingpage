@@ -47,7 +47,7 @@ const Overlay = () => {
     if (!isAnimationLoaded) {
       setTimeout(() => {
         setStartAnimation(true)
-      }, 1000)
+      }, 100)
     }
   }, [isAnimationLoaded])
 
