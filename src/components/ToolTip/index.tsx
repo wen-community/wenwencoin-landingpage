@@ -8,8 +8,6 @@ import {
   useTransform
 } from 'framer-motion'
 
-import { cn } from '@/utils/cn'
-
 const ToolTip = ({
   items
 }: {
@@ -81,10 +79,10 @@ const ToolTip = ({
           </AnimatePresence>
           <div
             onMouseMove={handleMouseMove}
-            className={cn(
-              'relative size-5 rounded-full border border-black/40 !p-0 transition duration-500 group-hover:z-30 group-hover:scale-125',
-              `bg-[${item.hex}]`
-            )}
+            style={{
+              backgroundColor: item.hex
+            }}
+            className="relative size-5 rounded-full border border-black/40 !p-0 transition duration-500 group-hover:z-30 group-hover:scale-125"
           />
         </div>
       ))}
