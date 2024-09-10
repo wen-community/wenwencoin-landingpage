@@ -18,7 +18,7 @@ const MapUpdater = ({ continent }: { continent: string | null }) => {
     if (continent && CONTINENTS_POSITION[continent]) {
       map.setView(CONTINENTS_POSITION[continent], ZOOM_LEVEL)
     } else {
-      map.setView([MAP_CENTER.lat, MAP_CENTER.lng], 2)
+      map.setView([MAP_CENTER.lat, MAP_CENTER.lng], 3)
     }
   }, [continent, map])
 
@@ -35,7 +35,7 @@ const Map = ({ users }: { users: IUser[] }) => {
       <MapContainer
         ref={mapRef}
         center={[MAP_CENTER.lat, MAP_CENTER.lng]}
-        zoom={5}
+        zoom={3}
         preferCanvas={true}
       >
         <TileLayer

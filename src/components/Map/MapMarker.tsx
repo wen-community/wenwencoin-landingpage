@@ -7,10 +7,10 @@ import { divIcon } from 'leaflet'
 
 import { IUser } from '@/types'
 
-import { TwitterV2 } from '../icons'
+import { Pin, TwitterV2 } from '../icons'
 import ExternalLink from '../icons/ExternalLink'
 
-const MarkerDiv = ({
+export const MarkerDiv = ({
   name,
   twitterName
 }: {
@@ -57,11 +57,9 @@ const LeafletMarker = ({ user }: { user: IUser }) => {
   )
 }
 
-export const markerIcon = (user: IUser) =>
+export const markerIcon = () =>
   divIcon({
-    html: ReactDOMServer.renderToString(
-      <MarkerDiv name={user.username} twitterName={user.twitter_name} />
-    )
+    html: ReactDOMServer.renderToString(<Pin />)
   })
 
 export const pointIcon = (count: number, size: number) =>

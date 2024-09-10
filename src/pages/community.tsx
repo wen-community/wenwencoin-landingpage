@@ -38,7 +38,7 @@ const JoinCommunity = () => {
           </button>
         </div>
         <div className="flex flex-col items-end gap-2 rounded-lg bg-black/80 px-5 py-3 text-white">
-          <h2 className="relative flex flex-col gap-2 text-5xl font-semibold md:flex-row md:items-center">
+          <h2 className="relative flex items-center gap-2 text-5xl font-semibold">
             <span className="relative top-0 flex h-3 w-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
@@ -55,7 +55,7 @@ const JoinCommunity = () => {
         showForm={showForm}
         setShowForm={setShowForm}
       />
-      <section className="max-h-screen-md gap-8 py-12 md:py-16">
+      <section className="min-h-[50%] gap-8 py-12 md:py-16">
         <MapComponent users={users} />
       </section>
     </>

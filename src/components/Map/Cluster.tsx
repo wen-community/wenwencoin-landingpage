@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { Marker, useMap } from 'react-leaflet'
+import { Marker, Popup, useMap } from 'react-leaflet'
 
 import { PointFeature } from 'supercluster'
 import useSupercluster from 'use-supercluster'
 
 import { IUser } from '@/types'
 
-import { markerIcon, pointIcon } from './MapMarker'
+import { MarkerDiv, markerIcon, pointIcon } from './MapMarker'
 
 type BBox = [number, number, number, number]
 
@@ -104,8 +104,15 @@ const Cluster = ({ users }: { users: IUser[] }) => {
             riseOnHover
             key={`crime-${cluster.properties.id}`}
             position={[latitude, longitude]}
-            icon={markerIcon(cluster.properties as IUser)}
-          />
+            icon={markerIcon()}
+          >
+            <Popup>
+              <MarkerDiv
+                name={cluster.properties.username}
+                twitterName={cluster.properties.twitter_name}
+              />
+            </Popup>
+          </Marker>
         )
       })}
     </>
