@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.19.3",
+    "@solana/spl-token": "^0.4.8",
+    "@solana/web3.js": "^1.95.3",
     "@supabase/supabase-js": "^2.45.1",
-    "cities.json": "^1.1.39",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.29",
     "leaflet": "^1.9.4",
@@ -22,6 +24,7 @@
     "supercluster": "^8.0.1",
     "tailwind-merge": "^2.4.0",
     "tailwind-scrollbar": "^3.1.0",
+    "use-places-autocomplete": "^4.0.1",
     "use-supercluster": "^1.2.0",
     "yup": "^1.4.0"
   },

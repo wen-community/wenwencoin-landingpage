@@ -6,10 +6,11 @@ import '@/styles/globals.css'
 
 import { Layout } from '@/components'
 import { AnimationProvider } from '@/contexts/AnimationContext'
+import { PhantomWalletProvider } from '@/contexts/PhantomWalletContext'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <PhantomWalletProvider>
       <AnimationProvider>
         <Layout>
           <Component {...pageProps} />
@@ -22,6 +23,6 @@ export default function App({ Component, pageProps }: AppProps) {
           right: '1.25rem'
         }}
       />
-    </>
+    </PhantomWalletProvider>
   )
 }

@@ -1,37 +1,28 @@
+import Script from 'next/script'
+
 import {
   ChangeEvent,
   Dispatch,
   InputHTMLAttributes,
   SetStateAction,
   useCallback,
-  useMemo,
   useState
 } from 'react'
 
-import cities from 'cities.json/cities.json'
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng
+} from 'use-places-autocomplete'
 
-import { DEFAULT_CITY, ICity } from '@/types'
+import { Libraries, useLoadScript } from '@react-google-maps/api'
+
+import { ICity } from '@/types'
 import { cn } from '@/utils/cn'
 
 import FormLine from '../FormLine'
+import { Spinner } from '../icons'
 
-const Item = ({
-  item,
-  onSelect
-}: {
-  item: ICity
-  onSelect: (item: ICity) => void
-}) => (
-  <li>
-    <button
-      type="button"
-      className="w-full p-2 text-start hover:bg-black/10"
-      onClick={() => onSelect(item)}
-    >
-      {item.name} ({item.country})
-    </button>
-  </li>
-)
+const libraries: Libraries = ['places']
 
 interface IDropDown extends InputHTMLAttributes<HTMLInputElement> {
   id: string
@@ -51,67 +42,116 @@ const DropDown = ({
   onLocationSelect,
   ...props
 }: IDropDown) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>('')
+  const [showDropdown, setShowDropdown] = useState<boolean>(false)
 
-  const handleSelect = useCallback(
-    (item: ICity) => {
-      onLocationSelect(item)
-      setValue(item.name)
-      setIsOpen(false)
-    },
-    [onLocationSelect]
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.GOOGLE_PLACES_API_KEY!,
+    libraries
+  })
+
+  const {
+    init,
+    ready,
+    value,
+    suggestions: { status, data, loading },
+    setValue,
+    clearSuggestions
+  } = usePlacesAutocomplete({
+    debounce: 300
+  })
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target
+    console.log(value)
+    setValue(value)
+    setShowDropdown(value !== '')
+
+    if (value === '') {
+      onLocationSelect({ lat: '0', lng: '0', name: '' })
+      clearSuggestions()
+    }
+  }
+
+  const handleLocationSelect = useCallback(
+    ({ description }: { description: string }) =>
+      () => {
+        setValue(description, false)
+        clearSuggestions()
+        setShowDropdown(false)
+        getGeocode({ address: description }).then((results) => {
+          const { lat, lng } = getLatLng(results[0])
+          const city = description.split(',')[0]
+          onLocationSelect({
+            lat: lat.toString(),
+            lng: lng.toString(),
+            name: city
+          })
+        })
+      },
+    [clearSuggestions, onLocationSelect, setValue]
   )
 
-  const handleChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value)
-      if (isOpen) onLocationSelect(DEFAULT_CITY)
-    },
-    [isOpen, onLocationSelect]
-  )
+  const renderSuggestions = useCallback(
+    () =>
+      data.map((suggestion) => {
+        const {
+          place_id,
+          structured_formatting: { main_text, secondary_text }
+        } = suggestion
 
-  const itemList = useMemo(() => {
-    if (value === '') return []
-
-    const uniqueCities = new Set(
-      (cities as ICity[])
-        .filter((item) =>
-          item.name.toLocaleLowerCase().startsWith(value.toLocaleLowerCase())
+        return (
+          <li key={place_id}>
+            <button
+              type="button"
+              className="text-primaryText w-full truncate px-4 py-2 text-left text-sm hover:bg-gray-100"
+              onClick={handleLocationSelect(suggestion)}
+            >
+              <strong>{main_text}</strong> <small>{secondary_text}</small>
+            </button>
+          </li>
         )
-        .slice(0, 5)
-        .map((item) => item.name)
-    )
+      }),
+    [data, handleLocationSelect]
+  )
 
-    return Array.from(uniqueCities).map((name) => {
-      const item = (cities as ICity[]).find((city) => city.name === name)
-      if (item) {
-        return <Item key={item.admin2} item={item} onSelect={handleSelect} />
-      }
-      return null
-    })
-  }, [handleSelect, value])
-
-  console.log(itemList)
+  if (!isLoaded) return <div>Loading...</div>
 
   return (
-    <div className={cn('relative flex flex-col', className)}>
-      <FormLine
-        id={id}
-        title={title}
-        error={error}
-        required={required}
-        value={value}
-        onChange={handleChange}
-        onFocus={() => setIsOpen(true)}
-        {...props}
+    <>
+      <Script
+        id="googlemaps"
+        type="text/javascript"
+        strategy="lazyOnload"
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_PLACES_API_KEY}&libraries=places`}
+        onReady={init}
       />
-      {itemList.length > 0 && isOpen && (
-        <ul className="absolute top-24 z-[401] flex w-full flex-col gap-2 overflow-hidden rounded-md bg-white p-2 shadow-xl">
-          {itemList}
-        </ul>
-      )}
-    </div>
+      <div className={cn('relative flex flex-col', className)}>
+        <FormLine
+          id={id}
+          title={title}
+          error={error}
+          required={required}
+          value={value}
+          onChange={handleInputChange}
+          disabled={!ready}
+          {...props}
+        />
+        {showDropdown && (
+          <ul className="absolute top-24 z-[401] flex w-full flex-col gap-2 overflow-hidden rounded-md bg-white shadow-xl">
+            {status === 'OK' && renderSuggestions()}
+            {status !== 'OK' && (
+              <li className="w-full truncate px-4 py-2 text-left text-sm">
+                {loading ? (
+                  <Spinner className="mx-auto" />
+                ) : (
+                  'No locations found'
+                )}
+              </li>
+            )}
+          </ul>
+        )}
+      </div>
+    </>
   )
 }
 
