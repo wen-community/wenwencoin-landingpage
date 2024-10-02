@@ -5,6 +5,7 @@ import {
   DexSection,
   FaqSection
 } from '@/containers'
+import CommunitySection from '@/containers/CommunitySection'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ContentSection />
       <AboutSection />
       <DexSection />
+      <CommunitySection />
       <BuySection />
       <FaqSection />
     </>

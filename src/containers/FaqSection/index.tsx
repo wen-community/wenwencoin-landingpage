@@ -11,7 +11,11 @@ const FaqSection = () => (
       <p className="flex max-w-screen-sm flex-col gap-8 font-semibold">
         Find answers to everything around the cute cat
       </p>
-      <NextLink href="#about" className="text-lg">
+      <NextLink
+        href="https://docs.wenwencoin.com"
+        target="#"
+        className="text-lg"
+      >
         Learn more about WEN
       </NextLink>
     </div>

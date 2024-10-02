@@ -36,11 +36,19 @@ const AboutSection = () => {
           </p>
           <p>
             Wen is the proud owner of the #1 and #2 cat accounts in the world (
-            <Link href="https://x.com/ShouldHaveCat" target="_blank">
+            <Link
+              href="https://x.com/ShouldHaveCat"
+              className="text-purple hover:underline"
+              target="_blank"
+            >
               @shouldhavecat
             </Link>{' '}
             &{' '}
-            <Link href="https://x.com/PostsOfCats" target="_blank">
+            <Link
+              href="https://x.com/PostsOfCats"
+              className="text-purple hover:underline"
+              target="_blank"
+            >
               @postsofcats
             </Link>
             ) The mission for Wen is to take over mainstream audiences and

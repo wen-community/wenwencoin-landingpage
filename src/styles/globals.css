@@ -26,15 +26,15 @@ body {
 
 .radialGradient {
   background: radial-gradient(
-      52.97% 40.04% at 96.84% 100%,
-      rgba(150, 190, 220, 0.3) 0%,
-      rgba(150, 190, 220, 0) 100%
-    ),
-    radial-gradient(
-      71.91% 45.75% at 0% 100%,
-      rgba(122, 127, 195, 0.4) 0%,
-      rgba(122, 127, 195, 0) 100%
-    );
+    60% 50% at 95% 95%,
+    rgba(135, 186, 225, 0.9) 0%,
+    rgba(150, 190, 220, 0) 100%
+  ),
+  radial-gradient(
+    75% 50% at 5% 95%,
+    rgba(151, 156, 222, 0.8) 0%,
+    rgba(122, 127, 195, 0) 100%
+);
 }
 
 .leaflet-container {

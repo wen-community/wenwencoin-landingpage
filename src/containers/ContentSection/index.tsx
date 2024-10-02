@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { useState } from 'react'
-
 import { FlipWords, NextLink } from '@/components'
 import {
   Africa,
@@ -27,14 +25,9 @@ const icons = [
 ]
 
 const Content = () => {
-  const [isHovered, setIsHovered] = useState<boolean>(false)
-
   return (
     <section className="radialGradient flex min-h-[max(calc(100%-142px),600px)] flex-col items-center justify-center gap-y-7 px-4 backdrop-blur-xl md:min-h-[max(calc(100%-142px),900px)] md:px-8 lg:gap-y-14 lg:px-16">
-      <div
-        className="relative flex size-[335px] -translate-y-10 items-center justify-center md:size-[502px]"
-        onMouseLeave={() => setIsHovered(false)}
-      >
+      <div className="relative flex size-[335px] -translate-y-10 items-center justify-center md:size-[502px]">
         {icons.slice(0, 7).map(({ icon: Icon, name }, index) => (
           <Link
             href={`/community?continent=${name}`}
@@ -42,25 +35,16 @@ const Content = () => {
             className={cn(
               'absolute flex size-20 items-center justify-center rounded-full transition-all duration-300 ease-in-out md:size-28',
               '[&>svg]:transition-transform [&>svg]:duration-300 [&>svg]:ease-in-out [&>svg]:hover:scale-125',
-              {
-                'opacity-100': isHovered,
-                'opacity-0': !isHovered
-              }
+              'opacity-100'
             )}
             style={{
-              transform: cn({
-                [`rotate(${index * (360 / 7)}deg) translate(200%) rotate(-${index * (360 / 7)}deg)`]:
-                  isHovered,
-                'translate(0, 0)': !isHovered
-              })
+              transform: `rotate(${index * (360 / 7)}deg) translate(200%) rotate(-${index * (360 / 7)}deg)`
             }}
           >
             <Icon />
           </Link>
         ))}
         <Image
-          onMouseEnter={() => setIsHovered(true)}
-          onClick={() => setIsHovered(true)}
           src={`/logo.webp`}
           width={297}
           height={265}
