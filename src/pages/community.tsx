@@ -9,8 +9,13 @@ import { supabase } from '@/services/supabase'
 import { IUser } from '@/types'
 
 const JoinCommunity = () => {
-  const { connected, isEligible, connect, totalHolders, fetchTotalHolders } =
-    usePhantomWallet()
+  const {
+    connected,
+    isEligible,
+    connect,
+    // totalHolders,
+    fetchTotalHolders
+  } = usePhantomWallet()
 
   const [showForm, setShowForm] = useState<boolean>(false)
 
