@@ -32,7 +32,7 @@ const Content = () => {
           style={{ transform: 'rotateX(75deg)' }}
           className="absolute inset-0"
         >
-          <div className="grid-animation animate-gridGoDown absolute -inset-x-full inset-y-0 -ml-[50%] flex w-[200vw] translate-y-0 items-center justify-center overflow-hidden" />
+          <div className="grid-animation absolute -inset-x-full inset-y-0 -ml-[50%] flex w-[200vw] translate-y-0 animate-gridGoDown items-center justify-center overflow-hidden" />
         </div>
       </div>
       <div className="relative flex size-[335px] -translate-y-10 items-center justify-center md:size-[502px]">
