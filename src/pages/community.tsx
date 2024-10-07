@@ -9,13 +9,7 @@ import { supabase } from '@/services/supabase'
 import { IUser } from '@/types'
 
 const JoinCommunity = () => {
-  const {
-    connected,
-    isEligible,
-    connect,
-    // totalHolders,
-    fetchTotalHolders
-  } = usePhantomWallet()
+  const { connected, isEligible, connect } = usePhantomWallet()
 
   const [showForm, setShowForm] = useState<boolean>(false)
 
@@ -30,13 +24,6 @@ const JoinCommunity = () => {
   useEffect(() => {
     fetchMarkers()
   }, [fetchMarkers])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      await fetchTotalHolders()
-    }
-    fetchData()
-  }, [fetchTotalHolders])
 
   return (
     <>

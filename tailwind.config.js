@@ -76,6 +76,18 @@ module.exports = {
         progressBar: {
           '0%': { 'background-position': '40px 0' },
           '100%': { 'background-position': '0 0' }
+        },
+        gridGoDown: {
+          '0%': {
+            'background-position-y': '0',
+            '-webkit-mask-position': '50% 0',
+            'mask-position': '50% 0'
+          },
+          '100%': {
+            'background-position-y': '100%',
+            '-webkit-mask-position': '50% 100%',
+            'mask-position': '50% 100%'
+          }
         }
       },
       animation: {
@@ -84,7 +96,8 @@ module.exports = {
         travel: 'travel 2s ease-in-out infinite',
         fadeIn: 'fadeIn 1s ease-in-out',
         hiThere: 'hiThere 1s ease infinite;',
-        slider: 'slider 10s ease-in-out infinite'
+        slider: 'slider 10s ease-in-out infinite',
+        gridGoDown: 'gridGoDown 10s linear infinite'
       },
       backgroundSize: {
         'size-stripes': '20px 20px'

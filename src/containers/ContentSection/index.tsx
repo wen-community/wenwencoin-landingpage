@@ -27,6 +27,14 @@ const icons = [
 const Content = () => {
   return (
     <section className="radialGradient flex min-h-[max(calc(100%-142px),600px)] flex-col items-center justify-center gap-y-7 px-4 backdrop-blur-xl md:min-h-[max(calc(100%-142px),900px)] md:px-8 lg:gap-y-14 lg:px-16">
+      <div className="absolute inset-0 -z-10 overflow-hidden transition-[perspective] duration-300 ![perspective:1000px] sm:![perspective:1000px] md:![perspective:1000px] lg:![perspective:1000px]">
+        <div
+          style={{ transform: 'rotateX(75deg)' }}
+          className="absolute inset-0"
+        >
+          <div className="grid-animation animate-gridGoDown absolute -inset-x-full inset-y-0 -ml-[50%] flex w-[200vw] translate-y-0 items-center justify-center overflow-hidden" />
+        </div>
+      </div>
       <div className="relative flex size-[335px] -translate-y-10 items-center justify-center md:size-[502px]">
         {icons.slice(0, 7).map(({ icon: Icon, name }, index) => (
           <Link

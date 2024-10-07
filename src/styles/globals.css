@@ -74,3 +74,32 @@ body {
 .leaflet-popup-content {
   @apply !m-0;
 }
+
+.grid-animation {
+  --right: white;
+  --left: white;
+  background-image: linear-gradient(
+    to right,
+    var(--left) 45%,
+    transparent 50%,
+    var(--right) 55%
+  );
+  -webkit-mask-image: linear-gradient(90deg, #000 2px, transparent 0),
+    linear-gradient(180deg, #000 2px, transparent 0);
+  mask-image: linear-gradient(90deg, #000 2px, transparent 0),
+    linear-gradient(180deg, #000 2px, transparent 0);
+  -webkit-mask-size: 60px 60px;
+  mask-size: 60px 60px;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  inset: -100% 0;
+
+}
+
+@media (min-width: 1024px) {
+  .grid-animation {
+    animation-duration: 60s;
+    -webkit-mask-size: 80px 80px;
+    mask-size: 80px 80px;
+  }
+}
