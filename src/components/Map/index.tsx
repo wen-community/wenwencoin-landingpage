@@ -16,9 +16,8 @@ const MapUpdater = ({ continent }: { continent: string | null }) => {
 
   useEffect(() => {
     if (continent && CONTINENTS_POSITION[continent]) {
-      map.setView(CONTINENTS_POSITION[continent], ZOOM_LEVEL)
-    } else {
-      map.setView([MAP_CENTER.lat, MAP_CENTER.lng], 3)
+      map.setView(CONTINENTS_POSITION[continent])
+      map.setView([MAP_CENTER.lat, MAP_CENTER.lng])
     }
   }, [continent, map])
 
@@ -29,15 +28,18 @@ const Map = ({ users }: { users: IUser[] }) => {
   const searchParams = useSearchParams()
   const continent = searchParams.get('continent')
   const mapRef = useRef(null)
-
+  const isMobile = window.matchMedia('(max-width: 600px)').matches
   return (
     <div className="relative flex h-[695px] w-full">
       <MapContainer
         ref={mapRef}
         center={[MAP_CENTER.lat, MAP_CENTER.lng]}
-        zoom={3}
+        zoom={ZOOM_LEVEL}
         preferCanvas={true}
         zoomAnimation
+        scrollWheelZoom={isMobile}
+        dragging={isMobile}
+        zoomControl={isMobile}
       >
         <TileLayer
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=yLxcIp3UUDBGuYbjZXuk"

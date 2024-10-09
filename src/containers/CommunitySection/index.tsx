@@ -33,14 +33,13 @@ const CommunitySection = () => {
         </div>
       </div>
 
-      {/* Right Section: Map and Add Location */}
       <div className="flex flex-col gap-10">
         <AddLocation
           fetchMarkers={fetchMarkers}
           showForm={showForm}
           setShowForm={setShowForm}
         />
-        <div className="relative h-[600px] w-full overflow-hidden">
+        <div className="relative mt-6 h-[600px] w-full overflow-hidden">
           <MapComponent users={users} />
         </div>
       </div>

@@ -103,3 +103,11 @@ body {
     mask-size: 80px 80px;
   }
 }
+
+@media (max-width: 768px) {
+  .grid-animation {
+    animation-duration: 25s;
+    -webkit-mask-size: 70px 70px;
+    mask-size: 70px 70px;
+  }
+}

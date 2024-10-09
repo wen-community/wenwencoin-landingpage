@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { FlipWords, NextLink } from '@/components'
+import { FlipWords } from '@/components'
 import {
   Africa,
   Antarctica,
@@ -69,9 +69,8 @@ const Content = () => {
           <FlipWords words={['World', 'Massess', 'Universe', 'Cults']} />, One
           Wen at a time.
         </p>
-        <NextLink href="#about">Learn More</NextLink>
       </div>
-      <Arrow className="hidden animate-bounce md:block" />
+      <Arrow className="block animate-bounce" />
     </section>
   )
 }
