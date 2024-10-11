@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 
 import { AddLocation, CountUp, NextLink } from '@/components'
 import { MapComponent } from '@/components/Map/OpenStreetMap'
-import { MIN_WEN_AMOUNT } from '@/constants'
+import { HOLDERS_WORLDWIDE, MIN_WEN_AMOUNT } from '@/constants'
 import { usePhantomWallet } from '@/contexts/PhantomWalletContext'
 import { supabase } from '@/services/supabase'
 import { IUser } from '@/types'
@@ -74,7 +74,7 @@ const JoinCommunity = () => {
               <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
             </span>
             <span className="relative flex text-2xl">
-              <CountUp end={286455} />
+              <CountUp end={HOLDERS_WORLDWIDE} />
             </span>
           </h2>
           <p className="text-base">Holders Worldwide</p>
@@ -88,7 +88,7 @@ const JoinCommunity = () => {
         />
       </div>
       <section className="min-h-[50%] gap-8 py-12 md:py-16">
-        <MapComponent users={users} />
+        <MapComponent users={users} enableInteraction={true} />
       </section>
     </>
   )

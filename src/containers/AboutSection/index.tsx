@@ -12,7 +12,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="flex flex-col overflow-hidden py-4 lg:flex-row"
+      className="mt-10 flex flex-col overflow-hidden py-4 lg:flex-row"
     >
       <div className="flex flex-col gap-7 lg:w-1/2">
         <Image
@@ -59,7 +59,7 @@ const AboutSection = () => {
           <div className="flex flex-col justify-between gap-2 [&>*]:h-14">
             <HandHeart />
             <h2 className="flex text-4xl font-bold">
-              <CountUp end={280000} />+
+              <CountUp end={270000} />+
             </h2>
             <p>Holders Worldwide</p>
           </div>

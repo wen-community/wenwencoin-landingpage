@@ -24,7 +24,7 @@ const CommunitySection = () => {
   }, [fetchMarkers])
 
   return (
-    <section id="community" className="flex flex-col gap-10 py-4">
+    <section id="community" className="mt-10 flex flex-col gap-10 py-4">
       {/* Left Section: Content */}
       <div className="flex flex-col gap-4 lg:w-1/2">
         <h2 className="text-4xl font-bold">Join the Community</h2>
@@ -39,8 +39,8 @@ const CommunitySection = () => {
           showForm={showForm}
           setShowForm={setShowForm}
         />
-        <div className="relative mt-6 h-[600px] w-full overflow-hidden">
-          <MapComponent users={users} />
+        <div className="relative mt-5 h-[600px] w-full overflow-hidden">
+          <MapComponent users={users} enableInteraction={false} />
         </div>
       </div>
     </section>
