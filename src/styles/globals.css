@@ -26,15 +26,15 @@ body {
 
 .radialGradient {
   background: radial-gradient(
-    60% 50% at 95% 95%,
-    rgba(135, 186, 225, 0.9) 0%,
-    rgba(150, 190, 220, 0) 100%
-  ),
-  radial-gradient(
-    75% 50% at 5% 95%,
-    rgba(151, 156, 222, 0.8) 0%,
-    rgba(122, 127, 195, 0) 100%
-);
+      60% 50% at 95% 95%,
+      rgba(135, 186, 225, 0.9) 0%,
+      rgba(150, 190, 220, 0) 100%
+    ),
+    radial-gradient(
+      75% 50% at 5% 95%,
+      rgba(151, 156, 222, 0.8) 0%,
+      rgba(122, 127, 195, 0) 100%
+    );
 }
 
 .leaflet-container {
@@ -93,7 +93,6 @@ body {
   -webkit-mask-repeat: repeat;
   mask-repeat: repeat;
   inset: -100% 0;
-
 }
 
 @media (min-width: 1024px) {
@@ -110,4 +109,8 @@ body {
     -webkit-mask-size: 70px 70px;
     mask-size: 70px 70px;
   }
+}
+
+#jupiter-terminal-instance {
+  @apply z-[500] !h-0 !w-0;
 }

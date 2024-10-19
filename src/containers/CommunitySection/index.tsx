@@ -29,7 +29,7 @@ const CommunitySection = () => {
       <div className="flex flex-col gap-4 lg:w-1/2">
         <h2 className="text-4xl font-bold">Join the Community</h2>
         <div className="flex max-w-screen-sm flex-col gap-8 font-semibold">
-          <NextLink href="/community">Join the Community</NextLink>
+          <NextLink href="/community">Drop my pin</NextLink>
         </div>
       </div>
 

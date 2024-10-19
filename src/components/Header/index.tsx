@@ -61,11 +61,7 @@ const Header = ({
         </Link>
         <nav
           className={cn(
-            'justity-self-center hidden w-full items-center justify-center gap-x-8 font-semibold lg:flex',
-            {
-              hidden: style === 'primary',
-              'flex gap-x-4': style === 'secondary'
-            }
+            'hidden w-full items-center justify-center gap-x-8 font-semibold md:flex'
           )}
         >
           <Link href="/#about">About</Link>

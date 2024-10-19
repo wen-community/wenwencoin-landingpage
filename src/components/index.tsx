@@ -9,6 +9,7 @@ export { default as CountUp } from './CountUp'
 export { default as VisibilitySensor } from './VisibilitySensor'
 export { default as FlipWords } from './FlipWords'
 export { default as ToolTip } from './ToolTip'
+export { default as SwapWidget } from './SwapWidget'
 
 export {
   PawPrint,
