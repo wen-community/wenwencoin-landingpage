@@ -16,7 +16,6 @@ const SwapWidget = () => {
         formProps: {
           fixedInputMint: true, // Allow only SOL as input
           fixedOutputMint: true, // Allow only WEN as output
-          swapMode: 'ExactIn', // Swap mode
           initialInputMint: 'So11111111111111111111111111111111111111112', // SOL mint address
           initialOutputMint: WEN_PUBLIC_ADDRESS // WEN token mint address from environment variable
         }

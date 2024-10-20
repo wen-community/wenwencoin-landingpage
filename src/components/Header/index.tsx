@@ -93,14 +93,17 @@ const Header = ({
             >
               <Image
                 src={`${IMAGE_URL}/birdeye_logo.webp`}
-                width={16}
-                height={16}
+                width={30}
+                height={30}
                 alt="Birdeye"
               />
             </Link>
           </div>
-
-          <NextLink href="https://jup.ag/swap/USDC-WEN" target="_blank">
+          <NextLink
+            href="https://jup.ag/swap/USDC-WEN"
+            target="_blank"
+            className="w-36"
+          >
             Trade WEN
           </NextLink>
           <button
