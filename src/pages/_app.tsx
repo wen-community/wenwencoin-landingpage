@@ -19,9 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
         </Layout>
       </AnimationProvider>
       <Toaster
-        position="bottom-right"
+        position="top-right"
         containerStyle={{
-          bottom: '1.25rem',
+          top: '1.25rem',
           right: '1.25rem'
         }}
       />

@@ -9,29 +9,30 @@ const SwapWidget = () => {
     try {
       const mod = await import('@jup-ag/terminal')
       const init = mod.init
-
+      const SOL_MINT = 'So11111111111111111111111111111111111111112'
       init({
-        displayMode: 'widget', // Setting the display mode to widget
-        endpoint: QUICKNODE_URL, // Use your QuickNode endpoint
+        displayMode: 'widget',
+        endpoint: QUICKNODE_URL,
+        strictTokenList: true,
         formProps: {
-          fixedInputMint: true, // Allow only SOL as input
-          fixedOutputMint: true, // Allow only WEN as output
-          initialInputMint: 'So11111111111111111111111111111111111111112', // SOL mint address
-          initialOutputMint: WEN_PUBLIC_ADDRESS // WEN token mint address from environment variable
+          fixedInputMint: false,
+          fixedOutputMint: true,
+          initialInputMint: SOL_MINT,
+          initialOutputMint: WEN_PUBLIC_ADDRESS
         }
       })
 
-      setInitialized(true) // Mark as initialized
+      setInitialized(true)
     } catch (error) {
       console.error('Failed to load Jupiter Terminal:', error)
     }
-  }, [QUICKNODE_URL, WEN_PUBLIC_ADDRESS]) // Dependencies for useCallback
+  }, [QUICKNODE_URL, WEN_PUBLIC_ADDRESS])
 
   useEffect(() => {
     if (typeof window !== 'undefined' && !initialized) {
-      initializeJupiter() // Call the memoized function
+      initializeJupiter()
     }
-  }, [initialized, initializeJupiter]) // Only necessary dependencies
+  }, [initialized, initializeJupiter])
 
   return (
     <div id="jupiter-widget" className="absolute">

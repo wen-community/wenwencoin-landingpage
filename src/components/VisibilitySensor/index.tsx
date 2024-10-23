@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useRef } from 'react'
 
-import useOnScreen from '@/hooks/useOnScreen'
+// import useOnScreen from '@/hooks/useOnScreen'
 
 const VisibilitySensor = ({
   children,
@@ -12,8 +12,8 @@ const VisibilitySensor = ({
   setIsVisible: (isVisible: boolean) => void
 }) => {
   const ref = useRef<HTMLDivElement>(null)
-  const isVisible = useOnScreen(ref)
-
+  // const isVisible = useOnScreen(ref)
+  const isVisible = true
   useEffect(() => {
     setIsVisible(isVisible)
   }, [isVisible, setIsVisible])
