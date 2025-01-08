@@ -46,6 +46,7 @@ export type Database = {
           telegram_name: string | null
           twitter_name: string
           username: string
+          wallet_address: string | null
         }
         Insert: {
           city: string
@@ -56,6 +57,7 @@ export type Database = {
           telegram_name?: string | null
           twitter_name?: string
           username: string
+          wallet_address?: string | null
         }
         Update: {
           city?: string
@@ -66,6 +68,7 @@ export type Database = {
           telegram_name?: string | null
           twitter_name?: string
           username?: string
+          wallet_address?: string | null
         }
         Relationships: [
           {
@@ -90,6 +93,7 @@ export type Database = {
           longitude: string
           twitter: string
           telegram: string
+          walletaddress: string
         }
         Returns: undefined
       }

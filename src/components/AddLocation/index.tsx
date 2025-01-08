@@ -9,6 +9,7 @@ import toast from 'react-hot-toast'
 
 import * as yup from 'yup'
 
+import { usePhantomWallet } from '@/contexts/PhantomWalletContext'
 import { supabase } from '@/services/supabase'
 import { DEFAULT_CITY, ICity } from '@/types'
 import { cn } from '@/utils/cn'
@@ -38,6 +39,8 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
   const [name, setName] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
+  const { publicKey } = usePhantomWallet()
+
   const handleAddLocation = useCallback(
     async (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault()
@@ -46,6 +49,13 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
         setDropDownError('Please select a location')
         return
       }
+
+      if (!publicKey) {
+        toast.error('Please connect your wallet')
+        setIsLoading(false)
+        return
+      }
+
       try {
         const username = await nameSchema.validate(name)
 
@@ -55,12 +65,14 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
           latitude: selected.lat,
           longitude: selected.lng,
           twitter: twitterName,
-          telegram: telegramName
+          telegram: telegramName,
+          walletaddress: publicKey
         })
         setIsLoading(false)
 
         if (error) {
-          toast.error(error.message)
+          console.error(error.message)
+          toast.error('An error occurred, please try again')
           return
         } else toast.success('Thanks for adding a location!')
         fetchMarkers()
@@ -75,13 +87,14 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
       }
     },
     [
-      fetchMarkers,
-      name,
+      selected.name,
       selected.lat,
       selected.lng,
-      selected.name,
+      publicKey,
+      name,
       twitterName,
-      telegramName
+      telegramName,
+      fetchMarkers
     ]
   )
 
