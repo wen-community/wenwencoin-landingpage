@@ -70,7 +70,7 @@ const Map = ({
         <Cluster users={users} />
         <MapUpdater continent={continent} />
         {showHolders ? (
-          <div className="absolute right-5 top-5 z-[1000] flex flex-col items-end gap-2 rounded-lg bg-black/50 px-5 py-3 text-white">
+          <div className="absolute right-5 top-5 z-[500] flex flex-col items-end gap-2 rounded-lg bg-black/50 px-5 py-3 text-white">
             <h2 className="relative flex items-center gap-2 text-5xl font-semibold">
               <span className="relative top-0 flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>

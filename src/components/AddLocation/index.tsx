@@ -72,7 +72,7 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
 
         if (error) {
           console.error(error.message)
-          toast.error('An error occurred, please try again')
+          toast.error('Location already pinned for this wallet!')
           return
         } else toast.success('Thanks for adding a location!')
         fetchMarkers()
