@@ -36,14 +36,20 @@ const JoinCommunity = () => {
           {connected ? (
             <>
               {isEligible ? (
-                <button
-                  onClick={() => setShowForm(true)}
-                  className="w-max rounded-2.5 border bg-black px-5 py-2.5 font-medium text-white transition-colors hover:border-black hover:bg-white hover:text-black disabled:opacity-50"
-                  type="button"
-                  disabled={showForm}
-                >
-                  Add my location
-                </button>
+                <>
+                  <button
+                    onClick={() => setShowForm(true)}
+                    className="w-max rounded-2.5 border bg-black px-5 py-2.5 font-medium text-white transition-colors hover:border-black hover:bg-white hover:text-black disabled:opacity-50"
+                    type="button"
+                    disabled={showForm}
+                  >
+                    Add my location
+                  </button>
+                  <p>
+                    To interact with map and view the community, select to drop
+                    your pin
+                  </p>
+                </>
               ) : (
                 <div className="flex flex-col gap-3">
                   <h2 className="font-semibold">
@@ -56,6 +62,10 @@ const JoinCommunity = () => {
                   >
                     Buy Now
                   </NextLink>
+                  <p>
+                    To interact with map and view the community, select to drop
+                    your pin
+                  </p>
                 </div>
               )}
             </>

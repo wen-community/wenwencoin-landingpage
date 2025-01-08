@@ -60,6 +60,8 @@ const Map = ({
         scrollWheelZoom={zoomEnable}
         dragging={zoomEnable}
         zoomControl={zoomEnable}
+        doubleClickZoom={zoomEnable}
+        touchZoom={zoomEnable}
       >
         <TileLayer
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=yLxcIp3UUDBGuYbjZXuk"

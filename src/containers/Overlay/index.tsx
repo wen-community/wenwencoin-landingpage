@@ -59,7 +59,7 @@ const Overlay = () => {
           className="absolute inset-0 flex h-screen flex-col items-center justify-center gap-4 bg-gradient-to-br from-thunder via-puce to-blue-950 py-10 transition-[clip-path] duration-500 ease-in-out md:z-10"
         >
           <Image
-            src="/loading-screen-2.png"
+            src="/ThumbsUp-Rework.png"
             width={497}
             height={465}
             className="relative z-20 aspect-square w-36 transition-transform duration-300 ease-in-out md:w-64"

@@ -1,46 +1,31 @@
-const IMAGE_URL =
-  'https://niwzrpzmgomfotvsyjsy.supabase.co/storage/v1/object/public/assets'
-
 const BRAND_KIT = [
   {
-    url: `${IMAGE_URL}/brand_image_6.webp`,
-    title: 'Full Body + Background Text',
+    url: `/brands/wenbrand2.png`,
+    title: 'Mouth Closed',
     width: 300,
     height: 300
   },
   {
-    url: `${IMAGE_URL}/brand_image_3.webp`,
-    title: 'Mouth Open',
-    width: 300,
-    height: 300
-  },
-  {
-    url: `${IMAGE_URL}/brand_image_7.webp`,
+    url: `/brands/wen-head.png`,
     title: 'Wen Cat Full Body',
     width: 300,
     height: 300
   },
   {
-    url: `${IMAGE_URL}/brand_image_2.webp`,
+    url: `/brands/wen-logo.jpg`,
     title: 'Head + Text',
     width: 300,
     height: 300
   },
   {
-    url: `${IMAGE_URL}/brand_image_8.webp`,
+    url: `/brands/wenbrand1.png`,
     title: 'Wen Text',
-    width: 300,
-    height: 300
-  },
-  {
-    url: `${IMAGE_URL}/brand_image_4.webp`,
-    title: 'Mouth Closed',
     width: 300,
     height: 300
   },
 
   {
-    url: `${IMAGE_URL}/brand_image_1.webp`,
+    url: `/brands/wenbrand3.png`,
     title: 'Head + Text Vertical',
     width: 300,
     height: 300

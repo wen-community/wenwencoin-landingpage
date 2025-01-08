@@ -30,6 +30,9 @@ const CommunitySection = () => {
         <div className="flex max-w-screen-sm flex-col gap-8 font-semibold">
           <NextLink href="/community">Drop my pin</NextLink>
         </div>
+        <p>
+          To interact with map and view the community, select to drop your pin
+        </p>
       </div>
 
       <div className="flex flex-col gap-10">
