@@ -52,7 +52,7 @@ const AboutSection = () => {
           <div className="flex flex-col justify-between gap-2 [&>*]:h-14">
             <HandHeart />
             <h2 className="flex text-4xl font-bold">
-              <CountUp end={250000} />+
+              <CountUp end={240000} />+
             </h2>
             <p>Holders Worldwide</p>
           </div>
