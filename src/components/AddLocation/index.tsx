@@ -32,6 +32,7 @@ const nameSchema = yup
 const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
   const [selected, setSelected] = useState<ICity>(DEFAULT_CITY)
   const [twitterName, setTwitterName] = useState<string>('')
+  const [telegramName, setTelegramName] = useState<string>('')
   const [dropdownError, setDropDownError] = useState<string>('')
   const [nameError, setNameError] = useState<string>('')
   const [name, setName] = useState<string>('')
@@ -53,7 +54,8 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
           city_name: selected.name,
           latitude: selected.lat,
           longitude: selected.lng,
-          twitter: twitterName
+          twitter: twitterName,
+          telegram: telegramName
         })
         setIsLoading(false)
 
@@ -72,7 +74,15 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
         }
       }
     },
-    [fetchMarkers, name, selected.lat, selected.lng, selected.name, twitterName]
+    [
+      fetchMarkers,
+      name,
+      selected.lat,
+      selected.lng,
+      selected.name,
+      twitterName,
+      telegramName
+    ]
   )
 
   return (
@@ -86,7 +96,7 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
     >
       <form
         onSubmit={handleAddLocation}
-        className="flex flex-wrap items-end gap-5"
+        className="flex flex-wrap items-end gap-5 text-white"
       >
         <FormLine
           error={nameError}
@@ -108,6 +118,13 @@ const AddLocation = ({ showForm, setShowForm, fetchMarkers }: IAddLocation) => {
           title="Twitter / Username"
           placeholder="elonmusk"
           onChange={(e) => setTwitterName(e.target.value)}
+        />
+        <FormLine
+          error={nameError}
+          id="telegram"
+          title="telegram / Username"
+          placeholder="elonmusk"
+          onChange={(e) => setTelegramName(e.target.value)}
         />
         <button
           disabled={isLoading || selected.name === ''}

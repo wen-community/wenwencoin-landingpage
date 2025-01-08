@@ -1,5 +1,3 @@
-// contexts/PhantomWalletContext.tsx
-
 import React, {
   createContext,
   ReactNode,
@@ -9,11 +7,14 @@ import React, {
   useState
 } from 'react'
 
+import {
+  ASSOCIATED_TOKEN_PROGRAM_ID,
+  TOKEN_PROGRAM_ID
+} from '@solana/spl-token'
 import { Connection, ParsedAccountData, PublicKey } from '@solana/web3.js'
 
 import { MIN_WEN_AMOUNT } from '@/constants'
 
-// Type definition for the Solana object
 interface Solana {
   isPhantom: boolean
   publicKey: PublicKey | null
@@ -80,7 +81,17 @@ export const PhantomWalletProvider: React.FC<PhantomWalletProviderProps> = ({
       const connection = new Connection(process.env.QUICKNODE_URL!)
       const ownerPublicKey = new PublicKey(publicKey)
       const mintPublicKey = new PublicKey(process.env.WEN_PUBLIC_ADDRESS!)
-      const info = await connection.getTokenAccountBalance(ownerPublicKey)
+      const [associatedTokenAddress] = await PublicKey.findProgramAddress(
+        [
+          ownerPublicKey.toBuffer(),
+          TOKEN_PROGRAM_ID.toBuffer(),
+          mintPublicKey.toBuffer()
+        ],
+        ASSOCIATED_TOKEN_PROGRAM_ID
+      )
+      const info = await connection.getTokenAccountBalance(
+        associatedTokenAddress
+      )
       const amount = info?.value?.amount || 0
       const mintInfo = await connection.getParsedAccountInfo(mintPublicKey)
       const decimals =

@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { CountUp, HandHeart, Plugs, VisibilitySensor } from '@/components'
-import IMAGE_URL from '@/constants/ImageURL'
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
@@ -15,12 +14,6 @@ const AboutSection = () => {
       className="mt-10 flex flex-col overflow-hidden py-4 lg:flex-row"
     >
       <div className="flex flex-col gap-7 lg:w-1/2">
-        <Image
-          src={`${IMAGE_URL}/wen_head_logo.webp`}
-          width={82}
-          height={73}
-          alt="Wen Wen Coin"
-        />
         <h2 className="text-4xl font-bold">What is WEN</h2>
         <div className="flex max-w-screen-md flex-col gap-8 font-semibold">
           <p>
@@ -38,7 +31,7 @@ const AboutSection = () => {
             Wen is the proud owner of the #1 and #2 cat accounts in the world (
             <Link
               href="https://x.com/ShouldHaveCat"
-              className="text-purple hover:underline"
+              className="text-puce hover:underline"
               target="_blank"
             >
               @shouldhavecat
@@ -46,7 +39,7 @@ const AboutSection = () => {
             &{' '}
             <Link
               href="https://x.com/PostsOfCats"
-              className="text-purple hover:underline"
+              className="text-puce hover:underline"
               target="_blank"
             >
               @postsofcats
@@ -55,18 +48,18 @@ const AboutSection = () => {
             onboard the masses to the cutest cat in crypto.
           </p>
         </div>
-        <div className="flex flex-col gap-6 gap-x-28 pt-7 md:flex-row">
+        <div className="flex flex-row gap-6 gap-x-20 pt-7 md:gap-x-28">
           <div className="flex flex-col justify-between gap-2 [&>*]:h-14">
             <HandHeart />
             <h2 className="flex text-4xl font-bold">
-              <CountUp end={270000} />+
+              <CountUp end={250000} />+
             </h2>
             <p>Holders Worldwide</p>
           </div>
           <div className="flex flex-col justify-between gap-2 [&>*]:h-14">
             <Plugs />
             <h2 className="flex text-4xl font-bold">
-              <CountUp end={90} />+
+              <CountUp end={345} />+
             </h2>
             <p>Integrations</p>
           </div>
@@ -74,17 +67,17 @@ const AboutSection = () => {
       </div>
       <VisibilitySensor
         setIsVisible={setIsVisible}
-        className="relative flex w-full justify-center pb-[33%] lg:pb-0"
+        className="relative flex w-full justify-center pb-[20%] lg:pb-0"
       >
         {isVisible && (
-          <div className="defaultGradient absolute top-1/20 aspect-4/3 w-full max-w-screen-sm animate-fadeIn rounded-3xl" />
+          <div className="absolute top-1/20 aspect-4/3 w-full max-w-screen-sm animate-fadeIn rounded-3xl" />
         )}
         <Image
-          src={`${IMAGE_URL}/wen_full_body.webp`}
-          width={581}
-          height={489}
+          src="/about-page.png"
+          width={841}
+          height={999}
           alt="Wen Wen Full Body"
-          className="bottom-0 z-10 max-h-[489px] w-2/3 translate-y-1/3 object-contain"
+          className="bottom-0 z-10 max-h-[750px] w-2/3 translate-y-12 object-contain md:-translate-y-3"
           priority
         />
       </VisibilitySensor>

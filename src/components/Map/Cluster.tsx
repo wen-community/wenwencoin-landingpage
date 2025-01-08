@@ -110,6 +110,7 @@ const Cluster = ({ users }: { users: IUser[] }) => {
               <MarkerDiv
                 name={cluster.properties.username}
                 twitterName={cluster.properties.twitter_name}
+                telegramName={cluster.properties.twitter_name}
               />
             </Popup>
           </Marker>

@@ -59,7 +59,8 @@ const FlipWords = ({
           scale: 2,
           position: 'absolute'
         }}
-        className={cn('relative z-10 inline-block pl-3 text-purple', className)}
+        // eslint-disable-next-line prettier/prettier
+        className={cn('text-puce relative z-10 inline-block pl-3', className)}
         key={currentWord}
       >
         {/* edit suggested by Sajal: https://x.com/DewanganSajal */}

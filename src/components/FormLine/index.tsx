@@ -35,7 +35,7 @@ const FormLine: ForwardRefRenderFunction<HTMLInputElement, IFormLine> = (
         <input
           {...restProps}
           id={id}
-          className="rounded-lg border border-black p-2 outline-none"
+          className="rounded-lg border border-black p-2 text-black outline-none"
           ref={ref}
           required={required}
           aria-label={title}

@@ -30,4 +30,5 @@ export type IUser = {
   lng: string
   created_at: string
   twitter_name: string
+  telegram_name: string | null
 }

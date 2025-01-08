@@ -56,19 +56,19 @@ const Overlay = () => {
       <div className="absolute top-0 z-50 flex h-screen w-screen items-center justify-center">
         <div
           ref={animatedRef}
-          className="absolute inset-0 flex h-screen flex-col items-center justify-center gap-14 bg-gradient-to-br from-skyBlue via-lightBlue to-purple py-10 transition-[clip-path] duration-500 ease-in-out md:z-10 md:gap-28"
+          className="absolute inset-0 flex h-screen flex-col items-center justify-center gap-4 bg-gradient-to-br from-thunder via-puce to-blue-950 py-10 transition-[clip-path] duration-500 ease-in-out md:z-10"
         >
           <Image
-            src="/logo.webp"
-            width={297}
-            height={265}
-            className="relative z-20 aspect-square w-36 animate-hiThere transition-transform duration-300 ease-in-out md:w-64"
+            src="/loading-screen-2.png"
+            width={497}
+            height={465}
+            className="relative z-20 aspect-square w-36 transition-transform duration-300 ease-in-out md:w-64"
             alt="Wen Wen Coin"
             priority
           />
-          <div className="relative h-3 w-60 overflow-hidden rounded-lg bg-lightGray md:w-80">
+          <div className="relative h-3 w-60 overflow-hidden rounded-lg bg-puce md:w-80">
             <div
-              className="absolute left-0 top-0 h-full animate-progressBar rounded-l-lg bg-skyBlue bg-stripes bg-size-stripes transition-[width] duration-300 ease-in-out"
+              className="absolute left-0 top-0 h-full animate-progressBar rounded-l-lg bg-puce bg-stripes bg-size-stripes transition-[width] duration-300 ease-in-out"
               style={{ width }}
             ></div>
           </div>

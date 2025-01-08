@@ -137,7 +137,7 @@ const DropDown = ({
           {...props}
         />
         {showDropdown && (
-          <ul className="absolute top-24 z-[401] flex w-full flex-col gap-2 overflow-hidden rounded-md bg-white shadow-xl">
+          <ul className="absolute top-24 z-[401] flex w-full flex-col gap-2 overflow-hidden rounded-md bg-black shadow-xl">
             {status === 'OK' && renderSuggestions()}
             {status !== 'OK' && (
               <li className="w-full truncate px-4 py-2 text-left text-sm">

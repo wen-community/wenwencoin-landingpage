@@ -1,5 +1,8 @@
-const Cross = () => (
+import { ISvgIcon } from './model'
+
+const Cross = ({ className }: ISvgIcon) => (
   <svg
+    className={className}
     width="15"
     height="16"
     viewBox="0 0 15 16"

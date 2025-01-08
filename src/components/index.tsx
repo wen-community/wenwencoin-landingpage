@@ -10,6 +10,7 @@ export { default as VisibilitySensor } from './VisibilitySensor'
 export { default as FlipWords } from './FlipWords'
 export { default as ToolTip } from './ToolTip'
 export { default as SwapWidget } from './SwapWidget'
+export { default as MasonaryGallery } from './MasonaryGallery'
 
 export {
   PawPrint,
@@ -34,5 +35,6 @@ export {
   Australia,
   Europe,
   NorthAmerica,
-  SouthAmerica
+  SouthAmerica,
+  Preview
 } from './icons'

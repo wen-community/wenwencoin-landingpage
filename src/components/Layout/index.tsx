@@ -27,15 +27,16 @@ const Layout = ({ children }: { children: ReactNode }) => {
       {pathname === '/' && <Overlay />}
       <main
         className={cn(
-          'h-full w-full overflow-y-scroll scroll-smooth [&>*]:px-4 md:[&>*]:px-8 lg:[&>*]:px-16',
+          'h-full w-full overflow-y-scroll scroll-smooth scrollbar-thin scrollbar-track-transparent [&>*]:px-4 md:[&>*]:px-8 lg:[&>*]:px-16',
           inter.className
         )}
       >
-        <Header className="bg-transparent" />
+        {/* <Header className="bg-transparent" /> */}
         {children}
         <Header
           style="secondary"
           className="flex-col gap-y-8 border-b-0 md:flex-row"
+          removeImage={true}
         />
         <footer className="flex flex-col-reverse items-center justify-center gap-6 border-t py-8 text-sm md:flex-row">
           <p>© 2024 WEN. All rights reserved.</p>

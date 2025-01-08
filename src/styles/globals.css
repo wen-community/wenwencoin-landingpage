@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply flex h-screen w-screen !scroll-auto bg-white antialiased outline-none;
+  @apply flex h-screen w-screen overflow-hidden bg-deepPurple bg-customImage bg-cover bg-no-repeat text-white antialiased outline-none;
 }
 
 #__next {
@@ -14,8 +14,9 @@ body {
 .defaultGradient {
   background: linear-gradient(
       159deg,
-      rgb(43, 142, 197, 0.7) 0%,
-      rgb(253, 253, 249, 0) 100%
+      rgba(54, 35, 50, 1) 0%,
+      rgba(198, 123, 143, 1) 50%,
+      rgba(127, 137, 158, 1) 100%
     ),
     linear-gradient(
       25deg,
@@ -27,13 +28,15 @@ body {
 .radialGradient {
   background: radial-gradient(
       60% 50% at 95% 95%,
-      rgba(135, 186, 225, 0.9) 0%,
-      rgba(150, 190, 220, 0) 100%
+      rgba(54, 35, 50, 0.9) 0%,
+      rgba(120, 45, 77, 0.6) 50%,
+      rgba(198, 123, 143, 0) 100%
     ),
     radial-gradient(
       75% 50% at 5% 95%,
-      rgba(151, 156, 222, 0.8) 0%,
-      rgba(122, 127, 195, 0) 100%
+      rgba(113, 144, 153, 0.8) 0%,
+      rgba(140, 180, 212, 0.4) 50%,
+      rgba(127, 137, 158, 0) 100%
     );
 }
 
@@ -75,42 +78,63 @@ body {
   @apply !m-0;
 }
 
-.grid-animation {
-  --right: white;
-  --left: white;
-  background-image: linear-gradient(
-    to right,
-    var(--left) 45%,
-    transparent 50%,
-    var(--right) 55%
-  );
-  -webkit-mask-image: linear-gradient(90deg, #000 2px, transparent 0),
-    linear-gradient(180deg, #000 2px, transparent 0);
-  mask-image: linear-gradient(90deg, #000 2px, transparent 0),
-    linear-gradient(180deg, #000 2px, transparent 0);
-  -webkit-mask-size: 60px 60px;
-  mask-size: 60px 60px;
-  -webkit-mask-repeat: repeat;
-  mask-repeat: repeat;
-  inset: -100% 0;
-}
-
-@media (min-width: 1024px) {
-  .grid-animation {
-    animation-duration: 60s;
-    -webkit-mask-size: 80px 80px;
-    mask-size: 80px 80px;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid-animation {
-    animation-duration: 25s;
-    -webkit-mask-size: 70px 70px;
-    mask-size: 70px 70px;
-  }
-}
-
 #jupiter-terminal-instance {
   @apply z-[500] !h-0 !w-0;
+}
+
+nav a {
+  position: relative;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+nav a:hover {
+  transform: scale(1.1);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.particle {
+  position: absolute;
+  background: white;
+  border-radius: 40%;
+  opacity: 0.8;
+  z-index: 0;
+  width: 2px;
+  height: 2px;
+  transition:
+    transform 10s ease,
+    opacity 5s ease;
+  animation:
+    pulsate 2s ease-in-out infinite,
+    move 3s ease-out forwards;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
 }

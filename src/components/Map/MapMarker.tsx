@@ -7,15 +7,17 @@ import { divIcon } from 'leaflet'
 
 import { IUser } from '@/types'
 
-import { Pin, TwitterV2 } from '../icons'
+import { Pin, TelegramV2, TwitterV2 } from '../icons'
 import ExternalLink from '../icons/ExternalLink'
 
 export const MarkerDiv = ({
   name,
-  twitterName
+  twitterName,
+  telegramName
 }: {
   name: string
   twitterName: string
+  telegramName: string | null
 }) => (
   <div className="flex w-40 flex-col rounded-lg bg-black/90 px-3 py-2 text-white">
     {twitterName ? (
@@ -39,13 +41,33 @@ export const MarkerDiv = ({
         </span>
       </>
     )}
+
+    {telegramName ? (
+      <Link
+        href={`https://t.me/${telegramName}`}
+        target="_blank"
+        className="flex items-center gap-1 text-xs !text-white"
+      >
+        <TelegramV2 />
+        {telegramName}
+        <ExternalLink className="-translate-y-0.5" />
+      </Link>
+    ) : (
+      <span className="flex items-center gap-1 text-xs text-white/60">
+        <TelegramV2 /> N/A
+      </span>
+    )}
   </div>
 )
 
 const LeafletMarker = ({ user }: { user: IUser }) => {
   const icon = divIcon({
     html: ReactDOMServer.renderToString(
-      <MarkerDiv name={user.username} twitterName={user.twitter_name} />
+      <MarkerDiv
+        name={user.username}
+        twitterName={user.twitter_name}
+        telegramName={user.telegram_name}
+      />
     )
   })
 

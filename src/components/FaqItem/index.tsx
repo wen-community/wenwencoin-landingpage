@@ -23,7 +23,7 @@ const FaqItem = ({ title, content }: IFaqItem) => {
       >
         <span className="w-[calc(100%-1.125rem)]">{title}</span>
         <Chevron
-          className={cn('transition-transform', {
+          className={cn('invert transition-transform', {
             'rotate-180 opacity-40': isOpen
           })}
         />

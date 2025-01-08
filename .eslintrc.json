@@ -24,7 +24,8 @@
     "@typescript-eslint",
     "react-hooks",
     "jsx-a11y",
-    "simple-import-sort"
+    "simple-import-sort",
+    "tailwindcss"
   ],
   "settings": {
     "react": {
@@ -56,6 +57,7 @@
     "jsx-a11y/click-events-have-key-events": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "jsx-a11y/no-static-element-interactions": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "tailwindcss/classnames-order": "error"
   }
 }

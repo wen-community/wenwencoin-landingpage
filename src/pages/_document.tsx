@@ -8,6 +8,7 @@ export default function Document() {
         <script src="https://terminal.jup.ag/main-v3.js" data-preload />
       </Head>
       <body>
+        <div id="modal-root" />
         <Main />
         <NextScript />
       </body>
