@@ -63,8 +63,8 @@ const JoinCommunity = () => {
                     Buy Now
                   </NextLink>
                   <p>
-                    To interact with map and view the community, select to drop
-                    your pin
+                    To interact with the map and view the community, click Drop
+                    my pin.
                   </p>
                 </div>
               )}

@@ -31,7 +31,7 @@ const CommunitySection = () => {
           <NextLink href="/community">Drop my pin</NextLink>
         </div>
         <p>
-          To interact with map and view the community, select to drop your pin
+          To interact with the map and view the community, click Drop my pin.
         </p>
       </div>
 
