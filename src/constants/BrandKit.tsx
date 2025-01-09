@@ -12,7 +12,7 @@ const BRAND_KIT = [
     height: 300
   },
   {
-    url: `/brands/wen-logo.jpg`,
+    url: `/brands/wen-logo.png`,
     title: 'Head + Text',
     width: 300,
     height: 300
