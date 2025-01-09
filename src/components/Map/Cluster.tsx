@@ -16,7 +16,13 @@ type IClusterProps = IUser & {
   cluster_id: number
 }
 
-const Cluster = ({ users }: { users: IUser[] }) => {
+const Cluster = ({
+  users,
+  zoomEnable
+}: {
+  users: IUser[]
+  zoomEnable: boolean
+}) => {
   const [bounds, setBounds] = useState<BBox | undefined>()
   const [zoom, setZoom] = useState(12)
   const map = useMap()
@@ -85,13 +91,17 @@ const Cluster = ({ users }: { users: IUser[] }) => {
               icon={pointIcon(cluster.properties.point_count, 50)}
               eventHandlers={{
                 click: () => {
-                  const expansionZoom = Math.min(
-                    supercluster.getClusterExpansionZoom(cluster.id as number),
-                    17
-                  )
-                  map.setView([latitude, longitude], expansionZoom, {
-                    animate: true
-                  })
+                  if (zoomEnable) {
+                    const expansionZoom = Math.min(
+                      supercluster.getClusterExpansionZoom(
+                        cluster.id as number
+                      ),
+                      17
+                    )
+                    map.setView([latitude, longitude], expansionZoom, {
+                      animate: true
+                    })
+                  }
                 }
               }}
             />

@@ -9,6 +9,12 @@ const CONTENT_KIT = [
     height: 308
   },
   {
+    url: `/content/wen-beem.png`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
     url: `${IMAGE_URL}/content_image_14.webp`,
     title: 'Sneaky Blinder',
     width: 341,
@@ -165,6 +171,13 @@ const CONTENT_KIT = [
     height: 114
   },
   {
+    url: `/content/fight-the-bear.png`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+
+  {
     url: `${IMAGE_URL}/content_image_33.webp`,
     title: 'Big Boy',
     width: 341,
@@ -249,6 +262,12 @@ const CONTENT_KIT = [
     height: 114
   },
   {
+    url: `/content/wenstairs.png`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
     url: `${IMAGE_URL}/content_image_28.webp`,
     title: 'Big Boy',
     width: 341,
@@ -280,6 +299,19 @@ const CONTENT_KIT = [
   },
   {
     url: `/content/wen-going-up.png`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/looking-out-window.png`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+
+  {
+    url: `/content/wenwolf.png`,
     title: 'Big Boy',
     width: 341,
     height: 114

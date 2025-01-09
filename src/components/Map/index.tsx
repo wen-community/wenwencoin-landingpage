@@ -69,7 +69,7 @@ const Map = ({
           minZoom={2}
           maxZoom={12}
         />
-        <Cluster users={users} />
+        <Cluster users={users} zoomEnable={zoomEnable} />
         <MapUpdater continent={continent} />
         {showHolders ? (
           <div className="absolute right-5 top-5 z-[500] flex flex-col items-end gap-2 rounded-lg bg-black/50 px-5 py-3 text-white">

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { CountUp, HandHeart, Plugs, VisibilitySensor } from '@/components'
+import { HOLDERS_WORLDWIDE } from '@/constants'
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
@@ -17,18 +18,22 @@ const AboutSection = () => {
         <h2 className="text-4xl font-bold">What is WEN</h2>
         <div className="flex max-w-screen-md flex-col gap-8 font-semibold">
           <p>
-            Wen is a coin on the Solana blockchain aiming to disrupt mainstream
-            audiences and become the ultimate social culture coin.
+            Wen is culture. Wen is a movement. Wen is the internet’s cutest cat
+            and the heart of a growing global phenomenon. More than a brand, Wen
+            is on a mission to become one of the world’s most iconic and beloved
+            IPs.
           </p>
           <p>
-            Wen started as a free airdrop to 1M+ recipients to give back to the
-            crypto community. There were zero influencers, whales, or insiders
-            involved and each recipient received the exact same amount - this
-            made Wen the fairest and widest distributed airdrop ever on Solana.
-            Emphasizing Wen is a coin for the people.
+            Wen started as a free airdrop to 1M+ recipients to give back. There
+            were zero influencers, whales, or insiders involved and each
+            recipient received the exact same amount - this made Wen the fairest
+            and widest distributed airdrop ever on Solana. Emphasizing Wen is a
+            coin for the people.
           </p>
+
           <p>
-            Wen is the proud owner of the #1 and #2 cat accounts in the world (
+            Wen is also the proud owner of the #1 and #2 cat accounts in the
+            world (
             <Link
               href="https://x.com/ShouldHaveCat"
               className="text-puce hover:underline"
@@ -44,15 +49,14 @@ const AboutSection = () => {
             >
               @postsofcats
             </Link>
-            ) The mission for Wen is to take over mainstream audiences and
-            onboard the masses to the cutest cat in crypto.
+            ) Together, we can bring Wen to everyone, everywhere.
           </p>
         </div>
         <div className="flex flex-row gap-6 gap-x-20 pt-7 md:gap-x-28">
           <div className="flex flex-col justify-between gap-2 [&>*]:h-14">
             <HandHeart />
             <h2 className="flex text-4xl font-bold">
-              <CountUp end={240000} />+
+              <CountUp end={HOLDERS_WORLDWIDE} />
             </h2>
             <p>Holders Worldwide</p>
           </div>

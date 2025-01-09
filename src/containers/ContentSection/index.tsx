@@ -20,7 +20,7 @@ const Content = () => {
       <div className="flex flex-col items-center gap-5 md:gap-8">
         <p className="relative max-w-screen-sm text-center text-2xl font-bold md:text-3xl">
           Onboarding the
-          <FlipWords words={['World', 'Massess', 'Universe', 'Cults']} />, One
+          <FlipWords words={['World', 'Masses', 'Universe', 'Cults']} />, One
           Wen at a time.
         </p>
         <Arrow className="block animate-bounce invert" />

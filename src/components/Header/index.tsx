@@ -5,7 +5,6 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useCallback } from 'react'
 
 import { Telegram, Twitter } from '@/components'
-import IMAGE_URL from '@/constants/ImageURL'
 import { cn } from '@/utils/cn'
 
 import { Cross, Hamburger } from '../icons'
@@ -113,11 +112,11 @@ const Header = ({
               className="group relative text-gray-800 transition-transform duration-300 hover:scale-110"
             >
               <Image
-                src={`${IMAGE_URL}/birdeye_logo.webp`}
-                width={20}
-                height={20}
+                src={`/birdeye.png`}
+                width={16}
+                height={16}
                 alt="Birdeye"
-                className="invert filter sm:h-[20px] sm:w-[20px] md:h-[18px] md:w-[35px]"
+                className="invert filter sm:h-[20px] sm:w-[20px] md:h-[16px] md:w-[30px]"
               />
               <span className="absolute bottom-[-6px] left-0 h-[2px] w-full scale-x-0 transform bg-white filter-none transition-transform duration-300 group-hover:scale-x-100" />
             </Link>
@@ -175,9 +174,9 @@ const Header = ({
               className="invert"
             >
               <Image
-                src={`${IMAGE_URL}/birdeye_logo.webp`}
-                width={16}
-                height={16}
+                src={`/birdeye.png`}
+                width={18}
+                height={18}
                 alt="Birdeye"
               />
             </Link>
