@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { CountUp, HandHeart, Plugs, VisibilitySensor } from '@/components'
-import { HOLDERS_WORLDWIDE } from '@/constants'
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
@@ -56,7 +55,7 @@ const AboutSection = () => {
           <div className="flex flex-col justify-between gap-2 [&>*]:h-14">
             <HandHeart />
             <h2 className="flex text-4xl font-bold">
-              <CountUp end={HOLDERS_WORLDWIDE} />
+              <CountUp end={247820} />
             </h2>
             <p>Holders Worldwide</p>
           </div>
