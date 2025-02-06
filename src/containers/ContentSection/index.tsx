@@ -5,7 +5,7 @@ import ParticleEffect from '@/components/ParticleEffect'
 const Content = () => {
   return (
     <section
-      className="content-section flex min-h-[max(calc(100%),600px)] flex-col items-center justify-between gap-y-7 rounded-lg bg-mobile px-4 pb-10 md:min-h-[max(calc(100%),900px)] md:bg-desktop md:px-8 lg:gap-y-14"
+      className="content-section flex min-h-[max(calc(100%),600px)] flex-col items-center justify-between gap-y-7 overflow-hidden rounded-lg bg-mobile px-4 pb-10 md:min-h-[max(calc(100%),900px)] md:bg-desktop md:px-8 lg:gap-y-14"
       style={{
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',

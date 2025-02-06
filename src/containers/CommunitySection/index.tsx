@@ -23,8 +23,32 @@ const CommunitySection = () => {
     fetchMarkers()
   }, [fetchMarkers])
 
+  const handleDeleteUser = async (walletAddress: string) => {
+    try {
+      const { error } = await supabase.rpc('delete_user_and_city', {
+        walletaddress: walletAddress
+      })
+      if (error) {
+        toast.error(error.message)
+      } else {
+        setUsers((prevUsers) =>
+          prevUsers.filter((user) => user.wallet_address !== walletAddress)
+        )
+        toast.success('Marker deleted successfully')
+      }
+    } catch (error) {
+      if (error) {
+        toast.error('Unable to delete marker')
+        console.log(error)
+      }
+    }
+  }
+
   return (
-    <section id="community" className="mt-10 flex flex-col gap-10 py-10">
+    <section
+      id="community"
+      className="mt-10 flex flex-col gap-10 overflow-hidden py-10"
+    >
       <div className="flex flex-col gap-4 lg:w-1/2">
         <h2 className="text-4xl font-bold">Join the Community</h2>
         <div className="flex max-w-screen-sm flex-col gap-8 font-semibold">
@@ -46,6 +70,7 @@ const CommunitySection = () => {
             users={users}
             enableInteraction={false}
             showHolders={false}
+            onDeleteUser={handleDeleteUser}
           />
         </div>
       </div>

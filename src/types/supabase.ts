@@ -46,7 +46,7 @@ export type Database = {
           telegram_name: string | null
           twitter_name: string
           username: string
-          wallet_address: string | null
+          wallet_address: string
         }
         Insert: {
           city: string
@@ -57,7 +57,7 @@ export type Database = {
           telegram_name?: string | null
           twitter_name?: string
           username: string
-          wallet_address?: string | null
+          wallet_address?: string
         }
         Update: {
           city?: string
@@ -68,7 +68,7 @@ export type Database = {
           telegram_name?: string | null
           twitter_name?: string
           username?: string
-          wallet_address?: string | null
+          wallet_address?: string
         }
         Relationships: [
           {
@@ -93,6 +93,12 @@ export type Database = {
           longitude: string
           twitter: string
           telegram: string
+          walletaddress: string
+        }
+        Returns: undefined
+      }
+      delete_user_and_city: {
+        Args: {
           walletaddress: string
         }
         Returns: undefined

@@ -34,11 +34,13 @@ const MapUpdater = ({ continent }: { continent: string | null }) => {
 const Map = ({
   users,
   enableInteraction = false,
-  showHolders = false
+  showHolders = false,
+  onDeleteUser
 }: {
   users: IUser[]
   enableInteraction: boolean
   showHolders: boolean
+  onDeleteUser: (walletAddress: string) => void
 }) => {
   const searchParams = useSearchParams()
   const continent = searchParams.get('continent')
@@ -49,6 +51,7 @@ const Map = ({
   if (zoomEnable && router.pathname == '/') {
     zoomEnable = false
   }
+
   return (
     <div className="relative flex h-[695px] w-full">
       <MapContainer
@@ -69,7 +72,11 @@ const Map = ({
           minZoom={2}
           maxZoom={12}
         />
-        <Cluster users={users} zoomEnable={zoomEnable} />
+        <Cluster
+          users={users}
+          zoomEnable={zoomEnable}
+          onDeleteUser={onDeleteUser}
+        />
         <MapUpdater continent={continent} />
         {showHolders ? (
           <div className="absolute right-5 top-5 z-[500] flex flex-col items-end gap-2 rounded-lg bg-black/50 px-5 py-3 text-white">

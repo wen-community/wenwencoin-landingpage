@@ -73,11 +73,13 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({ items }) => {
                 alt={item.title}
                 width={item.width}
                 height={item.height}
-                className="cursor-pointer rounded-lg bg-tertiary/15 object-cover"
+                className="cursor-pointer rounded-lg bg-tertiary/15 object-cover transition-[max-height] duration-500 ease-in-out"
                 onClick={() => openModal(item)}
+                style={{ maxHeight: '200px' }}
                 onLoad={(e) => {
                   const target = e.target as HTMLImageElement
                   target.parentElement!.style.height = 'auto'
+                  target.style.maxHeight = '700px'
                 }}
               />
             </div>
@@ -95,9 +97,9 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({ items }) => {
             <Image
               src={selectedImage.url}
               alt={selectedImage.title}
-              width={selectedImage.width}
-              height={selectedImage.height}
-              className="max-h-[90vh] max-w-full object-contain"
+              width={3000}
+              height={3000}
+              className="max-h-[90vh] w-full max-w-full rounded-xl object-contain"
             />
           </div>
 

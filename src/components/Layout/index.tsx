@@ -39,7 +39,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           removeImage={true}
         />
         <footer className="flex flex-col-reverse items-center justify-center gap-6 border-t py-8 text-sm md:flex-row">
-          <p>© 2025 WEN. All rights reserved.</p>
+          <p>© 2024 WEN. All rights reserved.</p>
         </footer>
       </main>
     </>

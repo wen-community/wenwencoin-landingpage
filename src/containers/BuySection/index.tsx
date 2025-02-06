@@ -2,7 +2,7 @@ import { BuyWenStep, NextLink } from '@/components'
 import BUY_WEN_STEPS from '@/constants/BuyWenSteps'
 
 const BuySection = () => (
-  <section className="flex flex-wrap gap-10 py-[2rem] md:py-[7rem]">
+  <section className="flex flex-wrap gap-10 overflow-hidden py-[2rem] md:py-[7rem]">
     <div className="flex flex-col gap-4 lg:w-1/2">
       <h2 className="text-10 font-bold">How to buy WEN</h2>
       <p className="flex max-w-screen-sm flex-col gap-8 font-semibold">

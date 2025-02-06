@@ -36,7 +36,7 @@ const DexSection = () => {
   }, [])
 
   return (
-    <section className="flex flex-col items-center !px-0">
+    <section className="flex flex-col items-center overflow-hidden !px-0">
       <h3 className="text-md px-4 pb-5 pt-20 text-center font-bold md:px-8 md:text-xl lg:px-16">
         WEN is trusted on 30+ CEXs and DEXes
       </h3>

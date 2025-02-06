@@ -31,4 +31,5 @@ export type IUser = {
   created_at: string
   twitter_name: string
   telegram_name: string | null
+  wallet_address: string | null
 }

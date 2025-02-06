@@ -62,7 +62,6 @@ const DropDown = ({
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
-    console.log(value)
     setValue(value)
     setShowDropdown(value !== '')
 

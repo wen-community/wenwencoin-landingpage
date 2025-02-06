@@ -3,13 +3,19 @@ const IMAGE_URL =
 
 const CONTENT_KIT = [
   {
+    url: `/content/wen-6.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
     url: `${IMAGE_URL}/content_image_12.webp`,
     title: 'Thanos',
     width: 341,
     height: 308
   },
   {
-    url: `/content/wen-beem.png`,
+    url: `/content/wen-beem.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114
@@ -73,14 +79,20 @@ const CONTENT_KIT = [
     height: 114
   },
   {
-    url: `/content/window_wen.jpg`,
+    url: `/content/window_wen.webp`,
     title: 'Window',
     width: 341,
     height: 114
   },
   {
-    url: `/content/china_wen.jpg`,
+    url: `/content/china_wen.webp`,
     title: 'China',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-13.webp`,
+    title: 'Big Boy',
     width: 341,
     height: 114
   },
@@ -91,7 +103,13 @@ const CONTENT_KIT = [
     height: 114
   },
   {
-    url: `/content/moon_wen.jpg`,
+    url: `/content/wen-4.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/moon_wen.webp`,
     title: 'Moon',
     width: 341,
     height: 114
@@ -110,44 +128,44 @@ const CONTENT_KIT = [
     height: 114
   },
   {
-    url: `/content/gate_wen.jpg`,
+    url: `/content/gate_wen.webp`,
     title: 'Gate',
     width: 341,
     height: 114
   },
   {
-    url: `/content/nemo_wen.jpg`,
+    url: `/content/nemo_wen.webp`,
     title: 'Nemo',
     width: 341,
     height: 114
   },
 
   {
-    url: `/content/toy_story_wen.jpg`,
+    url: `/content/toy_story_wen.webp`,
     title: 'Toy Story',
     width: 341,
     height: 114
   },
   {
-    url: `/content/shuttle_wen.jpg`,
+    url: `/content/shuttle_wen.webp`,
     title: 'Shuttle',
     width: 341,
     height: 114
   },
   {
-    url: `/content/book_wen.jpg`,
+    url: `/content/book_wen.webp`,
     title: 'Book',
     width: 341,
     height: 114
   },
   {
-    url: `/content/women_wen.jpg`,
+    url: `/content/women_wen.webp`,
     title: 'Women',
     width: 341,
     height: 114
   },
   {
-    url: `/content/deer_wen.jpg`,
+    url: `/content/deer_wen.webp`,
     title: 'Deer',
     width: 341,
     height: 114
@@ -171,7 +189,7 @@ const CONTENT_KIT = [
     height: 114
   },
   {
-    url: `/content/fight-the-bear.png`,
+    url: `/content/fight-the-bear.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114
@@ -238,6 +256,12 @@ const CONTENT_KIT = [
     height: 114
   },
   {
+    url: `/content/wen-17.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
     url: `${IMAGE_URL}/content_image_24.webp`,
     title: 'Big Boy',
     width: 341,
@@ -262,7 +286,7 @@ const CONTENT_KIT = [
     height: 114
   },
   {
-    url: `/content/wenstairs.png`,
+    url: `/content/wenstairs.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114
@@ -274,44 +298,124 @@ const CONTENT_KIT = [
     height: 114
   },
   {
-    url: `/content/how-to-train-your-wen.png`,
+    url: `/content/how-to-train-your-wen.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114
   },
   {
-    url: `/content/up.png`,
+    url: `/content/up.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114
   },
   {
-    url: `/content/jupiter-wen2.png`,
+    url: `/content/jupiter-wen2.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114
   },
   {
-    url: `/content/looking-at-moon.png`,
+    url: `/content/looking-at-moon.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114
   },
   {
-    url: `/content/wen-going-up.png`,
+    url: `/content/wen-going-up.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114
   },
   {
-    url: `/content/looking-out-window.png`,
+    url: `/content/looking-out-window.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wenwolf.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-1.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-2.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-3.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114
   },
 
   {
-    url: `/content/wenwolf.png`,
+    url: `/content/wen-5.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+
+  {
+    url: `/content/wen-7.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-8.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-9.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-10.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-11.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-12.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+
+  {
+    url: `/content/wen-14.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-15.webp`,
+    title: 'Big Boy',
+    width: 341,
+    height: 114
+  },
+  {
+    url: `/content/wen-16.webp`,
     title: 'Big Boy',
     width: 341,
     height: 114

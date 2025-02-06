@@ -27,6 +27,7 @@ module.exports = {
         purple: '#7A7FC3',
         bali: '#86A6B0',
         puce: '#c67b8f',
+        darkPuce: '#a05b6f',
         roseTaupe: '#6F455A',
         tertiary: '#F2F6FA',
         lightBlue: '#96BEDC',
@@ -100,6 +101,14 @@ module.exports = {
             '-webkit-mask-position': '50% 100%',
             'mask-position': '50% 100%'
           }
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' }
+        },
+        'float-zoom': {
+          from: { transform: 'translateY(500px) scale(0.3)' },
+          to: { transform: 'translateY(0) scale(1)' }
         }
       },
       animation: {
@@ -108,7 +117,9 @@ module.exports = {
         travel: 'travel 2s ease-in-out infinite',
         fadeIn: 'fadeIn 1s ease-in-out',
         hiThere: 'hiThere 1s ease infinite;',
-        slider: 'slider 30s linear infinite'
+        slider: 'slider 30s linear infinite',
+        slideUp: 'slideUp 0.5s ease-out forwards',
+        'float-zoom': 'float-zoom .3s ease-in-out'
       },
       backgroundSize: {
         'size-stripes': '20px 20px'

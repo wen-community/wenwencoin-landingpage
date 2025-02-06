@@ -1,31 +1,31 @@
 const BRAND_KIT = [
   {
-    url: `/brands/wenbrand2.png`,
+    url: `/brands/wenbrand2.webp`,
     title: 'Mouth Closed',
     width: 300,
     height: 300
   },
   {
-    url: `/brands/wen-head.png`,
+    url: `/brands/wen-head.webp`,
     title: 'Wen Cat Full Body',
     width: 300,
     height: 300
   },
   {
-    url: `/brands/wen-logo.png`,
+    url: `/brands/wen-logo.webp`,
     title: 'Head + Text',
     width: 300,
     height: 300
   },
   {
-    url: `/brands/wenbrand1.png`,
+    url: `/brands/wenbrand1.webp`,
     title: 'Wen Text',
     width: 300,
     height: 300
   },
 
   {
-    url: `/brands/wenbrand3.png`,
+    url: `/brands/wenbrand3.webp`,
     title: 'Head + Text Vertical',
     width: 300,
     height: 300

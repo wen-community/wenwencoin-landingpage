@@ -4,7 +4,7 @@ import { FAQ_ITEMS } from '@/constants'
 const FaqSection = () => (
   <section
     id="faq"
-    className="relative mb-5 hidden flex-col gap-10 bg-backgroundSecondary py-28 md:flex lg:flex-row"
+    className="relative mb-5 hidden flex-col gap-10 overflow-hidden bg-backgroundSecondary py-28 md:flex lg:flex-row"
   >
     <div className="flex flex-col gap-4 lg:w-1/2">
       <h2 className="text-10 font-bold">FAQ</h2>

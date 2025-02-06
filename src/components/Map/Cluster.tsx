@@ -18,10 +18,12 @@ type IClusterProps = IUser & {
 
 const Cluster = ({
   users,
-  zoomEnable
+  zoomEnable,
+  onDeleteUser
 }: {
   users: IUser[]
   zoomEnable: boolean
+  onDeleteUser: (walletAddress: string) => void
 }) => {
   const [bounds, setBounds] = useState<BBox | undefined>()
   const [zoom, setZoom] = useState(12)
@@ -121,6 +123,8 @@ const Cluster = ({
                 name={cluster.properties.username}
                 twitterName={cluster.properties.twitter_name}
                 telegramName={cluster.properties.telegram_name}
+                walletAddress={cluster.properties.wallet_address}
+                onDelete={() => onDeleteUser(cluster.properties.wallet_address)}
               />
             </Popup>
           </Marker>

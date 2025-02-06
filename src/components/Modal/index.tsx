@@ -24,7 +24,7 @@ const ModalWrapper: FC<IModal> = ({ children, isVisible, onClose, type }) => (
   >
     <div
       className={cn(
-        'relative max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-lg bg-[#11131C] shadow-lg transition-transform duration-500 ease-in-out',
+        'relative max-h-[90vh] w-full max-w-3xl animate-float-zoom overflow-hidden rounded-lg bg-[#11131C] shadow-lg transition-transform duration-500 ease-in-out',
         {
           'h-auto p-4': type === 'small',
           'h-full max-h-[90vh] p-6': type === 'full'
