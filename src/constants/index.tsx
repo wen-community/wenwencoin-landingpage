@@ -8,4 +8,4 @@ export const DEFAULT_ZOOM_LEVEL = 4
 
 export const MAP_CENTER = { lat: 0.5162, lng: 13.3777 }
 export const MIN_WEN_AMOUNT = 250000
-export const HOLDERS_WORLDWIDE = 244391
+export const HOLDERS_WORLDWIDE = 238491
