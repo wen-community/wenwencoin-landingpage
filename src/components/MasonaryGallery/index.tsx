@@ -81,6 +81,7 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({ items }) => {
                   target.parentElement!.style.height = 'auto'
                   target.style.maxHeight = '700px'
                 }}
+                priority={true}
               />
             </div>
           )}
