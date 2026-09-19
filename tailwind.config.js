@@ -34,9 +34,9 @@ module.exports = {
         deepPurple: '#191826'
       },
       backgroundImage: {
-        mobile: "url('/background-mobile.png')",
-        desktop: "url('/background-web.png')",
-        customImage: "url('/IMG_0653.png')",
+        mobile: "url('/backgrounds/hero-mobile.webp')",
+        desktop: "url('/backgrounds/hero-desktop.webp')",
+        customImage: "url('/backgrounds/site.webp')",
         backgroundSecondary:
           'linear-gradient(25deg, rgba(34, 22, 33, 1) 0%, rgba(112, 69, 90, 1) 50%, rgba(15, 34, 73, 0.95) 100%)',
         defaultGradient:

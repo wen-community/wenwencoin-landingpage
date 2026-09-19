@@ -4,10 +4,9 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 import { useCallback } from 'react'
 
-import { Telegram, Twitter } from '@/components'
 import { cn } from '@/utils/cn'
 
-import { Cross, Hamburger } from '../icons'
+import { Cross, Hamburger, Telegram, Twitter } from '../icons'
 
 const Header = ({
   className,

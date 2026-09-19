@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 
-import { AddLocation, NextLink } from '@/components'
+import { NextLink } from '@/components'
 import { MapComponent } from '@/components/Map/OpenStreetMap'
 import { supabase } from '@/services/supabase'
 import { IUser } from '@/types'
 
 const CommunitySection = () => {
-  const [showForm, setShowForm] = useState<boolean>(false)
   const [users, setUsers] = useState<IUser[]>([])
 
   const fetchMarkers = useCallback(async () => {
@@ -60,11 +59,6 @@ const CommunitySection = () => {
       </div>
 
       <div className="flex flex-col gap-10">
-        <AddLocation
-          fetchMarkers={fetchMarkers}
-          showForm={showForm}
-          setShowForm={setShowForm}
-        />
         <div className="relative mt-5 h-[600px] w-full overflow-hidden">
           <MapComponent
             users={users}

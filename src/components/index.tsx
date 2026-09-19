@@ -4,12 +4,10 @@ export { default as FaqItem } from './FaqItem'
 export { default as Layout } from './Layout'
 export { default as BrandItem } from './BrandItem'
 export { default as NextLink } from './Link'
-export { default as AddLocation } from './AddLocation'
 export { default as CountUp } from './CountUp'
 export { default as VisibilitySensor } from './VisibilitySensor'
 export { default as FlipWords } from './FlipWords'
 export { default as ToolTip } from './ToolTip'
-export { default as SwapWidget } from './SwapWidget'
 export { default as MasonaryGallery } from './MasonaryGallery'
 
 export {

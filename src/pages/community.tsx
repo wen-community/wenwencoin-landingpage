@@ -1,12 +1,23 @@
+import dynamic from 'next/dynamic'
+
 import { useCallback, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 
-import { AddLocation, Header, NextLink } from '@/components'
+import { Header, NextLink } from '@/components'
 import { MapComponent } from '@/components/Map/OpenStreetMap'
 import { MIN_WEN_AMOUNT } from '@/constants'
-import { usePhantomWallet } from '@/contexts/PhantomWalletContext'
+import {
+  PhantomWalletProvider,
+  usePhantomWallet
+} from '@/contexts/PhantomWalletContext'
 import { supabase } from '@/services/supabase'
 import { IUser } from '@/types'
+
+// Only mounted once the user opens the form, so yup and the Google Places
+// autocomplete (plus its script) are never loaded just to look at the map.
+const AddLocation = dynamic(() => import('@/components/AddLocation'), {
+  ssr: false
+})
 
 const JoinCommunity = () => {
   const { connected, isEligible, connect } = usePhantomWallet()
@@ -126,11 +137,13 @@ const JoinCommunity = () => {
         </div>
       </div>
       <div>
-        <AddLocation
-          fetchMarkers={fetchMarkers}
-          showForm={showForm}
-          setShowForm={setShowForm}
-        />
+        {showForm && (
+          <AddLocation
+            fetchMarkers={fetchMarkers}
+            showForm={showForm}
+            setShowForm={setShowForm}
+          />
+        )}
       </div>
       <section className="min-h-[50%] gap-8 py-12 md:py-16">
         <MapComponent
@@ -144,4 +157,12 @@ const JoinCommunity = () => {
   )
 }
 
-export default JoinCommunity
+// The wallet provider lives here instead of _app so @solana/web3.js and
+// spl-token only ship on this route.
+const CommunityPage = () => (
+  <PhantomWalletProvider>
+    <JoinCommunity />
+  </PhantomWalletProvider>
+)
+
+export default CommunityPage
