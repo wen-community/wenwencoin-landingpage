@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 
 import { ReactNode } from 'react'
 
-import { Overlay } from '@/containers'
+import Overlay from '@/containers/Overlay'
 import { cn } from '@/utils/cn'
 
 import Header from '../Header'

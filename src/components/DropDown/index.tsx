@@ -1,11 +1,10 @@
-import Script from 'next/script'
-
 import {
   ChangeEvent,
   Dispatch,
   InputHTMLAttributes,
   SetStateAction,
   useCallback,
+  useEffect,
   useState
 } from 'react'
 
@@ -45,7 +44,7 @@ const DropDown = ({
   const [showDropdown, setShowDropdown] = useState<boolean>(false)
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_PLACES_API_KEY!,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY!,
     libraries
   })
 
@@ -59,6 +58,12 @@ const DropDown = ({
   } = usePlacesAutocomplete({
     debounce: 300
   })
+
+  // usePlacesAutocomplete tries to initialise on mount, before the Maps script
+  // from useLoadScript has arrived, so run init again once it is ready.
+  useEffect(() => {
+    if (isLoaded) init()
+  }, [isLoaded, init])
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
@@ -116,41 +121,28 @@ const DropDown = ({
   if (!isLoaded) return <div>Loading...</div>
 
   return (
-    <>
-      <Script
-        id="googlemaps"
-        type="text/javascript"
-        strategy="lazyOnload"
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_PLACES_API_KEY}&libraries=places`}
-        onReady={init}
+    <div className={cn('relative flex flex-col', className)}>
+      <FormLine
+        id={id}
+        title={title}
+        error={error}
+        required={required}
+        value={value}
+        onChange={handleInputChange}
+        disabled={!ready}
+        {...props}
       />
-      <div className={cn('relative flex flex-col', className)}>
-        <FormLine
-          id={id}
-          title={title}
-          error={error}
-          required={required}
-          value={value}
-          onChange={handleInputChange}
-          disabled={!ready}
-          {...props}
-        />
-        {showDropdown && (
-          <ul className="absolute top-24 z-[401] flex w-full flex-col gap-2 overflow-hidden rounded-md bg-black shadow-xl">
-            {status === 'OK' && renderSuggestions()}
-            {status !== 'OK' && (
-              <li className="w-full truncate px-4 py-2 text-left text-sm">
-                {loading ? (
-                  <Spinner className="mx-auto" />
-                ) : (
-                  'No locations found'
-                )}
-              </li>
-            )}
-          </ul>
-        )}
-      </div>
-    </>
+      {showDropdown && (
+        <ul className="absolute top-24 z-[401] flex w-full flex-col gap-2 overflow-hidden rounded-md bg-black shadow-xl">
+          {status === 'OK' && renderSuggestions()}
+          {status !== 'OK' && (
+            <li className="w-full truncate px-4 py-2 text-left text-sm">
+              {loading ? <Spinner className="mx-auto" /> : 'No locations found'}
+            </li>
+          )}
+        </ul>
+      )}
+    </div>
   )
 }
 
